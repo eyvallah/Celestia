@@ -832,7 +832,7 @@ msgstr ""
 
 # Android/iOS/Mac
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 # Android/iOS/Mac
 msgid "Open Clusters"
@@ -1210,7 +1210,7 @@ msgid "Stars"
 msgstr ""
 
 # Android/iOS/Mac
-msgid "Stars With Planets"
+msgid "Stars with Planets"
 msgstr ""
 
 # Mac
