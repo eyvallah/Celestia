@@ -4,7 +4,24 @@
 #include <celutil/array_view.h>
 
 #ifdef GL_ES
-#include <epoxy/gl.h>
+//#include <epoxy/gl.h>
+#define GL_TEXTURE_BASE_LEVEL                                                      0x813C
+#define GL_TEXTURE_BASE_LEVEL_SGIS                                                 0x813C
+#define GL_TEXTURE_MAX_LEVEL                                                       0x813D
+#define GL_TEXTURE_MAX_LEVEL_APPLE                                                 0x813D
+#define GL_TEXTURE_MAX_LEVEL_SGIS                                                  0x813D
+#define GL_COMPRESSED_RGBA_S3TC_DXT1_EXT                                           0x83F1
+#define GL_COMPRESSED_RGBA_S3TC_DXT3_ANGLE                                         0x83F2
+#define GL_COMPRESSED_RGBA_S3TC_DXT3_EXT                                           0x83F2
+#define GL_COMPRESSED_RGBA_S3TC_DXT5_ANGLE                                         0x83F3
+#define GL_COMPRESSED_RGBA_S3TC_DXT5_EXT                                           0x83F3
+#define GL_CLAMP_TO_BORDER_OES                                                     0x812D
+#define GL_TEXTURE_BORDER_COLOR_OES                                                0x1004
+#if defined(__APPLE__) || defined(ANDROID)
+#define GL_GLEXT_PROTOTYPES
+#include <GLES2/gl2.h>
+#include <GLES2/gl2ext.h>
+#endif
 /*
 #include <GLES2/gl2.h>
 #define GL_GLEXT_PROTOTYPES 1
@@ -27,6 +44,9 @@
 #undef glDepthRange
 #endif
 #define glDepthRange glDepthRangef
+#define glGenVertexArrays glGenVertexArraysOES
+#define glBindVertexArray glBindVertexArrayOES
+#define glDeleteVertexArrays glDeleteVertexArraysOES
 #endif
 
 namespace celestia
