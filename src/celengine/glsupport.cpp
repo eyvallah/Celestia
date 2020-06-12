@@ -1,5 +1,6 @@
 #include "glsupport.h"
 #include <algorithm>
+#include <cstring>
 
 namespace celestia
 {
@@ -24,7 +25,9 @@ namespace
 {
     inline bool has_extension(const char* name) noexcept
     {
-        return epoxy_has_gl_extension(name);
+//        return epoxy_has_gl_extension(name);
+        const char *extensions = reinterpret_cast<const char *>(glGetString(GL_EXTENSIONS));
+        return strstr(extensions, name) != nullptr;
     }
 
     bool check_extension(util::array_view<std::string> list, const char* name) noexcept
@@ -64,7 +67,8 @@ bool init(util::array_view<std::string> ignore) noexcept
 
 bool checkVersion(int v) noexcept
 {
-    return epoxy_gl_version() >= v;
+    return true;
+//    return epoxy_gl_version() >= v;
 }
 } // gl
 } // celestia

@@ -29,7 +29,7 @@ using namespace Eigen;
 using namespace std;
 
 // GLSL on Mac OS X appears to have a bug that precludes us from using structs
-#define USE_GLSL_STRUCTS
+//#define USE_GLSL_STRUCTS
 #define POINT_FADE 1
 
 constexpr const int ShadowSampleKernelWidth = 2;
