@@ -353,7 +353,7 @@ msgstr "Описание"
 
 # Android/iOS, URL for Development wiki
 msgid "Development"
-msgstr ""
+msgstr "Разработка"
 
 # Android/iOS/Mac, Marker
 msgid "Diamond"
