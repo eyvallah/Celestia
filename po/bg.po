@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: celestia 1.7.0\n"
 "Report-Msgid-Bugs-To: team@celestia.space\n"
 "POT-Creation-Date: 2020-07-14 09:41+0300\n"
-"PO-Revision-Date: 2020-07-30 19:12+0200\n"
+"PO-Revision-Date: 2020-09-21 10:57+0200\n"
 "Last-Translator: Georgi Georgiev <georgiev_1994@abv.bg>, 2020\n"
 "Language-Team: Bulgarian (https://www.transifex.com/celestia/teams/93131/"
 "bg/)\n"
@@ -812,7 +812,7 @@ msgstr "Хелзинки"
 
 #: ??
 msgid "Hong Kong"
-msgstr ""
+msgstr "Хонконг"
 
 #: ../data/data.cpp:197
 msgid "Honiara"
@@ -1060,7 +1060,7 @@ msgstr "Нукуалофа"
 
 #: ??
 msgid "Nur-Sultan"
-msgstr ""
+msgstr "Нур Султан"
 
 #: ../data/data.cpp:259
 msgid "Nuuk"
