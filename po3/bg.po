@@ -353,7 +353,7 @@ msgstr "Описание"
 
 # Android/iOS, URL for Development wiki
 msgid "Development"
-msgstr ""
+msgstr "Разработка"
 
 # Android/iOS/Mac, Marker
 msgid "Diamond"
@@ -1113,7 +1113,7 @@ msgstr "Скриптове"
 
 # Android/iOS, URL for Scripts and URLs wiki
 msgid "Scripts and URLs"
-msgstr ""
+msgstr "Скриптове и линкове"
 
 # Android/iOS
 msgid "Search"
@@ -1315,7 +1315,7 @@ msgstr "Резолюция на текстурите:"
 
 # Android/iOS, URL for Third Party Dependencies wiki
 msgid "Third Party Dependencies"
-msgstr ""
+msgstr "Зависимости от трети страни"
 
 # Android/iOS/Mac
 msgid "Time"
@@ -1410,7 +1410,7 @@ msgid "Up Arrow"
 msgstr "Стрелка нагоре"
 
 # Android/iOS, URL for Use Add-ons and Scripts wiki
-msgid "Use Add-ons and Scripts"
+msgid "Използвани добавки и скриптове"
 msgstr ""
 
 # Android/iOS/Mac
