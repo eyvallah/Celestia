@@ -444,6 +444,10 @@ msgstr "赤道半径：%s"
 msgid "Error loading data, fallback to original configuration."
 msgstr "加载数据失败，尝试加载默认配置。"
 
+# Android, Exit Celestia
+msgid "Exit"
+msgstr "退出"
+
 # Mac
 msgid "Failed to start OpenGL."
 msgstr "无法启用OpenGL。"

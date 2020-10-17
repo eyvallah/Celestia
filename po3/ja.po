@@ -444,6 +444,10 @@ msgstr "赤道半径: %s"
 msgid "Error loading data, fallback to original configuration."
 msgstr "データのロードでエラーがありました。オリジナルの設定へフォールバックします。"
 
+# Android, Exit Celestia
+msgid "Exit"
+msgstr ""
+
 # Mac
 msgid "Failed to start OpenGL."
 msgstr "OpenGLの開始に失敗しました。"

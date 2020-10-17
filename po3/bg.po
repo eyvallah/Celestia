@@ -4,6 +4,7 @@
 # Translators:
 # Georgi Georgiev <georgiev_1994@abv.bg>, 2020
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: celestia 1.7.0\n"
@@ -79,7 +80,7 @@ msgstr "Добави отметка"
 
 # iOS, Add a new item (bookmark)
 msgid "Add new…"
-msgstr "Добави нова..."
+msgstr "Добави нова…"
 
 # Mac
 msgid "Add/Subtract Light Travel Delay"
@@ -172,7 +173,7 @@ msgstr "c (светлинна скорост)"
 
 # Android/iOS, Calculating for eclipses
 msgid "Calculating…"
-msgstr "Изчисляване..."
+msgstr "Изчисляване…"
 
 # Android/iOS, Observer control
 msgid "Camera Control"
@@ -280,7 +281,7 @@ msgstr "Копирай URL"
 
 # Android, Copying default data from APK
 msgid "Copying data…"
-msgstr "Копиране на данни..."
+msgstr "Копиране на данни…"
 
 # Android/iOS/Mac, Location labels
 msgid "Crater"
@@ -444,6 +445,10 @@ msgstr "Екваториален радиус: %s"
 msgid "Error loading data, fallback to original configuration."
 msgstr "Грешка при зареждане на данните, връщане към началната конфигурация."
 
+# Android, Exit Celestia
+msgid "Exit"
+msgstr ""
+
 # Mac
 msgid "Failed to start OpenGL."
 msgstr "Неуспешно стартиране на OpenGL."
@@ -542,7 +547,7 @@ msgstr "Общи"
 
 # Android/iOS
 msgid "Generating sharing link…"
-msgstr "Генериране на споделяща връзка..."
+msgstr "Генериране на споделяща връзка…"
 
 # Android/iOS/Mac
 msgid "Globulars"
@@ -558,7 +563,7 @@ msgstr "Отиди до обект"
 
 # Mac
 msgid "Go to Object…"
-msgstr "Отиди до обект..."
+msgstr "Отиди до обект…"
 
 # Mac, Go to selected object
 msgid "Go to Selection"
@@ -702,7 +707,7 @@ msgstr "Зареждането на Celestia е неуспешно…"
 # Android, Loading Celestia configuration
 #, c-format
 msgid "Loading configuration…"
-msgstr "Зареждане на конфигурация..."
+msgstr "Зареждане на конфигурация…"
 
 # Android/iOS, Celestia initialization, loading file
 #, c-format
@@ -899,7 +904,7 @@ msgstr "Информация за OpenGL"
 
 # Android
 msgid "Opening external file or URL…"
-msgstr "Отваряне на външен файл или URL..."
+msgstr "Отваряне на външен файл или URL…"
 
 # iOS
 msgid "Operation not permitted."
@@ -915,7 +920,7 @@ msgstr "Орбити"
 
 # Mac
 msgid "Organize Bookmarks…"
-msgstr "Организирай отметки..."
+msgstr "Организирай отметки…"
 
 # Mac, Other location labels
 msgid "Other"
@@ -988,7 +993,7 @@ msgstr "Предпочитания"
 
 # Mac, Settings
 msgid "Preferences…"
-msgstr "Предпочитания..."
+msgstr "Предпочитания…"
 
 # Mac, Quit Celestia
 msgid "Quit"
@@ -1097,7 +1102,7 @@ msgstr "Изпълни скрипта?"
 
 # Mac
 msgid "Run Script…"
-msgstr "Изпълни скрипта..."
+msgstr "Изпълни скрипта…"
 
 # Android/iOS/Mac, Star style
 msgid "Scaled Discs"
@@ -1141,7 +1146,7 @@ msgstr "Задай време"
 
 # Mac, Select simulation time
 msgid "Set Time…"
-msgstr "Задай време..."
+msgstr "Задай време…"
 
 # Android/iOS, Set simulation time to device
 msgid "Set to Current Time"
@@ -1410,7 +1415,7 @@ msgid "Up Arrow"
 msgstr "Стрелка нагоре"
 
 # Android/iOS, URL for Use Add-ons and Scripts wiki
-msgid "Използвани добавки и скриптове"
+msgid "Use Add-ons and Scripts"
 msgstr ""
 
 # Android/iOS/Mac

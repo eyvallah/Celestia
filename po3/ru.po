@@ -443,6 +443,10 @@ msgstr "Экваториальный радиус: %s"
 msgid "Error loading data, fallback to original configuration."
 msgstr "Ошибка загрузки данных, возврат к исходной конфигурации."
 
+# Android, Exit Celestia
+msgid "Exit"
+msgstr ""
+
 # Mac
 msgid "Failed to start OpenGL."
 msgstr "Ошибка подключения OpenGL."

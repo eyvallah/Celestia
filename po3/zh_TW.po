@@ -443,6 +443,10 @@ msgstr ""
 msgid "Error loading data, fallback to original configuration."
 msgstr ""
 
+# Android, Exit Celestia
+msgid "Exit"
+msgstr ""
+
 # Mac
 msgid "Failed to start OpenGL."
 msgstr ""

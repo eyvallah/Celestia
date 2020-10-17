@@ -444,6 +444,10 @@ msgstr "Äquatorradius: %s"
 msgid "Error loading data, fallback to original configuration."
 msgstr "Fehler beim Laden der Daten, lade Originalkonfiguration."
 
+# Android, Exit Celestia
+msgid "Exit"
+msgstr ""
+
 # Mac
 msgid "Failed to start OpenGL."
 msgstr "OpenGL konnte nicht gestartet werden."
