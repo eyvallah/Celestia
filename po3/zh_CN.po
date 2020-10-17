@@ -81,6 +81,14 @@ msgstr "添加书签"
 msgid "Add new…"
 msgstr "添加…"
 
+# iOS
+msgid "Add-on directory does not exist."
+msgstr "插件文件夹不存在。"
+
+# Android/iOS
+msgid "Add-ons"
+msgstr "插件"
+
 # Mac
 msgid "Add/Subtract Light Travel Delay"
 msgstr "增加/减少光速延迟"
@@ -100,6 +108,10 @@ msgstr "替换表面"
 # Android/iOS/Mac, In setting
 msgid "Ambient Light"
 msgstr "环境光"
+
+# iOS
+msgid "An external screen is connected, do you want to display Celestia on the external screen?"
+msgstr "检测到已连接新的屏幕，您是否想在外接屏幕上显示 Celestia ？"
 
 # Mac, Used in "Find Eclipses cast on: ... Between: ... and:"
 msgid "and:"
@@ -124,6 +136,11 @@ msgstr "天文单位"
 # Android/iOS, Authors for Celestia
 msgid "Authors"
 msgstr "软件作者"
+
+# Android/iOS, Authors for an add-on
+#, c-format
+msgid "Authors: %s"
+msgstr "作者：%s"
 
 # Mac, Auto mag for star display
 msgid "Auto Mag"
@@ -189,6 +206,10 @@ msgstr "无法添加对象"
 # Mac, Record a video in Celestia
 msgid "Capture Video"
 msgstr "录制视频"
+
+# Android/iOS, Add-on categories
+msgid "Categories"
+msgstr "分类"
 
 # Mac
 msgid "Celestia"
@@ -379,6 +400,14 @@ msgstr "显示光速延迟"
 msgid "Distance:"
 msgstr "距离:"
 
+# Android/iOS, Prompt to ask to cancel downloading an add-on
+msgid "Do you want to cancel this task?"
+msgstr "您是否希望取消该任务？"
+
+# Android/iOS
+msgid "Do you want to uninstall this add-on?"
+msgstr "您是否希望卸载该插件？"
+
 # Mac, In eclipse finder
 msgid "Double click on item to go"
 msgstr "双击条目前往"
@@ -394,6 +423,14 @@ msgstr "下"
 # Android/iOS/Mac, Marker
 msgid "Down Arrow"
 msgstr "下箭头"
+
+# Android/iOS, Download button when the add-on is not downloaded
+msgid "DOWNLOAD"
+msgstr "下载"
+
+# Android/iOS, Download button when the add-on is being downloaded
+msgid "DOWNLOADING"
+msgstr "下载中"
 
 # Android/iOS/Mac, Tab for deep sky objects in Star Browser
 msgid "DSOs"
@@ -443,6 +480,26 @@ msgstr "赤道半径：%s"
 # Android/iOS
 msgid "Error loading data, fallback to original configuration."
 msgstr "加载数据失败，尝试加载默认配置。"
+
+# Android, Exit Celestia
+msgid "Exit"
+msgstr "退出"
+
+# iOS
+msgid "Failed to connect to the external screen."
+msgstr "连接到外接屏幕失败。"
+
+# Android/iOS
+msgid "Failed to download or install this add-on."
+msgstr "下载或安装插件失败。"
+
+# Android/iOS
+msgid "Failed to load add-on categories."
+msgstr "无法加载插件目录。"
+
+# Android/iOS
+msgid "Failed to load add-ons."
+msgstr "无法加载插件列表。"
 
 # Mac
 msgid "Failed to start OpenGL."
@@ -648,6 +705,14 @@ msgstr "信息显示 :"
 msgid "Information"
 msgstr "信息"
 
+# Android/iOS, Title for the list of installed add-ons
+msgid "Installed"
+msgstr "已安装"
+
+# Android/iOS, Download button when the add-on is installed
+msgid "INSTALLED"
+msgstr "已安装"
+
 # Mac, Set simulation time based on Julian date
 msgid "Julian Date:"
 msgstr "儒略日："
@@ -836,6 +901,10 @@ msgstr "无响应"
 # Android/iOS/Mac, Empty HUD display
 msgid "None"
 msgstr "无"
+
+# Android/iOS
+msgid "Note: restarting Celestia is needed to use any new installed add-on."
+msgstr "注意：需要重新启动 Celestia 以使用新插件。"
 
 # Mac, Hint for specifying time in eclipse finder
 msgid ""
@@ -1026,6 +1095,15 @@ msgstr "参考向量"
 # Android/iOS
 msgid "Reference vectors are only visible for the current selected solar system object."
 msgstr "参考向量只对当前选中的太阳系天体有效。"
+
+# Android/iOS, Button to refresh this list
+msgid "Refresh"
+msgstr "刷新"
+
+# Android/iOS, Release date for an add-on
+#, c-format
+msgid "Release date: %s"
+msgstr "发布日前：%s"
 
 # Android, Rename a favorite item (currently bookmark)
 msgid "Rename"
@@ -1376,6 +1454,15 @@ msgstr "类型"
 # Mac
 msgid "Unable to capture video"
 msgstr "无法录制视频"
+
+# Android, Custom config/data directory path have to be under a specific path
+#, c-format
+msgid "Unable to resolve path, please ensure that you have selected a path inside %s."
+msgstr "无法获取路径，请确保您选择的路径在%s下。"
+
+# Android/iOS
+msgid "Unable to uninstall add-on."
+msgstr "无法卸载插件。"
 
 # Android/iOS/Mac
 msgid "Unknown"

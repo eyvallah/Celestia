@@ -8,13 +8,14 @@ msgstr ""
 "Project-Id-Version: celestia 1.7.0\n"
 "Report-Msgid-Bugs-To: team@celestia.space\n"
 "POT-Creation-Date: 2020-04-15 20:22+0800\n"
-"PO-Revision-Date: 2020-06-28 15:45+0300\n"
+"PO-Revision-Date: 2020-10-25 10:41+0300\n"
 "Last-Translator: Askaniy Anpilogov <aaskaniy@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3.1\n"
 
 # Android/iOS/Mac
 #, c-format
@@ -80,6 +81,14 @@ msgstr "Добавить закладку"
 msgid "Add new…"
 msgstr "Создать…"
 
+# iOS
+msgid "Add-on directory does not exist."
+msgstr "Папка для дополнений отсутствует."
+
+# Android/iOS
+msgid "Add-ons"
+msgstr "Дополнения"
+
 # Mac
 msgid "Add/Subtract Light Travel Delay"
 msgstr "Вкл./откл. световое запаздывание"
@@ -99,6 +108,10 @@ msgstr "Альтернативные поверхности"
 # Android/iOS/Mac, In setting
 msgid "Ambient Light"
 msgstr "Подсветка"
+
+# iOS
+msgid "An external screen is connected, do you want to display Celestia on the external screen?"
+msgstr "Внешний экран подключен, вы хотите отобразить Celestia на внешнем экране?"
 
 # Mac, Used in "Find Eclipses cast on: ... Between: ... and:"
 msgid "and:"
@@ -123,6 +136,11 @@ msgstr "а.е."
 # Android/iOS, Authors for Celestia
 msgid "Authors"
 msgstr "В разработке принимали участие"
+
+# Android/iOS, Authors for an add-on
+#, c-format
+msgid "Authors: %s"
+msgstr "Авторы: %s"
 
 # Mac, Auto mag for star display
 msgid "Auto Mag"
@@ -189,6 +207,10 @@ msgstr "Не удаётся добавить объект"
 msgid "Capture Video"
 msgstr "Захват видео"
 
+# Android/iOS, Add-on categories
+msgid "Categories"
+msgstr "Категории"
+
 # Mac
 msgid "Celestia"
 msgstr "Celestia"
@@ -223,7 +245,7 @@ msgstr "Выбрать файл конфигурации"
 
 # Android/iOS/Mac, Marker
 msgid "Circle"
-msgstr "Круг"
+msgstr "Окружность"
 
 # Android/iOS/Mac
 msgid "Cities"
@@ -287,7 +309,7 @@ msgstr "Кратеры"
 
 # Android/iOS/Mac, Marker
 msgid "Crosshair"
-msgstr "Перекрестие"
+msgstr "Указатель"
 
 # Android, Current display language
 msgid "Current Language"
@@ -352,7 +374,7 @@ msgstr "Описание"
 
 # Android/iOS, URL for Development wiki
 msgid "Development"
-msgstr ""
+msgstr "Разработка"
 
 # Android/iOS/Mac, Marker
 msgid "Diamond"
@@ -364,7 +386,7 @@ msgstr "Направление"
 
 # Android/iOS/Mac, Marker
 msgid "Disk"
-msgstr "Диски"
+msgstr "Круг"
 
 # Android/iOS/Mac, Display settings
 msgid "Display"
@@ -377,6 +399,14 @@ msgstr "Отобразить световое запаздывание"
 # Mac, Distance to the object (in Go to)
 msgid "Distance:"
 msgstr "Расстояние:"
+
+# Android/iOS, Prompt to ask to cancel downloading an add-on
+msgid "Do you want to cancel this task?"
+msgstr "Вы хотите прервать загрузку?"
+
+# Android/iOS
+msgid "Do you want to uninstall this add-on?"
+msgstr "Вы хотите удалить это дополнение?"
 
 # Mac, In eclipse finder
 msgid "Double click on item to go"
@@ -393,6 +423,14 @@ msgstr "Вниз"
 # Android/iOS/Mac, Marker
 msgid "Down Arrow"
 msgstr "Стрелка вниз"
+
+# Android/iOS, Download button when the add-on is not downloaded
+msgid "DOWNLOAD"
+msgstr "СКАЧАТЬ"
+
+# Android/iOS, Download button when the add-on is being downloaded
+msgid "DOWNLOADING"
+msgstr "ЗАГРУЗКА"
 
 # Android/iOS/Mac, Tab for deep sky objects in Star Browser
 msgid "DSOs"
@@ -442,6 +480,26 @@ msgstr "Экваториальный радиус: %s"
 # Android/iOS
 msgid "Error loading data, fallback to original configuration."
 msgstr "Ошибка загрузки данных, возврат к исходной конфигурации."
+
+# Android, Exit Celestia
+msgid "Exit"
+msgstr "Выйти"
+
+# iOS
+msgid "Failed to connect to the external screen."
+msgstr "Не удалось подключиться к внешнему экрану."
+
+# Android/iOS
+msgid "Failed to download or install this add-on."
+msgstr "Не удалось загрузить или установить это дополнение."
+
+# Android/iOS
+msgid "Failed to load add-on categories."
+msgstr "Не удалось загрузить категории дополнений."
+
+# Android/iOS
+msgid "Failed to load add-ons."
+msgstr "Не удалось загрузить дополнения."
 
 # Mac
 msgid "Failed to start OpenGL."
@@ -647,6 +705,14 @@ msgstr "Отображение информации:"
 msgid "Information"
 msgstr "Об объекте"
 
+# Android/iOS, Title for the list of installed add-ons
+msgid "Installed"
+msgstr "Установлено"
+
+# Android/iOS, Download button when the add-on is installed
+msgid "INSTALLED"
+msgstr "УСТАНОВЛЕНО"
+
 # Mac, Set simulation time based on Julian date
 msgid "Julian Date:"
 msgstr "Юлианская дата:"
@@ -836,13 +902,17 @@ msgstr "Нет ответа"
 msgid "None"
 msgstr "Нет"
 
+# Android/iOS
+msgid "Note: restarting Celestia is needed to use any new installed add-on."
+msgstr "Примечание: для использования любых новых установленных дополнений необходим перезапуск Celestia."
+
 # Mac, Hint for specifying time in eclipse finder
 msgid ""
 "Note:\n"
 "Specifying a large time interval may cause long search times and a very large number of results."
 msgstr ""
 "Примечание:\n"
-"Указание большого интервала времени может привести к длительному времени поиска и очень большому количеству результатов."
+"Указание большого временного интервала может привести к длительному поиску и большому количеству результатов."
 
 # Android/iOS, In eclipse finder, object to find eclipse with
 msgid "Object"
@@ -1026,6 +1096,15 @@ msgstr "Опорные векторы"
 msgid "Reference vectors are only visible for the current selected solar system object."
 msgstr "Опорные векторы видны только для текущего выбранного объекта."
 
+# Android/iOS, Button to refresh this list
+msgid "Refresh"
+msgstr "Обновить"
+
+# Android/iOS, Release date for an add-on
+#, c-format
+msgid "Release date: %s"
+msgstr "Дата выпуска: %s"
+
 # Android, Rename a favorite item (currently bookmark)
 msgid "Rename"
 msgstr "Переименовать"
@@ -1112,7 +1191,7 @@ msgstr "Сценарии"
 
 # Android/iOS, URL for Scripts and URLs wiki
 msgid "Scripts and URLs"
-msgstr ""
+msgstr "Как использовать сценарии и ссылки"
 
 # Android/iOS
 msgid "Search"
@@ -1314,7 +1393,7 @@ msgstr "Разрешение текстур:"
 
 # Android/iOS, URL for Third Party Dependencies wiki
 msgid "Third Party Dependencies"
-msgstr ""
+msgstr "Сторонние зависимости"
 
 # Android/iOS/Mac
 msgid "Time"
@@ -1376,6 +1455,15 @@ msgstr "Тип"
 msgid "Unable to capture video"
 msgstr "Нельзя записать видео"
 
+# Android, Custom config/data directory path have to be under a specific path
+#, c-format
+msgid "Unable to resolve path, please ensure that you have selected a path inside %s."
+msgstr "Расположение папки указано неверно, убедитесь, что вы выбрали путь внутри %s."
+
+# Android/iOS
+msgid "Unable to uninstall add-on."
+msgstr "Не удаётся удалить дополнение."
+
 # Android/iOS/Mac
 msgid "Unknown"
 msgstr "Неизвестно"
@@ -1410,7 +1498,7 @@ msgstr "Стрелка вверх"
 
 # Android/iOS, URL for Use Add-ons and Scripts wiki
 msgid "Use Add-ons and Scripts"
-msgstr ""
+msgstr "Как установить дополнения и сценарии"
 
 # Android/iOS/Mac
 msgid "UTC"
@@ -1458,7 +1546,7 @@ msgstr "Окно"
 
 # Android/iOS/Mac, Marker
 msgid "X"
-msgstr "X"
+msgstr "Крест"
 
 # Android/iOS/Mac, Camera control
 msgid "Yaw"
