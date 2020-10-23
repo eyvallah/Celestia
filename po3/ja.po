@@ -81,6 +81,14 @@ msgstr "ブックマークに追加"
 msgid "Add new…"
 msgstr "新規追加…"
 
+# iOS
+msgid "Add-on directory does not exist."
+msgstr ""
+
+# Android/iOS
+msgid "Add-ons"
+msgstr ""
+
 # Mac
 msgid "Add/Subtract Light Travel Delay"
 msgstr "光速による遅れを考慮して表示"
@@ -189,6 +197,10 @@ msgstr "天体を追加できません"
 # Mac, Record a video in Celestia
 msgid "Capture Video"
 msgstr "動画キャプチャ"
+
+# Android/iOS, Add-on categories
+msgid "Categories"
+msgstr ""
 
 # Mac
 msgid "Celestia"
@@ -379,6 +391,14 @@ msgstr "光速到達時間を表示"
 msgid "Distance:"
 msgstr "距離: "
 
+# Android/iOS, Prompt to ask to cancel downloading an add-on
+msgid "Do you want to cancel this task?"
+msgstr ""
+
+# Android/iOS
+msgid "Do you want to uninstall this add-on?"
+msgstr ""
+
 # Mac, In eclipse finder
 msgid "Double click on item to go"
 msgstr "項目をダブルクリックで移動"
@@ -394,6 +414,14 @@ msgstr "伏せる"
 # Android/iOS/Mac, Marker
 msgid "Down Arrow"
 msgstr "下矢印(↓)"
+
+# Android/iOS, Download button when the add-on is not downloaded
+msgid "DOWNLOAD"
+msgstr ""
+
+# Android/iOS, Download button when the add-on is being downloaded
+msgid "DOWNLOADING"
+msgstr ""
 
 # Android/iOS/Mac, Tab for deep sky objects in Star Browser
 msgid "DSOs"
@@ -446,6 +474,18 @@ msgstr "データのロードでエラーがありました。オリジナルの
 
 # Android, Exit Celestia
 msgid "Exit"
+msgstr ""
+
+# Android/iOS
+msgid "Failed to download or install this add-on."
+msgstr ""
+
+# Android/iOS
+msgid "Failed to load add-on categories."
+msgstr ""
+
+# Android/iOS
+msgid "Failed to load add-ons."
 msgstr ""
 
 # Mac
@@ -652,6 +692,14 @@ msgstr "天体情報表示:"
 msgid "Information"
 msgstr "情報"
 
+# Android/iOS, Title for the list of installed add-ons
+msgid "Installed"
+msgstr ""
+
+# Android/iOS, Download button when the add-on is installed
+msgid "INSTALLED"
+msgstr ""
+
 # Mac, Set simulation time based on Julian date
 msgid "Julian Date:"
 msgstr "ユリウス日:"
@@ -840,6 +888,10 @@ msgstr "応答がありません"
 # Android/iOS/Mac, Empty HUD display
 msgid "None"
 msgstr "無し"
+
+# Android/iOS
+msgid "Note: restarting Celestia is needed to use any new installed add-on."
+msgstr ""
 
 # Mac, Hint for specifying time in eclipse finder
 msgid ""
@@ -1030,6 +1082,10 @@ msgstr "参照ベクトル"
 # Android/iOS
 msgid "Reference vectors are only visible for the current selected solar system object."
 msgstr "参照ベクトルは、現在選択されている太陽系の天体に対してのみ表示されます。"
+
+# Android/iOS, Button to refresh this list
+msgid "Refresh"
+msgstr ""
 
 # Android, Rename a favorite item (currently bookmark)
 msgid "Rename"
@@ -1380,6 +1436,15 @@ msgstr "スペクトル型"
 # Mac
 msgid "Unable to capture video"
 msgstr "ビデオをキャプチャーできません"
+
+# Android, Custom config/data directory path have to be under a specific path
+#, c-format
+msgid "Unable to resolve path, please ensure that you have selected a path inside %s."
+msgstr ""
+
+# Android/iOS
+msgid "Unable to uninstall add-on."
+msgstr ""
 
 # Android/iOS/Mac
 msgid "Unknown"

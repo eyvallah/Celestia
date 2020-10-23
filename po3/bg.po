@@ -82,6 +82,14 @@ msgstr "Добави отметка"
 msgid "Add new…"
 msgstr "Добави нова…"
 
+# iOS
+msgid "Add-on directory does not exist."
+msgstr ""
+
+# Android/iOS
+msgid "Add-ons"
+msgstr ""
+
 # Mac
 msgid "Add/Subtract Light Travel Delay"
 msgstr "Добави/Извади забавянето на светлината"
@@ -190,6 +198,10 @@ msgstr "Обектът не може да се добави"
 # Mac, Record a video in Celestia
 msgid "Capture Video"
 msgstr "Прихвани видео"
+
+# Android/iOS, Add-on categories
+msgid "Categories"
+msgstr ""
 
 # Mac
 msgid "Celestia"
@@ -380,6 +392,14 @@ msgstr "Покажи забавянето на светлината"
 msgid "Distance:"
 msgstr "Разстояние:"
 
+# Android/iOS, Prompt to ask to cancel downloading an add-on
+msgid "Do you want to cancel this task?"
+msgstr ""
+
+# Android/iOS
+msgid "Do you want to uninstall this add-on?"
+msgstr ""
+
 # Mac, In eclipse finder
 msgid "Double click on item to go"
 msgstr "Кликни два пъти за да отидеш до елемента"
@@ -395,6 +415,14 @@ msgstr "Надолу"
 # Android/iOS/Mac, Marker
 msgid "Down Arrow"
 msgstr "Стрелка надолу"
+
+# Android/iOS, Download button when the add-on is not downloaded
+msgid "DOWNLOAD"
+msgstr ""
+
+# Android/iOS, Download button when the add-on is being downloaded
+msgid "DOWNLOADING"
+msgstr ""
 
 # Android/iOS/Mac, Tab for deep sky objects in Star Browser
 msgid "DSOs"
@@ -447,6 +475,18 @@ msgstr "Грешка при зареждане на данните, връщан
 
 # Android, Exit Celestia
 msgid "Exit"
+msgstr ""
+
+# Android/iOS
+msgid "Failed to download or install this add-on."
+msgstr ""
+
+# Android/iOS
+msgid "Failed to load add-on categories."
+msgstr ""
+
+# Android/iOS
+msgid "Failed to load add-ons."
 msgstr ""
 
 # Mac
@@ -653,6 +693,14 @@ msgstr "Информационен екран:"
 msgid "Information"
 msgstr "Информация"
 
+# Android/iOS, Title for the list of installed add-ons
+msgid "Installed"
+msgstr ""
+
+# Android/iOS, Download button when the add-on is installed
+msgid "INSTALLED"
+msgstr ""
+
 # Mac, Set simulation time based on Julian date
 msgid "Julian Date:"
 msgstr "Юлианова дата:"
@@ -841,6 +889,10 @@ msgstr "Няма отговор"
 # Android/iOS/Mac, Empty HUD display
 msgid "None"
 msgstr "Нищо"
+
+# Android/iOS
+msgid "Note: restarting Celestia is needed to use any new installed add-on."
+msgstr ""
 
 # Mac, Hint for specifying time in eclipse finder
 msgid ""
@@ -1031,6 +1083,10 @@ msgstr "Референтни вектори"
 # Android/iOS
 msgid "Reference vectors are only visible for the current selected solar system object."
 msgstr "Референтните вектори са видими само за текущия обект от слънчевата система."
+
+# Android/iOS, Button to refresh this list
+msgid "Refresh"
+msgstr ""
 
 # Android, Rename a favorite item (currently bookmark)
 msgid "Rename"
@@ -1381,6 +1437,15 @@ msgstr "Вид"
 # Mac
 msgid "Unable to capture video"
 msgstr "Видеото не може да се прихване"
+
+# Android, Custom config/data directory path have to be under a specific path
+#, c-format
+msgid "Unable to resolve path, please ensure that you have selected a path inside %s."
+msgstr ""
+
+# Android/iOS
+msgid "Unable to uninstall add-on."
+msgstr ""
 
 # Android/iOS/Mac
 msgid "Unknown"

@@ -80,6 +80,14 @@ msgstr "Aggiungi segnalibro"
 msgid "Add new…"
 msgstr ""
 
+# iOS
+msgid "Add-on directory does not exist."
+msgstr ""
+
+# Android/iOS
+msgid "Add-ons"
+msgstr ""
+
 # Mac
 msgid "Add/Subtract Light Travel Delay"
 msgstr ""
@@ -188,6 +196,10 @@ msgstr ""
 # Mac, Record a video in Celestia
 msgid "Capture Video"
 msgstr "Cattura video"
+
+# Android/iOS, Add-on categories
+msgid "Categories"
+msgstr ""
 
 # Mac
 msgid "Celestia"
@@ -378,6 +390,14 @@ msgstr ""
 msgid "Distance:"
 msgstr "Distanza: "
 
+# Android/iOS, Prompt to ask to cancel downloading an add-on
+msgid "Do you want to cancel this task?"
+msgstr ""
+
+# Android/iOS
+msgid "Do you want to uninstall this add-on?"
+msgstr ""
+
 # Mac, In eclipse finder
 msgid "Double click on item to go"
 msgstr ""
@@ -393,6 +413,14 @@ msgstr ""
 # Android/iOS/Mac, Marker
 msgid "Down Arrow"
 msgstr "Freccia giù"
+
+# Android/iOS, Download button when the add-on is not downloaded
+msgid "DOWNLOAD"
+msgstr ""
+
+# Android/iOS, Download button when the add-on is being downloaded
+msgid "DOWNLOADING"
+msgstr ""
 
 # Android/iOS/Mac, Tab for deep sky objects in Star Browser
 msgid "DSOs"
@@ -445,6 +473,18 @@ msgstr ""
 
 # Android, Exit Celestia
 msgid "Exit"
+msgstr ""
+
+# Android/iOS
+msgid "Failed to download or install this add-on."
+msgstr ""
+
+# Android/iOS
+msgid "Failed to load add-on categories."
+msgstr ""
+
+# Android/iOS
+msgid "Failed to load add-ons."
 msgstr ""
 
 # Mac
@@ -645,6 +685,14 @@ msgstr ""
 msgid "Information"
 msgstr ""
 
+# Android/iOS, Title for the list of installed add-ons
+msgid "Installed"
+msgstr ""
+
+# Android/iOS, Download button when the add-on is installed
+msgid "INSTALLED"
+msgstr ""
+
 # Mac, Set simulation time based on Julian date
 msgid "Julian Date:"
 msgstr ""
@@ -834,6 +882,10 @@ msgstr ""
 msgid "None"
 msgstr "Nessuno"
 
+# Android/iOS
+msgid "Note: restarting Celestia is needed to use any new installed add-on."
+msgstr ""
+
 # Mac, Hint for specifying time in eclipse finder
 msgid ""
 "Note:\n"
@@ -1020,6 +1072,10 @@ msgstr ""
 
 # Android/iOS
 msgid "Reference vectors are only visible for the current selected solar system object."
+msgstr ""
+
+# Android/iOS, Button to refresh this list
+msgid "Refresh"
 msgstr ""
 
 # Android, Rename a favorite item (currently bookmark)
@@ -1370,6 +1426,15 @@ msgstr "Tipo"
 
 # Mac
 msgid "Unable to capture video"
+msgstr ""
+
+# Android, Custom config/data directory path have to be under a specific path
+#, c-format
+msgid "Unable to resolve path, please ensure that you have selected a path inside %s."
+msgstr ""
+
+# Android/iOS
+msgid "Unable to uninstall add-on."
 msgstr ""
 
 # Android/iOS/Mac
