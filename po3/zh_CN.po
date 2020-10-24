@@ -109,6 +109,10 @@ msgstr "替换表面"
 msgid "Ambient Light"
 msgstr "环境光"
 
+# iOS
+msgid "An external screen is connected, do you want to display Celestia on the external screen?"
+msgstr "检测到已连接新的屏幕，您是否想在外接屏幕上显示 Celestia ？"
+
 # Mac, Used in "Find Eclipses cast on: ... Between: ... and:"
 msgid "and:"
 msgstr "到"
@@ -475,6 +479,10 @@ msgstr "加载数据失败，尝试加载默认配置。"
 # Android, Exit Celestia
 msgid "Exit"
 msgstr "退出"
+
+# iOS
+msgid "Failed to connect to the external screen."
+msgstr "连接到外接屏幕失败。"
 
 # Android/iOS
 msgid "Failed to download or install this add-on."
