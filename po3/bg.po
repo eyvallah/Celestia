@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: celestia 1.7.0\n"
 "Report-Msgid-Bugs-To: team@celestia.space\n"
 "POT-Creation-Date: 2020-04-15 20:22+0800\n"
-"PO-Revision-Date: 2020-08-29 22:36+0200\n"
+"PO-Revision-Date: 2020-10-24 12:45+0200\n"
 "Last-Translator: Georgi Georgiev <georgiev_1994@abv.bg>\n"
 "Language-Team: Bulgarian <georgiev_1994@abv.bg>\n"
 "Language: bg\n"
@@ -83,12 +83,12 @@ msgid "Add new…"
 msgstr "Добави нова…"
 
 # iOS
-msgid "Add-on directory does not exit."
-msgstr ""
+msgid "Add-on directory does not exist."
+msgstr "Директорията за добавки не съществува."
 
 # Android/iOS
 msgid "Add-ons"
-msgstr ""
+msgstr "Добавки"
 
 # Mac
 msgid "Add/Subtract Light Travel Delay"
@@ -201,7 +201,7 @@ msgstr "Прихвани видео"
 
 # Android/iOS, Add-on categories
 msgid "Categories"
-msgstr ""
+msgstr "Категории"
 
 # Mac
 msgid "Celestia"
@@ -394,11 +394,11 @@ msgstr "Разстояние:"
 
 # Android/iOS, Prompt to ask to cancel downloading an add-on
 msgid "Do you want to cancel this task?"
-msgstr ""
+msgstr "Искате ли да отмените тази задача?"
 
 # Android/iOS
 msgid "Do you want to uninstall this add-on?"
-msgstr ""
+msgstr "Искате ли да деинсталирате тази добавка?"
 
 # Mac, In eclipse finder
 msgid "Double click on item to go"
@@ -418,11 +418,11 @@ msgstr "Стрелка надолу"
 
 # Android/iOS, Download button when the add-on is not downloaded
 msgid "DOWNLOAD"
-msgstr ""
+msgstr "ИЗТЕГЛИ"
 
 # Android/iOS, Download button when the add-on is being downloaded
 msgid "DOWNLOADING"
-msgstr ""
+msgstr "ИЗТЕГЛЯНЕ"
 
 # Android/iOS/Mac, Tab for deep sky objects in Star Browser
 msgid "DSOs"
@@ -475,19 +475,19 @@ msgstr "Грешка при зареждане на данните, връщан
 
 # Android, Exit Celestia
 msgid "Exit"
-msgstr ""
+msgstr "Изход"
 
 # Android/iOS
 msgid "Failed to download or install this add-on."
-msgstr ""
+msgstr "Неуспешно изтегляне или инсталиране на добавката."
 
 # Android/iOS
 msgid "Failed to load add-on categories."
-msgstr ""
+msgstr "Неуспешно зареждане на категориите с добавки."
 
 # Android/iOS
 msgid "Failed to load add-ons."
-msgstr ""
+msgstr "Неуспешно зареждане на добавките."
 
 # Mac
 msgid "Failed to start OpenGL."
@@ -695,11 +695,11 @@ msgstr "Информация"
 
 # Android/iOS, Title for the list of installed add-ons
 msgid "Installed"
-msgstr ""
+msgstr "Инсталирани"
 
 # Android/iOS, Download button when the add-on is installed
 msgid "INSTALLED"
-msgstr ""
+msgstr "ИНСТАЛИРАНА"
 
 # Mac, Set simulation time based on Julian date
 msgid "Julian Date:"
@@ -892,7 +892,7 @@ msgstr "Нищо"
 
 # Android/iOS
 msgid "Note: restarting Celestia is needed to use any new installed add-on."
-msgstr ""
+msgstr "Забележка: рестартирайте Celestia за активация на новите инсталирани добавки."
 
 # Mac, Hint for specifying time in eclipse finder
 msgid ""
@@ -1086,7 +1086,7 @@ msgstr "Референтните вектори са видими само за 
 
 # Android/iOS, Button to refresh this list
 msgid "Refresh"
-msgstr ""
+msgstr "Опресни"
 
 # Android, Rename a favorite item (currently bookmark)
 msgid "Rename"
@@ -1441,11 +1441,11 @@ msgstr "Видеото не може да се прихване"
 # Android, Custom config/data directory path have to be under a specific path
 #, c-format
 msgid "Unable to resolve path, please ensure that you have selected a path inside %s."
-msgstr ""
+msgstr "Пътят не е разпознат, моля, изберете път в %s."
 
 # Android/iOS
 msgid "Unable to uninstall add-on."
-msgstr ""
+msgstr "Добавката не може да се деинсталира."
 
 # Android/iOS/Mac
 msgid "Unknown"
@@ -1481,7 +1481,7 @@ msgstr "Стрелка нагоре"
 
 # Android/iOS, URL for Use Add-ons and Scripts wiki
 msgid "Use Add-ons and Scripts"
-msgstr ""
+msgstr "Използвай добавки и скриптове"
 
 # Android/iOS/Mac
 msgid "UTC"
