@@ -112,7 +112,7 @@ msgstr "Фонова светлина"
 
 # iOS
 msgid "An external screen is connected, do you want to display Celestia on the external screen?"
-msgstr ""
+msgstr "Свързан е външен екран, искате ли Celestia да се покаже на външния екран?"
 
 # Mac, Used in "Find Eclipses cast on: ... Between: ... and:"
 msgid "and:"
@@ -483,7 +483,7 @@ msgstr "Изход"
 
 # iOS
 msgid "Failed to connect to the external screen."
-msgstr ""
+msgstr "Неуспешно свързване с външния екран."
 
 # Android/iOS
 msgid "Failed to download or install this add-on."
