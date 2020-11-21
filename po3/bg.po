@@ -252,6 +252,10 @@ msgstr "Кръг"
 msgid "Cities"
 msgstr "Градове"
 
+# Mac
+msgid "Close"
+msgstr ""
+
 # Android/iOS/Mac
 msgid "Cloud Shadows"
 msgstr "Сенки от облаци"
@@ -372,6 +376,10 @@ msgstr "Изтрий другите изгледи"
 # iOS, Title for share link
 msgid "Description"
 msgstr "Описание"
+
+# Android/iOS, A list of destinations in guide
+msgid "Destinations"
+msgstr ""
 
 # Android/iOS, URL for Development wiki
 msgid "Development"
@@ -735,6 +743,10 @@ msgstr "Наситеност на надписите"
 msgid "Labels"
 msgstr "Надписи"
 
+# Android/iOS, Go to surface of an object
+msgid "Land"
+msgstr ""
+
 # Android/iOS/Mac, Location labels
 msgid "Landing Sites"
 msgstr "Места на приземяване"
@@ -854,6 +866,10 @@ msgstr "Планини"
 # Android/iOS/Mac
 msgid "Moons"
 msgstr "Луни"
+
+# Android/iOS, Guide to control Celestia with a mouse/keyboard
+msgid "Mouse/Keyboard Controls"
+msgstr ""
 
 # Mac, Move closer to the object
 msgid "Move Closer"
@@ -1253,6 +1269,10 @@ msgstr "Покажи наименованията на съзвездията"
 # Mac
 msgid "Show Constellations"
 msgstr "Покажи съзвездията"
+
+# Android/iOS, Show a list of destinations in guide
+msgid "Show Destinations"
+msgstr ""
 
 # Android/iOS/Mac, Reference vector
 msgid "Show Frame Axes"

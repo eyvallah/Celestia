@@ -251,6 +251,10 @@ msgstr "圆"
 msgid "Cities"
 msgstr "城市"
 
+# Mac
+msgid "Close"
+msgstr "关闭"
+
 # Android/iOS/Mac
 msgid "Cloud Shadows"
 msgstr "云层投影"
@@ -371,6 +375,10 @@ msgstr "删除其他视图"
 # iOS, Title for share link
 msgid "Description"
 msgstr "描述"
+
+# Android/iOS, A list of destinations in guide
+msgid "Destinations"
+msgstr "目的地"
 
 # Android/iOS, URL for Development wiki
 msgid "Development"
@@ -734,6 +742,10 @@ msgstr "标签密度"
 msgid "Labels"
 msgstr "标签"
 
+# Android/iOS, Go to surface of an object
+msgid "Land"
+msgstr "着陆"
+
 # Android/iOS/Mac, Location labels
 msgid "Landing Sites"
 msgstr "着陆点"
@@ -853,6 +865,10 @@ msgstr "山脉"
 # Android/iOS/Mac
 msgid "Moons"
 msgstr "卫星"
+
+# Android/iOS, Guide to control Celestia with a mouse/keyboard
+msgid "Mouse/Keyboard Controls"
+msgstr "鼠标/键盘控制"
 
 # Mac, Move closer to the object
 msgid "Move Closer"
@@ -1103,7 +1119,7 @@ msgstr "刷新"
 # Android/iOS, Release date for an add-on
 #, c-format
 msgid "Release date: %s"
-msgstr "发布日前：%s"
+msgstr "发布日期：%s"
 
 # Android, Rename a favorite item (currently bookmark)
 msgid "Rename"
@@ -1252,6 +1268,10 @@ msgstr "显示星座标签"
 # Mac
 msgid "Show Constellations"
 msgstr "显示星座"
+
+# Android/iOS, Show a list of destinations in guide
+msgid "Show Destinations"
+msgstr "查看目的地"
 
 # Android/iOS/Mac, Reference vector
 msgid "Show Frame Axes"

@@ -250,6 +250,10 @@ msgstr "원(○)"
 msgid "Cities"
 msgstr "도시"
 
+# Mac
+msgid "Close"
+msgstr ""
+
 # Android/iOS/Mac
 msgid "Cloud Shadows"
 msgstr "구름 그림자"
@@ -370,6 +374,10 @@ msgstr ""
 # iOS, Title for share link
 msgid "Description"
 msgstr "기간"
+
+# Android/iOS, A list of destinations in guide
+msgid "Destinations"
+msgstr ""
 
 # Android/iOS, URL for Development wiki
 msgid "Development"
@@ -727,6 +735,10 @@ msgstr ""
 msgid "Labels"
 msgstr "지명 보기"
 
+# Android/iOS, Go to surface of an object
+msgid "Land"
+msgstr ""
+
 # Android/iOS/Mac, Location labels
 msgid "Landing Sites"
 msgstr "착륙지점"
@@ -846,6 +858,10 @@ msgstr "산지"
 # Android/iOS/Mac
 msgid "Moons"
 msgstr "위성"
+
+# Android/iOS, Guide to control Celestia with a mouse/keyboard
+msgid "Mouse/Keyboard Controls"
+msgstr ""
 
 # Mac, Move closer to the object
 msgid "Move Closer"
@@ -1242,6 +1258,10 @@ msgstr ""
 
 # Mac
 msgid "Show Constellations"
+msgstr ""
+
+# Android/iOS, Show a list of destinations in guide
+msgid "Show Destinations"
 msgstr ""
 
 # Android/iOS/Mac, Reference vector

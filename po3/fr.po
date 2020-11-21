@@ -250,6 +250,10 @@ msgstr "Cercle"
 msgid "Cities"
 msgstr "Villes"
 
+# Mac
+msgid "Close"
+msgstr ""
+
 # Android/iOS/Mac
 msgid "Cloud Shadows"
 msgstr "Ombres des nuages"
@@ -369,6 +373,10 @@ msgstr "Supprimer les autres vues"
 
 # iOS, Title for share link
 msgid "Description"
+msgstr ""
+
+# Android/iOS, A list of destinations in guide
+msgid "Destinations"
 msgstr ""
 
 # Android/iOS, URL for Development wiki
@@ -727,6 +735,10 @@ msgstr ""
 msgid "Labels"
 msgstr ""
 
+# Android/iOS, Go to surface of an object
+msgid "Land"
+msgstr ""
+
 # Android/iOS/Mac, Location labels
 msgid "Landing Sites"
 msgstr "Sites d'atterrissage"
@@ -846,6 +858,10 @@ msgstr "Mons"
 # Android/iOS/Mac
 msgid "Moons"
 msgstr "Lunes"
+
+# Android/iOS, Guide to control Celestia with a mouse/keyboard
+msgid "Mouse/Keyboard Controls"
+msgstr ""
 
 # Mac, Move closer to the object
 msgid "Move Closer"
@@ -1245,6 +1261,10 @@ msgstr "Show Constellation Labels"
 # Mac
 msgid "Show Constellations"
 msgstr "Show Constellations"
+
+# Android/iOS, Show a list of destinations in guide
+msgid "Show Destinations"
+msgstr ""
 
 # Android/iOS/Mac, Reference vector
 msgid "Show Frame Axes"
