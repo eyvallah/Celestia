@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: celestia 1.7.0\n"
 "Report-Msgid-Bugs-To: team@celestia.space\n"
 "POT-Creation-Date: 2020-04-15 20:22+0800\n"
-"PO-Revision-Date: 2020-10-25 10:41+0300\n"
+"PO-Revision-Date: 2020-11-24 15:45+0300\n"
 "Last-Translator: Askaniy Anpilogov <aaskaniy@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: \n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 # Android/iOS/Mac
 #, c-format
@@ -253,7 +253,7 @@ msgstr "Города"
 
 # Mac
 msgid "Close"
-msgstr ""
+msgstr "Закрыть"
 
 # Android/iOS/Mac
 msgid "Cloud Shadows"
@@ -378,7 +378,7 @@ msgstr "Описание"
 
 # Android/iOS, A list of destinations in guide
 msgid "Destinations"
-msgstr ""
+msgstr "Направления"
 
 # Android/iOS, URL for Development wiki
 msgid "Development"
@@ -744,7 +744,7 @@ msgstr "Название"
 
 # Android/iOS, Go to surface of an object
 msgid "Land"
-msgstr ""
+msgstr "Посадка на объект"
 
 # Android/iOS/Mac, Location labels
 msgid "Landing Sites"
@@ -868,7 +868,7 @@ msgstr "Спутники"
 
 # Android/iOS, Guide to control Celestia with a mouse/keyboard
 msgid "Mouse/Keyboard Controls"
-msgstr ""
+msgstr "Управление мышью/клавиатурой"
 
 # Mac, Move closer to the object
 msgid "Move Closer"
@@ -1271,7 +1271,7 @@ msgstr "Показывать созвездия"
 
 # Android/iOS, Show a list of destinations in guide
 msgid "Show Destinations"
-msgstr ""
+msgstr "Показывать направления"
 
 # Android/iOS/Mac, Reference vector
 msgid "Show Frame Axes"
