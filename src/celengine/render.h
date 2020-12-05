@@ -48,6 +48,19 @@ struct Matrices
     const Eigen::Matrix4f *modelview;
 };
 
+struct SimplifiedLine
+{
+    Eigen::Vector3f point;
+    float scale;
+};
+
+struct Line
+{
+    Eigen::Vector3f point1;
+    Eigen::Vector3f point2;
+    float scale;
+};
+
 struct LightSource
 {
     Eigen::Vector3d position;
