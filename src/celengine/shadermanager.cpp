@@ -100,12 +100,14 @@ static const char* NormalVertexPosition =
 static const char* LineVertexPosition =
     "vec4 thisPos = calc_vp(in_Position);\n"
     "vec4 nextPos = calc_vp(in_PositionNext);\n"
-    "thisPos /= thisPos.w;\n"
+    "float w = thisPos.w;\n"
+    "thisPos /= w;\n"
     "nextPos /= nextPos.w;\n"
     "vec2 transform = normalize(nextPos.xy - thisPos.xy);\n"
     "transform = vec2(transform.y * lineWidthX, -transform.x * lineWidthY) * in_ScaleFactor;\n"
     "gl_Position = thisPos;\n"
-    "gl_Position.xy += transform;\n";
+    "gl_Position.xy += transform;\n"
+    "gl_Position *= w;\n";
 
 
 static string VertexPosition(const ShaderProperties& props)

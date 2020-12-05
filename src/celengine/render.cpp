@@ -701,6 +701,31 @@ void Renderer::setScreenDpi(int _dpi)
     screenDpi = _dpi;
 }
 
+float Renderer::getScaleFactor() const
+{
+    return screenDpi / 96.0f;
+}
+
+float Renderer::getPointWidth() const
+{
+    return 2.0f / windowWidth * getScaleFactor();
+}
+
+float Renderer::getPointHeight() const
+{
+    return 2.0f / windowHeight * getScaleFactor();
+}
+
+float Renderer::getLineWidthX() const
+{
+    return ((renderFlags | ShowSmoothLines) ? 1.5f : 1.0f) * getPointWidth();
+}
+
+float Renderer::getLineWidthY() const
+{
+    return ((renderFlags | ShowSmoothLines) ? 1.5f : 1.0f) * getPointHeight();
+}
+
 void Renderer::setFaintestAM45deg(float _faintestAutoMag45deg)
 {
     faintestAutoMag45deg = _faintestAutoMag45deg;
@@ -1117,7 +1142,7 @@ void Renderer::renderOrbit(const OrbitPathListEntry& orbitPath,
                            const Matrices& m)
 {
     ShaderProperties shadprop;
-    shadprop.texUsage = ShaderProperties::VertexColors;
+    shadprop.texUsage = ShaderProperties::VertexColors | ShaderProperties::LineAsTriangles;
     shadprop.lightModel = ShaderProperties::UnlitModel;
     auto *prog = shaderManager->getShader(shadprop);
     if (prog == nullptr)
@@ -1320,6 +1345,8 @@ void Renderer::renderOrbit(const OrbitPathListEntry& orbitPath,
 
     prog->use();
     prog->setMVPMatrices(*m.projection);
+    prog->lineWidthX = getPointWidth();
+    prog->lineWidthY = getPointHeight();
     if (orbit->isPeriodic())
     {
         double period = orbit->getPeriod();
@@ -5462,29 +5489,29 @@ void Renderer::drawRectangle(const Rect &r, int fishEyeOverrideMode, const Eigen
     constexpr array<short, 8> texels = {0, 1,  1, 1,  1, 0,  0, 0};
     array<float, 8> vertices = { r.x, r.y,  r.x+r.w, r.y, r.x+r.w, r.y+r.h, r.x, r.y+r.h };
     array<float, 80> lineAsTriangleVertices = {
-        r.x,       r.y,       r.x + r.w, r.y,       -r.lw,
-        r.x,       r.y,       r.x + r.w, r.y,        r.lw,
+        r.x,       r.y,       r.x + r.w, r.y,       -0.5,
+        r.x,       r.y,       r.x + r.w, r.y,        0.5,
 
-        r.x + r.w, r.y,       r.x,       r.y,       -r.lw,
-        r.x + r.w, r.y,       r.x,       r.y,        r.lw,
+        r.x + r.w, r.y,       r.x,       r.y,       -0.5,
+        r.x + r.w, r.y,       r.x,       r.y,        0.5,
 
-        r.x + r.w, r.y,       r.x + r.w, r.y + r.h, -r.lw,
-        r.x + r.w, r.y,       r.x + r.w, r.y + r.h,  r.lw,
+        r.x + r.w, r.y,       r.x + r.w, r.y + r.h, -0.5,
+        r.x + r.w, r.y,       r.x + r.w, r.y + r.h,  0.5,
 
-        r.x + r.w, r.y + r.h, r.x + r.w, r.y,       -r.lw,
-        r.x + r.w, r.y + r.h, r.x + r.w, r.y,        r.lw,
+        r.x + r.w, r.y + r.h, r.x + r.w, r.y,       -0.5,
+        r.x + r.w, r.y + r.h, r.x + r.w, r.y,        0.5,
 
-        r.x + r.w, r.y + r.h, r.x,       r.y + r.h, -r.lw,
-        r.x + r.w, r.y + r.h, r.x,       r.y + r.h,  r.lw,
+        r.x + r.w, r.y + r.h, r.x,       r.y + r.h, -0.5,
+        r.x + r.w, r.y + r.h, r.x,       r.y + r.h,  0.5,
 
-        r.x,       r.y + r.h, r.x + r.w, r.y + r.h, -r.lw,
-        r.x,       r.y + r.h, r.x + r.w, r.y + r.h,  r.lw,
+        r.x,       r.y + r.h, r.x + r.w, r.y + r.h, -0.5,
+        r.x,       r.y + r.h, r.x + r.w, r.y + r.h,  0.5,
 
-        r.x,       r.y + r.h, r.x,       r.y,       -r.lw,
-        r.x,       r.y + r.h, r.x,       r.y,        r.lw,
+        r.x,       r.y + r.h, r.x,       r.y,       -0.5,
+        r.x,       r.y + r.h, r.x,       r.y,        0.5,
 
-        r.x,       r.y,       r.x,       r.y + r.h, -r.lw,
-        r.x,       r.y,       r.x,       r.y + r.h,  r.lw,
+        r.x,       r.y,       r.x,       r.y + r.h, -0.5,
+        r.x,       r.y,       r.x,       r.y + r.h,  0.5,
     };
     constexpr array<short, 24> lineAsTriangleIndcies = {
          0,  1,  2,   2,  3,  0,
@@ -5533,8 +5560,8 @@ void Renderer::drawRectangle(const Rect &r, int fishEyeOverrideMode, const Eigen
 
     if (drawLineAsTriangles)
     {
-        prog->lineWidthX = 2.0f / windowWidth * (screenDpi / 96.0f);
-        prog->lineWidthY = 2.0f / windowHeight * (screenDpi / 96.0f);
+        prog->lineWidthX = getLineWidthX() * r.lw;
+        prog->lineWidthY = getLineWidthY() * r.lw;
         glDrawElements(GL_TRIANGLES, lineAsTriangleIndcies.size(), GL_UNSIGNED_SHORT, lineAsTriangleIndcies.data());
     }
     else

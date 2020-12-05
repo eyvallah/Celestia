@@ -96,7 +96,7 @@ renderTerminator(Renderer* renderer,
 
     float lineWidth = renderer->getScreenDpi() / 96.0f;
     ShaderProperties shadprop;
-    shadprop.texUsage =  ShaderProperties::VertexColors | ShaderProperties::LineAsTriangles;
+    shadprop.texUsage = ShaderProperties::VertexColors | ShaderProperties::LineAsTriangles;
     shadprop.lightModel = ShaderProperties::UnlitModel;
     auto *prog = renderer->getShaderManager().getShader(shadprop);
     if (prog == nullptr)
@@ -121,8 +121,8 @@ renderTerminator(Renderer* renderer,
     vo.setBufferData(pos.data(), 0, pos.size() * sizeof(SimplifiedLine));
 
     prog->use();
-    prog->lineWidthX = 1.0f / renderer->getWindowWidth() * lineWidth;
-    prog->lineWidthY = 1.0f / renderer->getWindowHeight() * lineWidth;
+    prog->lineWidthX = renderer->getLineWidthX();
+    prog->lineWidthY = renderer->getLineWidthY();
     prog->setMVPMatrices(*mvp.projection, *mvp.modelview);
     glVertexAttrib(CelestiaGLProgram::ColorAttributeIndex, color);
 
@@ -208,13 +208,8 @@ VisibleRegion::render(Renderer* renderer,
     double ee = e_.squaredNorm();
 
     vector<SimplifiedLine> pos;
-    pos.reserve(nSections);
+    pos.reserve((nSections + 2) * 2);
 
-    float scaleFactor = renderer->getScreenDpi() / 96.0f;
-
-    Vector3f firstPoint;
-    Vector3f previousPoint;
-    bool previousPointValid = false;
     for (unsigned i = 0; i <= nSections + 1; i++)
     {
         double theta = (double) i / (double) (nSections) * 2.0 * PI;
@@ -223,8 +218,8 @@ VisibleRegion::render(Renderer* renderer,
         Vector3d toCenter = ellipsoidTangent(recipSemiAxes, w, e, e_, ee);
         toCenter *= maxSemiAxis * scale;
         Vector3f thisPoint = toCenter.cast<float>();
-        pos.push_back({thisPoint, -scaleFactor});
-        pos.push_back({thisPoint, scaleFactor});
+        pos.push_back({thisPoint, -0.5});
+        pos.push_back({thisPoint, 0.5});
     }
 
     Affine3f transform = Translation3f(position) * qf.conjugate();

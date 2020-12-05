@@ -152,8 +152,8 @@ PlanetographicGrid::render(Renderer* renderer,
     }
 
     prog->use();
-    float lineWidthX = 2.0f / renderer->getWindowWidth() * (renderer->getScreenDpi() / 96.0f);
-    float lineWidthY = 2.0f / renderer->getWindowHeight() * (renderer->getScreenDpi() / 96.0f);
+    float lineWidthX = renderer->getLineWidthX();
+    float lineWidthY = renderer->getLineWidthY();
 
     for (float latitude = -90.0f + latitudeStep; latitude < 90.0f; latitude += latitudeStep)
     {
@@ -166,7 +166,6 @@ PlanetographicGrid::render(Renderer* renderer,
                            Renderer::PlanetEquatorColor);
             prog->lineWidthX = 2.0f * lineWidthX;
             prog->lineWidthY = 2.0f * lineWidthY;
-            glLineWidth(2.0f * renderer->getScreenDpi() / 96.0f);
         }
         else
         {
@@ -177,8 +176,6 @@ PlanetographicGrid::render(Renderer* renderer,
         }
         prog->setMVPMatrices(projection, modelView * vecgl::translate(0.0f, sin(phi), 0.0f) * vecgl::scale(r));
         glDrawArrays(GL_TRIANGLE_STRIP, 0, xzCircle.size() - 2);
-
-        glLineWidth(1.0f * renderer->getScreenDpi() / 96.0f);
 
         if (showCoordinateLabels)
         {

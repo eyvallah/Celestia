@@ -556,8 +556,8 @@ SkyGrid::render(Renderer& renderer,
                  vecgl::rotate((xrot90 * m_orientation.conjugate() * xrot90.conjugate()).cast<float>()) *
                  vecgl::scale(1000.0f);
     prog->setMVPMatrices(renderer.getProjectionMatrix(), m);
-    prog->lineWidthX = 2.0f / renderer.getWindowWidth() * (renderer.getScreenDpi() / 96.0f);
-    prog->lineWidthY = 2.0f / renderer.getWindowHeight() * (renderer.getScreenDpi() / 96.0f);
+    prog->lineWidthX = renderer.getLineWidthX();
+    prog->lineWidthY = renderer.getLineWidthY();
 
     double arcStep = (maxTheta - minTheta) / (double) ARC_SUBDIVISIONS;
     double theta0 = minTheta;

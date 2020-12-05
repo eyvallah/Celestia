@@ -270,6 +270,12 @@ class Renderer
     int getWindowWidth() const;
     int getWindowHeight() const;
 
+    float getScaleFactor() const;
+    float getPointWidth() const;
+    float getPointHeight() const;
+    float getLineWidthX() const;
+    float getLineWidthY() const;
+
     // GL wrappers
     void getViewport(int* x, int* y, int* w, int* h) const;
     void getViewport(std::array<int, 4>& viewport) const;
