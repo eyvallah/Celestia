@@ -238,7 +238,7 @@ void Renderer::renderMarker(MarkerRepresentation::Symbol symbol,
     glVertexAttrib(CelestiaGLProgram::ColorAttributeIndex, color);
 
     prog->use();
-    float s = size / 2.0f;
+    float s = size / 2.0f * getScreenDpi() / 96.0f;
     prog->setMVPMatrices(*m.projection, (*m.modelview) * vecgl::scale(Vector3f(s, s, 0)));
 
     switch (symbol)
