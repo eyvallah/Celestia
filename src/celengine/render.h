@@ -86,7 +86,10 @@ enum class VOType
     Rectangle  = 2,
     Terminator = 3,
     LargeStar  = 4,
-    Count      = 5
+    AxisLetter = 5,
+    MarkerLine = 6,
+    Ecliptic   = 7,
+    Count      = 8,
 };
 
 enum class RenderMode
