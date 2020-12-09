@@ -34,6 +34,7 @@ class VertexObject
     void bindWritable() noexcept;
     void unbind() noexcept;
     void draw(GLenum primitive, GLsizei count, GLint first = 0) noexcept;
+    void drawElements(GLenum mode, GLsizei count, GLenum type, const void* indices) noexcept;
     bool allocate(const void* data = nullptr) noexcept;
     bool allocate(GLsizeiptr bufferSize, const void* data = nullptr) noexcept;
     bool allocate(GLenum bufferType, GLsizeiptr bufferSize, const void* data, GLenum streamType) noexcept;

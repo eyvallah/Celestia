@@ -123,6 +123,14 @@ void VertexObject::draw(GLenum primitive, GLsizei count, GLint first) noexcept
     glDrawArrays(primitive, first, count);
 }
 
+void VertexObject::drawElements(GLenum mode, GLsizei count, GLenum type, const void* indices) noexcept
+{
+    if ((m_state & State::Initialize) != 0)
+        enableAttribArrays();
+
+    glDrawElements(mode, count, type, indices);
+}
+
 void VertexObject::enableAttribArrays() noexcept
 {
      glBindBuffer(m_bufferType, m_vboId);
