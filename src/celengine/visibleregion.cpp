@@ -84,7 +84,7 @@ constexpr const unsigned maxSections = 360;
 
 static void
 renderTerminator(Renderer* renderer,
-                 const vector<SimplifiedLine>& pos,
+                 const vector<LineStripEnd>& pos,
                  const Color& color,
                  const Matrices& mvp)
 {
@@ -107,18 +107,18 @@ renderTerminator(Renderer* renderer,
     vo.bindWritable();
     if (!vo.initialized())
     {
-        vo.setBufferSize((maxSections + 2) * 2 * sizeof(SimplifiedLine));
+        vo.setBufferSize((maxSections + 2) * 2 * sizeof(LineStripEnd));
         vo.allocate();
-        vo.setVertices(3, GL_FLOAT, false, sizeof(SimplifiedLine), 0);
+        vo.setVertices(3, GL_FLOAT, false, sizeof(LineStripEnd), 0);
         vo.setVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex,
-                                3, GL_FLOAT, false, sizeof(SimplifiedLine)
-                                , 2 * sizeof(SimplifiedLine) + offsetof(SimplifiedLine, point));
+                                3, GL_FLOAT, false, sizeof(LineStripEnd)
+                                , 2 * sizeof(LineStripEnd) + offsetof(LineStripEnd, point));
         vo.setVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex,
-                                1, GL_FLOAT, false, sizeof(SimplifiedLine)
-                                , offsetof(SimplifiedLine, scale));
+                                1, GL_FLOAT, false, sizeof(LineStripEnd)
+                                , offsetof(LineStripEnd, scale));
     }
 
-    vo.setBufferData(pos.data(), 0, pos.size() * sizeof(SimplifiedLine));
+    vo.setBufferData(pos.data(), 0, pos.size() * sizeof(LineStripEnd));
 
     prog->use();
     prog->lineWidthX = renderer->getLineWidthX();
@@ -207,7 +207,7 @@ VisibleRegion::render(Renderer* renderer,
     Vector3d e_ = e.cwiseProduct(recipSemiAxes);
     double ee = e_.squaredNorm();
 
-    vector<SimplifiedLine> pos;
+    vector<LineStripEnd> pos;
     pos.reserve((nSections + 2) * 2);
 
     for (unsigned i = 0; i <= nSections + 1; i++)
@@ -218,8 +218,8 @@ VisibleRegion::render(Renderer* renderer,
         Vector3d toCenter = ellipsoidTangent(recipSemiAxes, w, e, e_, ee);
         toCenter *= maxSemiAxis * scale;
         Vector3f thisPoint = toCenter.cast<float>();
-        pos.push_back({thisPoint, -0.5});
-        pos.push_back({thisPoint, 0.5});
+        pos.emplace_back(thisPoint, -0.5);
+        pos.emplace_back(thisPoint, 0.5);
     }
 
     Affine3f transform = Translation3f(position) * qf.conjugate();

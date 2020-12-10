@@ -562,16 +562,17 @@ SkyGrid::render(Renderer& renderer,
     double arcStep = (maxTheta - minTheta) / (double) ARC_SUBDIVISIONS;
     double theta0 = minTheta;
 
-    auto buffer = new SimplifiedLine[2 * (ARC_SUBDIVISIONS + 2)];
+    vector<LineStripEnd> buffer;
+    buffer.reserve(2 * (ARC_SUBDIVISIONS + 2));
     glEnableVertexAttribArray(CelestiaGLProgram::VertexCoordAttributeIndex);
     glEnableVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex);
     glEnableVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex);
     glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
-                          3, GL_FLOAT, GL_FALSE, sizeof(SimplifiedLine), buffer);
+                          3, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &buffer[0].point);
     glVertexAttribPointer(CelestiaGLProgram::NextVCoordAttributeIndex,
-                          3, GL_FLOAT, GL_FALSE, sizeof(SimplifiedLine), buffer + 2);
+                          3, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &buffer[2].point);
     glVertexAttribPointer(CelestiaGLProgram::ScaleFactorAttributeIndex,
-                          1, GL_FLOAT, GL_FALSE, sizeof(SimplifiedLine), &buffer[0].scale);
+                          1, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &buffer[0].scale);
 
     for (int dec = startDec; dec <= endDec; dec += decIncrement)
     {
@@ -586,10 +587,8 @@ SkyGrid::render(Renderer& renderer,
             auto y = (float) (cosPhi * std::sin(theta));
             auto z = (float) sinPhi;
             Vector3f position = {x, z, -y};  // convert to Celestia coords
-            buffer[2 * j].point = position;
-            buffer[2 * j].scale = -0.5f;
-            buffer[2 * j + 1].point = position;
-            buffer[2 * j + 1].scale = 0.5f;
+            buffer[2 * j] = {position, -0.5f};
+            buffer[2 * j + 1] =  {position, 0.5f};
         }
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 2 * (ARC_SUBDIVISIONS + 1));
 
@@ -665,10 +664,8 @@ SkyGrid::render(Renderer& renderer,
             auto y = (float) (cos(phi) * sinTheta);
             auto z = (float) sin(phi);
             Vector3f position = {x, z, -y};  // convert to Celestia coords
-            buffer[2 * j].point = position;
-            buffer[2 * j].scale = -0.5f;
-            buffer[2 * j + 1].point = position;
-            buffer[2 * j + 1].scale = 0.5f;
+            buffer[2 * j] = {position, -0.5f};
+            buffer[2 * j + 1] =  {position, 0.5f};
         }
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 2 * (ARC_SUBDIVISIONS + 1));
 
@@ -721,34 +718,34 @@ SkyGrid::render(Renderer& renderer,
 
     // Draw crosses indicating the north and south poles
     array<float, 112> lineAsTriangleVertices = {
-        -polarCrossSize, 1.0f,  0.0f,  polarCrossSize, 1.0f,  0.0f, -0.5,
-        -polarCrossSize, 1.0f,  0.0f,  polarCrossSize, 1.0f,  0.0f,  0.5,
+        -polarCrossSize, 1.0f, 0.0f,   polarCrossSize, 1.0f, 0.0f,   -0.5,
+        -polarCrossSize, 1.0f, 0.0f,   polarCrossSize, 1.0f, 0.0f,    0.5,
 
-         polarCrossSize, 1.0f,  0.0f, -polarCrossSize, 1.0f,  0.0f, -0.5,
-         polarCrossSize, 1.0f,  0.0f, -polarCrossSize, 1.0f,  0.0f,  0.5,
+        polarCrossSize, 1.0f, 0.0f,    -polarCrossSize, 1.0f, 0.0f,  -0.5,
+        polarCrossSize, 1.0f, 0.0f,    -polarCrossSize, 1.0f, 0.0f,   0.5,
 
-         0.0f, 1.0f, -polarCrossSize,  0.0f, 1.0f,  polarCrossSize, -0.5,
-         0.0f, 1.0f, -polarCrossSize,  0.0f, 1.0f,  polarCrossSize,  0.5,
+        0.0f, 1.0f, -polarCrossSize,   0.0f, 1.0f, polarCrossSize,   -0.5,
+        0.0f, 1.0f, -polarCrossSize,   0.0f, 1.0f, polarCrossSize,    0.5,
 
-          0.0f, 1.0f, polarCrossSize,  0.0f, 1.0f, -polarCrossSize, -0.5,
-          0.0f, 1.0f, polarCrossSize,  0.0f, 1.0f, -polarCrossSize,  0.5,
+        0.0f, 1.0f, polarCrossSize,    0.0f, 1.0f, -polarCrossSize,  -0.5,
+        0.0f, 1.0f, polarCrossSize,    0.0f, 1.0f, -polarCrossSize,   0.5,
 
-        -polarCrossSize, -1.0f, 0.0f,  polarCrossSize, -1.0f, 0.0f, -0.5,
-        -polarCrossSize, -1.0f, 0.0f,  polarCrossSize, -1.0f, 0.0f,  0.5,
+        -polarCrossSize, -1.0f, 0.0f,  polarCrossSize, -1.0f, 0.0f,  -0.5,
+        -polarCrossSize, -1.0f, 0.0f,  polarCrossSize, -1.0f, 0.0f,   0.5,
 
-         polarCrossSize, -1.0f, 0.0f,  -polarCrossSize, -1.0f, 0.0f, -0.5,
-         polarCrossSize, -1.0f, 0.0f,  -polarCrossSize, -1.0f, 0.0f,  0.5,
+        polarCrossSize, -1.0f, 0.0f,   -polarCrossSize, -1.0f, 0.0f, -0.5,
+        polarCrossSize, -1.0f, 0.0f,   -polarCrossSize, -1.0f, 0.0f,  0.5,
 
-        0.0f, -1.0f, -polarCrossSize,   0.0f, -1.0f, polarCrossSize, -0.5,
-        0.0f, -1.0f, -polarCrossSize,   0.0f, -1.0f, polarCrossSize,  0.5,
+        0.0f, -1.0f, -polarCrossSize,  0.0f, -1.0f, polarCrossSize,  -0.5,
+        0.0f, -1.0f, -polarCrossSize,  0.0f, -1.0f, polarCrossSize,   0.5,
 
-         0.0f, -1.0f, polarCrossSize,  0.0f, -1.0f, -polarCrossSize, -0.5,
-         0.0f, -1.0f, polarCrossSize,  0.0f, -1.0f, -polarCrossSize,  0.5,
+        0.0f, -1.0f, polarCrossSize,   0.0f, -1.0f, -polarCrossSize, -0.5,
+        0.0f, -1.0f, polarCrossSize,   0.0f, -1.0f, -polarCrossSize,  0.5,
     };
     constexpr array<short, 24> lineAsTriangleIndcies = {
-         0,  1,  2,   2,  3,  0,
-         4,  5,  6,   6,  7,  4,
-         8,  9, 10,  10, 11,  8,
+        0,  1,  2,   2,  3,  0,
+        4,  5,  6,   6,  7,  4,
+        8,  9,  10,  10, 11, 8,
         12, 13, 14,  14, 15, 12
     };
 
@@ -763,5 +760,4 @@ SkyGrid::render(Renderer& renderer,
     glDisableVertexAttribArray(CelestiaGLProgram::VertexCoordAttributeIndex);
     glDisableVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex);
     glDisableVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex);
-    delete[] buffer;
 }
