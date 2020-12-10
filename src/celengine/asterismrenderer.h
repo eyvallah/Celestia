@@ -17,7 +17,7 @@
 
 class Renderer;
 struct Matrices;
-struct Line;
+struct LineEnds;
 
 class AsterismRenderer
 {
@@ -34,7 +34,7 @@ class AsterismRenderer
     bool sameAsterisms(const AsterismList *asterisms) const;
 
  private:
-    bool prepare(std::vector<Line> &data);
+    bool prepare(std::vector<LineEnds> &data);
 
     celgl::VertexObject     m_vo        { GL_ARRAY_BUFFER, 0, GL_STATIC_DRAW };
     ShaderProperties        m_shadprop;

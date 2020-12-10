@@ -5471,13 +5471,13 @@ void Renderer::drawRectangle(const Rect &r, int fishEyeOverrideMode, const Eigen
     ShaderProperties shadprop;
     shadprop.lightModel = ShaderProperties::UnlitModel;
 
-    bool drawLineAsTriangles = r.type == Rect::Type::BorderOnly;
+    bool solid = r.type != Rect::Type::BorderOnly;
 
     if (r.nColors > 0)
         shadprop.texUsage |= ShaderProperties::VertexColors;
     if (r.tex != nullptr)
         shadprop.texUsage |= ShaderProperties::DiffuseTexture;
-    if (drawLineAsTriangles)
+    if (!solid)
         shadprop.texUsage |= ShaderProperties::LineAsTriangles;
 
     shadprop.fishEyeOverride = fishEyeOverrideMode;
@@ -5514,14 +5514,19 @@ void Renderer::drawRectangle(const Rect &r, int fishEyeOverrideMode, const Eigen
         r.x,       r.y,       r.x,       r.y + r.h,  0.5,
     };
     constexpr array<short, 24> lineAsTriangleIndcies = {
-         0,  1,  2,   2,  3,  0,
-         4,  5,  6,   6,  7,  4,
-         8,  9, 10,  10, 11,  8,
+        0,  1,  2,   2,  3,  0,
+        4,  5,  6,   6,  7,  4,
+        8,  9,  10,  10, 11, 8,
         12, 13, 14,  14, 15, 12
     };
 
     glEnableVertexAttribArray(CelestiaGLProgram::VertexCoordAttributeIndex);
-    if (drawLineAsTriangles)
+    if (solid)
+    {
+        glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
+                                  2, GL_FLOAT, GL_FALSE, 0, vertices.data());
+    }
+    else
     {
         glEnableVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex);
         glEnableVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex);
@@ -5531,11 +5536,6 @@ void Renderer::drawRectangle(const Rect &r, int fishEyeOverrideMode, const Eigen
                               2, GL_FLOAT, GL_FALSE, sizeof(float) * 5, lineAsTriangleVertices.data() + 2);
         glVertexAttribPointer(CelestiaGLProgram::ScaleFactorAttributeIndex,
                               1, GL_FLOAT, GL_FALSE, sizeof(float) * 5, lineAsTriangleVertices.data() + 4);
-    }
-    else
-    {
-        glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
-                              2, GL_FLOAT, GL_FALSE, 0, vertices.data());
     }
     if (r.tex != nullptr)
     {
@@ -5558,15 +5558,15 @@ void Renderer::drawRectangle(const Rect &r, int fishEyeOverrideMode, const Eigen
     prog->use();
     prog->setMVPMatrices(p, m);
 
-    if (drawLineAsTriangles)
+    if (solid)
+    {
+        glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+    }
+    else
     {
         prog->lineWidthX = getLineWidthX() * r.lw;
         prog->lineWidthY = getLineWidthY() * r.lw;
         glDrawElements(GL_TRIANGLES, lineAsTriangleIndcies.size(), GL_UNSIGNED_SHORT, lineAsTriangleIndcies.data());
-    }
-    else
-    {
-        glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
     }
 
     glDisableVertexAttribArray(CelestiaGLProgram::ColorAttributeIndex);

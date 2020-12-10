@@ -37,17 +37,17 @@ void AsterismRenderer::render(const Renderer &renderer, const Color &defaultColo
     m_vo.bind();
     if (!m_vo.initialized())
     {
-        std::vector<Line> data;
+        std::vector<LineEnds> data;
         if (!prepare(data))
         {
             m_vo.unbind();
             return;
         }
 
-        m_vo.allocate(data.size() * sizeof(Line), data.data());
-        m_vo.setVertices(3, GL_FLOAT, false, sizeof(Line), offsetof(Line, point1));
-        m_vo.setVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex, 3, GL_FLOAT, false, sizeof(Line), offsetof(Line, point2));
-        m_vo.setVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex, 1, GL_FLOAT, false, sizeof(Line), offsetof(Line, scale));
+        m_vo.allocate(data.size() * sizeof(LineEnds), data.data());
+        m_vo.setVertices(3, GL_FLOAT, false, sizeof(LineEnds), offsetof(LineEnds, point1));
+        m_vo.setVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex, 3, GL_FLOAT, false, sizeof(LineEnds), offsetof(LineEnds, point2));
+        m_vo.setVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex, 1, GL_FLOAT, false, sizeof(LineEnds), offsetof(LineEnds, scale));
     }
 
     prog->use();
@@ -79,7 +79,7 @@ void AsterismRenderer::render(const Renderer &renderer, const Color &defaultColo
     m_vo.unbind();
 }
 
-bool AsterismRenderer::prepare(std::vector<Line> &data)
+bool AsterismRenderer::prepare(std::vector<LineEnds> &data)
 {
     // calculate required vertices number
     GLsizei vtx_num = 0;

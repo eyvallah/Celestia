@@ -39,16 +39,16 @@ void BoundariesRenderer::render(const Renderer &renderer, const Color &color, co
     m_vo.bind();
     if (!m_vo.initialized())
     {
-        std::vector<Line> data;
+        std::vector<LineEnds> data;
         if (!prepare(data))
         {
             m_vo.unbind();
             return;
         }
-        m_vo.allocate(m_vtxTotal * sizeof(Line), data.data());
-        m_vo.setVertices(3, GL_FLOAT, false, sizeof(Line), offsetof(Line, point1));
-        m_vo.setVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex, 3, GL_FLOAT, false, sizeof(Line), offsetof(Line, point2));
-        m_vo.setVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex, 1, GL_FLOAT, false, sizeof(Line), offsetof(Line, scale));
+        m_vo.allocate(m_vtxTotal * sizeof(LineEnds), data.data());
+        m_vo.setVertices(3, GL_FLOAT, false, sizeof(LineEnds), offsetof(LineEnds, point1));
+        m_vo.setVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex, 3, GL_FLOAT, false, sizeof(LineEnds), offsetof(LineEnds, point2));
+        m_vo.setVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex, 1, GL_FLOAT, false, sizeof(LineEnds), offsetof(LineEnds, scale));
     }
 
     prog->use();
@@ -62,7 +62,7 @@ void BoundariesRenderer::render(const Renderer &renderer, const Color &color, co
 }
 
 
-bool BoundariesRenderer::prepare(std::vector<Line> &data)
+bool BoundariesRenderer::prepare(std::vector<LineEnds> &data)
 {
     auto chains = m_boundaries->getChains();
     auto vtx_num = accumulate(chains.begin(), chains.end(), 0,

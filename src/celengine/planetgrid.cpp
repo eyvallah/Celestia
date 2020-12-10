@@ -25,8 +25,8 @@ using namespace celestia;
 
 
 unsigned int PlanetographicGrid::circleSubdivisions = 100;
-std::vector<SimplifiedLine> PlanetographicGrid::xyCircle;
-std::vector<SimplifiedLine> PlanetographicGrid::xzCircle;
+std::vector<LineStripEnd> PlanetographicGrid::xyCircle;
+std::vector<LineStripEnd> PlanetographicGrid::xzCircle;
 
 
 PlanetographicGrid::PlanetographicGrid(const Body& _body) :
@@ -132,11 +132,11 @@ PlanetographicGrid::render(Renderer* renderer,
     glEnableVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex);
     glEnableVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex);
     glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
-                          3, GL_FLOAT, GL_FALSE, sizeof(SimplifiedLine), &xzCircle[0].point);
+                          3, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &xzCircle[0].point);
     glVertexAttribPointer(CelestiaGLProgram::NextVCoordAttributeIndex,
-                          3, GL_FLOAT, GL_FALSE, sizeof(SimplifiedLine), &xzCircle[2].point);
+                          3, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &xzCircle[2].point);
     glVertexAttribPointer(CelestiaGLProgram::ScaleFactorAttributeIndex,
-                          1, GL_FLOAT, GL_FALSE, sizeof(SimplifiedLine), &xzCircle[0].scale);
+                          1, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &xzCircle[0].scale);
 
     // Only show the coordinate labels if the body is sufficiently large on screen
     bool showCoordinateLabels = false;
@@ -195,11 +195,11 @@ PlanetographicGrid::render(Renderer* renderer,
     }
 
     glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
-                          3, GL_FLOAT, GL_FALSE, sizeof(SimplifiedLine), &xyCircle[0].point);
+                          3, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &xyCircle[0].point);
     glVertexAttribPointer(CelestiaGLProgram::NextVCoordAttributeIndex,
-                          3, GL_FLOAT, GL_FALSE, sizeof(SimplifiedLine), &xyCircle[2].point);
+                          3, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &xyCircle[2].point);
     glVertexAttribPointer(CelestiaGLProgram::ScaleFactorAttributeIndex,
-                          1, GL_FLOAT, GL_FALSE, sizeof(SimplifiedLine), &xyCircle[0].scale);
+                          1, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &xyCircle[0].scale);
 
     glVertexAttrib(CelestiaGLProgram::ColorAttributeIndex,
                    Renderer::PlanetographicGridColor);
@@ -315,9 +315,9 @@ PlanetographicGrid::InitializeGeometry()
         sincos(theta, s, c);
         Vector3f thisPointXY(c, s, 0.0f);
         Vector3f thisPointXZ(c, 0.0f, s);
-        xyCircle.push_back({thisPointXY, -0.5f});
-        xyCircle.push_back({thisPointXY,  0.5f});
-        xzCircle.push_back({thisPointXZ, -0.5f});
-        xzCircle.push_back({thisPointXZ,  0.5f});
+        xyCircle.emplace_back(thisPointXY, -0.5f);
+        xyCircle.emplace_back(thisPointXY,  0.5f);
+        xzCircle.emplace_back(thisPointXZ, -0.5f);
+        xzCircle.emplace_back(thisPointXZ,  0.5f);
     }
 }
