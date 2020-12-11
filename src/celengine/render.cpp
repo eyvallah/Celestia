@@ -1058,7 +1058,7 @@ Renderer::enableSmoothLines()
 #ifndef GL_ES
     glEnable(GL_LINE_SMOOTH);
 #endif
-    glLineWidth(1.5f * screenDpi / 96.0f);
+    glLineWidth(1.5f * getScaleFactor());
 }
 
 void
@@ -1072,7 +1072,7 @@ Renderer::disableSmoothLines()
 #ifndef GL_ES
     glDisable(GL_LINE_SMOOTH);
 #endif
-    glLineWidth(1.0f * screenDpi / 96.0f);
+    glLineWidth(1.0f * getScaleFactor());
 }
 
 Vector4f renderOrbitColor(const Body *body, bool selected, float opacity)
@@ -1749,9 +1749,7 @@ void Renderer::draw(const Observer& observer,
     disableDepthMask();
 
     // Render sky grids first--these will always be in the background
-    enableSmoothLines();
     renderSkyGrids(observer);
-    disableSmoothLines();
     enableBlending();
 
     // Render deep sky objects
@@ -3896,9 +3894,7 @@ void Renderer::renderAsterisms(const Universe& universe, float dist, const Matri
                         (MaxAsterismLinesDist - MaxAsterismLinesConstDist) + 1);
     }
 
-    enableSmoothLines();
     m_asterismRenderer->render(*this, Color(ConstellationColor, opacity), mvp);
-    disableSmoothLines();
 }
 
 
@@ -3927,9 +3923,7 @@ void Renderer::renderBoundaries(const Universe& universe, float dist, const Matr
                         (MaxAsterismLabelsDist - MaxAsterismLabelsConstDist) + 1);
     }
 
-    enableSmoothLines();
     m_boundariesRenderer->render(*this, Color(BoundaryColor, opacity), mvp);
-    disableSmoothLines();
 }
 
 
@@ -4716,10 +4710,6 @@ void Renderer::renderDeepSkyObjects(const Universe& universe,
     openClusterRep = MarkerRepresentation(MarkerRepresentation::Circle,   8.0f, OpenClusterLabelColor);
     globularRep    = MarkerRepresentation(MarkerRepresentation::Circle,   8.0f, GlobularLabelColor);
 
-    // Render any line primitives with smooth lines
-    // (mostly to make graticules look good.)
-    enableSmoothLines();
-
     setBlendingFactors(GL_SRC_ALPHA, GL_ONE);
 
 #ifdef OCTREE_DEBUG
@@ -4740,8 +4730,6 @@ void Renderer::renderDeepSkyObjects(const Universe& universe,
 #endif
 
     // clog << "DSOs processed: " << dsoRenderer.dsosProcessed << endl;
-
-    disableSmoothLines();
 }
 
 
@@ -4973,9 +4961,6 @@ void Renderer::renderAnnotations(const vector<Annotation>& annotations,
     if (font[fs] == nullptr)
         return;
 
-    // Enable line smoothing for rendering symbols
-    enableSmoothLines();
-
 #ifdef USE_HDR
     glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_FALSE);
 #endif
@@ -5037,7 +5022,6 @@ void Renderer::renderAnnotations(const vector<Annotation>& annotations,
 #endif
 
     font[fs]->unbind();
-    disableSmoothLines();
 }
 
 
@@ -6223,8 +6207,6 @@ Renderer::renderSolarSystemObjects(const Observer &observer,
 #else
             setBlendingFactors(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 #endif
-            enableSmoothLines();
-
             // Scan through the list of orbits and render any that overlap this interval
             for (const auto& orbit : orbitPathList)
             {
@@ -6244,8 +6226,6 @@ Renderer::renderSolarSystemObjects(const Observer &observer,
                                 m);
                 }
             }
-
-            disableSmoothLines();
         }
 
         // Render transparent objects in the second pass
@@ -6259,13 +6239,11 @@ Renderer::renderSolarSystemObjects(const Observer &observer,
         }
 
         // Render annotations in this interval
-        enableSmoothLines();
         annotation = renderSortedAnnotations(annotation,
                                              nearPlaneDistance,
                                              farPlaneDistance,
                                              FontNormal);
         endObjectAnnotations();
-        disableSmoothLines();
     }
 
     // reset the depth range
