@@ -677,6 +677,10 @@ msgstr "太陽を選択"
 msgid "Horizontal"
 msgstr "地平座標"
 
+# Android/iOS, Sharing option, image
+msgid "Image"
+msgstr ""
+
 # Android/iOS
 msgid ""
 "In camera mode, drag to move field of view.\n"
@@ -1245,7 +1249,7 @@ msgstr "現在時刻に設定"
 msgid "Settings"
 msgstr "設定"
 
-# Android/iOS, Share a URL
+# Android/iOS
 msgid "Share"
 msgstr "共有"
 
@@ -1475,6 +1479,10 @@ msgstr "スペクトル型"
 msgid "Unable to capture video"
 msgstr "ビデオをキャプチャーできません"
 
+# Android/iOS, Failed to generate an image for sharing
+msgid "Unable to generate image."
+msgstr ""
+
 # Android, Custom config/data directory path have to be under a specific path
 #, c-format
 msgid "Unable to resolve path, please ensure that you have selected a path inside %s."
@@ -1515,6 +1523,10 @@ msgstr "起こす"
 # Android/iOS/Mac, Marker
 msgid "Up Arrow"
 msgstr "上矢印(↑)"
+
+# Android/iOS, Sharing option, URL
+msgid "URL"
+msgstr ""
 
 # Android/iOS, URL for Use Add-ons and Scripts wiki
 msgid "Use Add-ons and Scripts"

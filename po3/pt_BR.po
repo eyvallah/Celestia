@@ -677,6 +677,10 @@ msgstr "Origem (Sol)"
 msgid "Horizontal"
 msgstr "Horizontal"
 
+# Android/iOS, Sharing option, image
+msgid "Image"
+msgstr ""
+
 # Android/iOS
 msgid ""
 "In camera mode, drag to move field of view.\n"
@@ -1245,7 +1249,7 @@ msgstr "Definir para Hora Atual"
 msgid "Settings"
 msgstr "Configurações"
 
-# Android/iOS, Share a URL
+# Android/iOS
 msgid "Share"
 msgstr "Compartilhar"
 
@@ -1475,6 +1479,10 @@ msgstr "Tipo"
 msgid "Unable to capture video"
 msgstr "Não pôde capturar vídeo"
 
+# Android/iOS, Failed to generate an image for sharing
+msgid "Unable to generate image."
+msgstr ""
+
 # Android, Custom config/data directory path have to be under a specific path
 #, c-format
 msgid "Unable to resolve path, please ensure that you have selected a path inside %s."
@@ -1515,6 +1523,10 @@ msgstr "Cima"
 # Android/iOS/Mac, Marker
 msgid "Up Arrow"
 msgstr "Seta para Cima"
+
+# Android/iOS, Sharing option, URL
+msgid "URL"
+msgstr ""
 
 # Android/iOS, URL for Use Add-ons and Scripts wiki
 msgid "Use Add-ons and Scripts"

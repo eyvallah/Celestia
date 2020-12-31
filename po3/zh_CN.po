@@ -677,6 +677,10 @@ msgstr "主地点 (太阳)"
 msgid "Horizontal"
 msgstr "地平座标系"
 
+# Android/iOS, Sharing option, image
+msgid "Image"
+msgstr "图片"
+
 # Android/iOS
 msgid ""
 "In camera mode, drag to move field of view.\n"
@@ -1245,7 +1249,7 @@ msgstr "设置为当前时间"
 msgid "Settings"
 msgstr "设置"
 
-# Android/iOS, Share a URL
+# Android/iOS
 msgid "Share"
 msgstr "分享"
 
@@ -1475,6 +1479,10 @@ msgstr "类型"
 msgid "Unable to capture video"
 msgstr "无法录制视频"
 
+# Android/iOS, Failed to generate an image for sharing
+msgid "Unable to generate image."
+msgstr "无法生成图片。"
+
 # Android, Custom config/data directory path have to be under a specific path
 #, c-format
 msgid "Unable to resolve path, please ensure that you have selected a path inside %s."
@@ -1515,6 +1523,10 @@ msgstr "上"
 # Android/iOS/Mac, Marker
 msgid "Up Arrow"
 msgstr "上箭头"
+
+# Android/iOS, Sharing option, URL
+msgid "URL"
+msgstr "URL"
 
 # Android/iOS, URL for Use Add-ons and Scripts wiki
 msgid "Use Add-ons and Scripts"
