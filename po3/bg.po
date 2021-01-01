@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: celestia 1.7.0\n"
 "Report-Msgid-Bugs-To: team@celestia.space\n"
 "POT-Creation-Date: 2020-04-15 20:22+0800\n"
-"PO-Revision-Date: 2020-11-21 13:22+0200\n"
+"PO-Revision-Date: 2021-01-01 11:10+0200\n"
 "Last-Translator: Georgi Georgiev <georgiev_1994@abv.bg>\n"
 "Language-Team: Bulgarian <georgiev_1994@abv.bg>\n"
 "Language: bg\n"
@@ -680,7 +680,7 @@ msgstr "Хоризонтална"
 
 # Android/iOS, Sharing option, image
 msgid "Image"
-msgstr ""
+msgstr "Изображение"
 
 # Android/iOS
 msgid ""
@@ -1482,7 +1482,7 @@ msgstr "Видеото не може да бъде прихванато"
 
 # Android/iOS, Failed to generate an image for sharing
 msgid "Unable to generate image."
-msgstr ""
+msgstr "Изображението не може да бъде генерирано."
 
 # Android, Custom config/data directory path have to be under a specific path
 #, c-format
@@ -1527,7 +1527,7 @@ msgstr "Стрелка нагоре"
 
 # Android/iOS, Sharing option, URL
 msgid "URL"
-msgstr ""
+msgstr "Връзка"
 
 # Android/iOS, URL for Use Add-ons and Scripts wiki
 msgid "Use Add-ons and Scripts"
