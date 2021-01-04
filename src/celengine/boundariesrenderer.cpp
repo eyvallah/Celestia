@@ -32,61 +32,82 @@ bool BoundariesRenderer::sameBoundaries(const ConstellationBoundaries *boundarie
 
 void BoundariesRenderer::render(const Renderer &renderer, const Color &color, const Matrices &mvp)
 {
-    auto *prog = renderer.getShaderManager().getShader(m_shadprop);
+    using AttributesType = celgl::VertexObject::AttributesType;
+
+    ShaderProperties props = m_shadprop;
+    bool lineAsTriangles = renderer.shouldDrawLineAsTriangles();
+    if (lineAsTriangles)
+        props.texUsage |= ShaderProperties::LineAsTriangles;
+
+    auto *prog = renderer.getShaderManager().getShader(props);
     if (prog == nullptr)
         return;
 
-    m_vo.bind();
+    m_vo.bind(lineAsTriangles ? AttributesType::Default : AttributesType::Alternative1);
     if (!m_vo.initialized())
     {
-        auto *vtx_buf = prepare();
-        if (vtx_buf == nullptr)
+        std::vector<LineEnds> data;
+        if (!prepare(data))
         {
             m_vo.unbind();
             return;
         }
-        m_vo.allocate(m_vtxTotal * 3 * sizeof(GLshort), vtx_buf);
-        m_vo.setVertices(3, GL_SHORT, false, 0, 0);
-        delete[] vtx_buf;
+        m_vo.allocate(data.size() * sizeof(LineEnds), data.data());
+        // Attributes for lines drawn as triangles
+        m_vo.setVertices(3, GL_FLOAT, false, sizeof(LineEnds), offsetof(LineEnds, point1));
+        m_vo.setVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex, 3, GL_FLOAT, false, sizeof(LineEnds), offsetof(LineEnds, point2));
+        m_vo.setVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex, 1, GL_FLOAT, false, sizeof(LineEnds), offsetof(LineEnds, scale));
+
+        // Attributes for lines drawn as lines
+        m_vo.setVertices(3, GL_FLOAT, false, sizeof(LineEnds) * 3, offsetof(LineEnds, point1), AttributesType::Alternative1);
     }
 
     prog->use();
     prog->setMVPMatrices(*mvp.projection, *mvp.modelview);
     glVertexAttrib(CelestiaGLProgram::ColorAttributeIndex, color);
-    m_vo.draw(GL_LINES, m_vtxTotal);
+    if (lineAsTriangles)
+    {
+        prog->lineWidthX = renderer.getLineWidthX();
+        prog->lineWidthY = renderer.getLineWidthY();
+        m_vo.draw(GL_TRIANGLES, m_lineCount * 6, 0);
+    }
+    else
+    {
+        m_vo.draw(GL_LINES, m_lineCount * 2, 0);
+    }
 
     m_vo.unbind();
 }
 
 
-GLshort* BoundariesRenderer::prepare()
+bool BoundariesRenderer::prepare(std::vector<LineEnds> &data)
 {
     auto chains = m_boundaries->getChains();
     auto vtx_num = accumulate(chains.begin(), chains.end(), 0,
                               [](int a, ConstellationBoundaries::Chain* b) { return a + b->size(); });
 
     if (vtx_num == 0)
-        return nullptr;
+        return false;
 
-    // as we use GL_LINES we should double the number of vertices
-    vtx_num *= 2;
-    m_vtxTotal = vtx_num;
+    m_lineCount = vtx_num;
 
-    auto *vtx_buf = new GLshort[vtx_num * 3];
-    GLshort* ptr = vtx_buf;
+    // we reserve 6 times the space so we can allow to
+    // draw a line segment with two triangles
+    data.reserve(m_lineCount * 6);
     for (const auto chain : chains)
     {
-        for (unsigned j = 0; j < 3; j++, ptr++)
-            *ptr = (GLshort) (*chain)[0][j];
         for (unsigned i = 1; i < chain->size(); i++)
         {
-            for (unsigned j = 0; j < 3; j++)
-                ptr[j] = ptr[j + 3] = (GLshort) (*chain)[i][j];
-            ptr += 6;
+            Eigen::Vector3f prev = (*chain)[i - 1];
+            Eigen::Vector3f cur = (*chain)[i];
+            data.emplace_back(prev, cur, -0.5);
+            data.emplace_back(prev ,cur, 0.5);
+            data.emplace_back(cur, prev, -0.5);
+            data.emplace_back(cur, prev, -0.5);
+            data.emplace_back(cur, prev, 0.5);
+            data.emplace_back(prev, cur, -0.5);
         }
-        for (unsigned j = 0; j < 3; j++, ptr++)
-            *ptr = (GLshort) (*chain)[0][j];
     }
 
-    return vtx_buf;
+    return true;
 }

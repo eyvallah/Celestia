@@ -48,6 +48,21 @@ struct Matrices
     const Eigen::Matrix4f *modelview;
 };
 
+struct LineStripEnd
+{
+    LineStripEnd(Eigen::Vector3f point, float scale) : point(point), scale(scale) {};
+    Eigen::Vector3f point;
+    float scale;
+};
+
+struct LineEnds
+{
+    LineEnds(Eigen::Vector3f point1, Eigen::Vector3f point2, float scale) : point1(point1), point2(point2), scale(scale) {};
+    Eigen::Vector3f point1;
+    Eigen::Vector3f point2;
+    float scale;
+};
+
 struct LightSource
 {
     Eigen::Vector3d position;
@@ -73,7 +88,10 @@ enum class VOType
     Rectangle  = 2,
     Terminator = 3,
     LargeStar  = 4,
-    Count      = 5
+    AxisLetter = 5,
+    MarkerLine = 6,
+    Ecliptic   = 7,
+    Count      = 8,
 };
 
 enum class RenderMode
@@ -256,6 +274,14 @@ class Renderer
     void setScreenDpi(int);
     int getWindowWidth() const;
     int getWindowHeight() const;
+
+    float getScaleFactor() const;
+    float getPointWidth() const;
+    float getPointHeight() const;
+    float getLineWidthX() const;
+    float getLineWidthY() const;
+    float getRasterizedLineWidth(float multiplier) const;
+    bool shouldDrawLineAsTriangles(float multiplier = 1.0f) const;
 
     // GL wrappers
     void getViewport(int* x, int* y, int* w, int* h) const;

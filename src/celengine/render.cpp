@@ -701,6 +701,41 @@ void Renderer::setScreenDpi(int _dpi)
     screenDpi = _dpi;
 }
 
+float Renderer::getScaleFactor() const
+{
+    return screenDpi / 96.0f;
+}
+
+float Renderer::getPointWidth() const
+{
+    return 2.0f / windowWidth * getScaleFactor();
+}
+
+float Renderer::getPointHeight() const
+{
+    return 2.0f / windowHeight * getScaleFactor();
+}
+
+float Renderer::getLineWidthX() const
+{
+    return ((renderFlags | ShowSmoothLines) ? 1.5f : 1.0f) * getPointWidth();
+}
+
+float Renderer::getLineWidthY() const
+{
+    return ((renderFlags | ShowSmoothLines) ? 1.5f : 1.0f) * getPointHeight();
+}
+
+float Renderer::getRasterizedLineWidth(float multiplier) const
+{
+    return multiplier * ((renderFlags | ShowSmoothLines) ? 1.5f : 1.0f) * getScaleFactor();
+}
+
+bool Renderer::shouldDrawLineAsTriangles(float multiplier) const
+{
+    return getRasterizedLineWidth(multiplier) > celestia::gl::maxLineWidth;
+}
+
 void Renderer::setFaintestAM45deg(float _faintestAutoMag45deg)
 {
     faintestAutoMag45deg = _faintestAutoMag45deg;
@@ -1033,7 +1068,7 @@ Renderer::enableSmoothLines()
 #ifndef GL_ES
     glEnable(GL_LINE_SMOOTH);
 #endif
-    glLineWidth(1.5f * screenDpi / 96.0f);
+    glLineWidth(getRasterizedLineWidth(1.0f));
 }
 
 void
@@ -1047,7 +1082,7 @@ Renderer::disableSmoothLines()
 #ifndef GL_ES
     glDisable(GL_LINE_SMOOTH);
 #endif
-    glLineWidth(1.0f * screenDpi / 96.0f);
+    glLineWidth(getScaleFactor());
 }
 
 Vector4f renderOrbitColor(const Body *body, bool selected, float opacity)
@@ -1118,6 +1153,9 @@ void Renderer::renderOrbit(const OrbitPathListEntry& orbitPath,
 {
     ShaderProperties shadprop;
     shadprop.texUsage = ShaderProperties::VertexColors;
+    bool lineAsTriangles = shouldDrawLineAsTriangles();
+    if (lineAsTriangles)
+        shadprop.texUsage |= ShaderProperties::LineAsTriangles;
     shadprop.lightModel = ShaderProperties::UnlitModel;
     auto *prog = shaderManager->getShader(shadprop);
     if (prog == nullptr)
@@ -1320,6 +1358,11 @@ void Renderer::renderOrbit(const OrbitPathListEntry& orbitPath,
 
     prog->use();
     prog->setMVPMatrices(*m.projection);
+    if (lineAsTriangles)
+    {
+        prog->lineWidthX = getPointWidth();
+        prog->lineWidthY = getPointHeight();
+    }
     if (orbit->isPeriodic())
     {
         double period = orbit->getPeriod();
@@ -1333,7 +1376,7 @@ void Renderer::renderOrbit(const OrbitPathListEntry& orbitPath,
                                 nearZ, farZ, viewFrustumPlaneNormals,
                                 subdivisionThreshold,
                                 windowStart, windowEnd,
-                                orbitColor);
+                                orbitColor, lineAsTriangles);
         }
         else
         {
@@ -1343,7 +1386,8 @@ void Renderer::renderOrbit(const OrbitPathListEntry& orbitPath,
                                      windowStart, windowEnd,
                                      orbitColor,
                                      windowStart,
-                                     windowEnd - windowDuration * (1.0 - LinearFadeFraction));
+                                     windowEnd - windowDuration * (1.0 - LinearFadeFraction),
+                                     lineAsTriangles);
         }
     }
     else
@@ -1355,7 +1399,7 @@ void Renderer::renderOrbit(const OrbitPathListEntry& orbitPath,
                                 nearZ, farZ, viewFrustumPlaneNormals,
                                 subdivisionThreshold,
                                 cachedOrbit->startTime(), t,
-                                orbitColor);
+                                orbitColor, lineAsTriangles);
         }
         else
         {
@@ -1363,7 +1407,7 @@ void Renderer::renderOrbit(const OrbitPathListEntry& orbitPath,
             cachedOrbit->render(modelview,
                                 nearZ, farZ, viewFrustumPlaneNormals,
                                 subdivisionThreshold,
-                                orbitColor);
+                                orbitColor, lineAsTriangles);
         }
     }
 
@@ -1719,6 +1763,8 @@ void Renderer::draw(const Observer& observer,
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 #endif
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glLineWidth(getScaleFactor());
+
     disableDepthMask();
 
     // Render sky grids first--these will always be in the background
@@ -5444,6 +5490,15 @@ void Renderer::drawRectangle(const Rect &r, int fishEyeOverrideMode, const Eigen
     ShaderProperties shadprop;
     shadprop.lightModel = ShaderProperties::UnlitModel;
 
+    bool solid = r.type != Rect::Type::BorderOnly;
+    bool lineAsTriangles = false;
+    if (!solid)
+    {
+        lineAsTriangles = shouldDrawLineAsTriangles();
+        if (lineAsTriangles)
+            shadprop.texUsage |= ShaderProperties::LineAsTriangles;
+    }
+
     if (r.nColors > 0)
         shadprop.texUsage |= ShaderProperties::VertexColors;
     if (r.tex != nullptr)
@@ -5457,10 +5512,55 @@ void Renderer::drawRectangle(const Rect &r, int fishEyeOverrideMode, const Eigen
 
     constexpr array<short, 8> texels = {0, 1,  1, 1,  1, 0,  0, 0};
     array<float, 8> vertices = { r.x, r.y,  r.x+r.w, r.y, r.x+r.w, r.y+r.h, r.x, r.y+r.h };
+    array<float, 80> lineAsTriangleVertices = {
+        r.x,       r.y,       r.x + r.w, r.y,       -0.5,
+        r.x,       r.y,       r.x + r.w, r.y,        0.5,
+
+        r.x + r.w, r.y,       r.x,       r.y,       -0.5,
+        r.x + r.w, r.y,       r.x,       r.y,        0.5,
+
+        r.x + r.w, r.y,       r.x + r.w, r.y + r.h, -0.5,
+        r.x + r.w, r.y,       r.x + r.w, r.y + r.h,  0.5,
+
+        r.x + r.w, r.y + r.h, r.x + r.w, r.y,       -0.5,
+        r.x + r.w, r.y + r.h, r.x + r.w, r.y,        0.5,
+
+        r.x + r.w, r.y + r.h, r.x,       r.y + r.h, -0.5,
+        r.x + r.w, r.y + r.h, r.x,       r.y + r.h,  0.5,
+
+        r.x,       r.y + r.h, r.x + r.w, r.y + r.h, -0.5,
+        r.x,       r.y + r.h, r.x + r.w, r.y + r.h,  0.5,
+
+        r.x,       r.y + r.h, r.x,       r.y,       -0.5,
+        r.x,       r.y + r.h, r.x,       r.y,        0.5,
+
+        r.x,       r.y,       r.x,       r.y + r.h, -0.5,
+        r.x,       r.y,       r.x,       r.y + r.h,  0.5,
+    };
+    constexpr array<short, 24> lineAsTriangleIndcies = {
+        0,  1,  2,   2,  3,  0,
+        4,  5,  6,   6,  7,  4,
+        8,  9,  10,  10, 11, 8,
+        12, 13, 14,  14, 15, 12
+    };
 
     glEnableVertexAttribArray(CelestiaGLProgram::VertexCoordAttributeIndex);
-    glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
-                          2, GL_FLOAT, GL_FALSE, 0, vertices.data());
+    if (lineAsTriangles)
+    {
+        glEnableVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex);
+        glEnableVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex);
+        glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
+                              2, GL_FLOAT, GL_FALSE, sizeof(float) * 5, lineAsTriangleVertices.data());
+        glVertexAttribPointer(CelestiaGLProgram::NextVCoordAttributeIndex,
+                              2, GL_FLOAT, GL_FALSE, sizeof(float) * 5, lineAsTriangleVertices.data() + 2);
+        glVertexAttribPointer(CelestiaGLProgram::ScaleFactorAttributeIndex,
+                              1, GL_FLOAT, GL_FALSE, sizeof(float) * 5, lineAsTriangleVertices.data() + 4);
+    }
+    else
+    {
+        glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
+                      2, GL_FLOAT, GL_FALSE, 0, vertices.data());
+    }
     if (r.tex != nullptr)
     {
         glEnableVertexAttribArray(CelestiaGLProgram::TextureCoord0AttributeIndex);
@@ -5482,22 +5582,25 @@ void Renderer::drawRectangle(const Rect &r, int fishEyeOverrideMode, const Eigen
     prog->use();
     prog->setMVPMatrices(p, m);
 
-    if (r.type != Rect::Type::BorderOnly)
+    if (lineAsTriangles)
     {
-        glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+        prog->lineWidthX = getLineWidthX() * r.lw;
+        prog->lineWidthY = getLineWidthY() * r.lw;
+        glDrawElements(GL_TRIANGLES, lineAsTriangleIndcies.size(), GL_UNSIGNED_SHORT, lineAsTriangleIndcies.data());
     }
     else
     {
-        if (r.lw != 1.0f)
-            glLineWidth(r.lw * screenDpi / 96.0f);
-        glDrawArrays(GL_LINE_LOOP, 0, 4);
-        if (r.lw != 1.0f)
-            glLineWidth(1.0f * screenDpi / 96.0f);
+        glDrawArrays(solid ? GL_TRIANGLE_FAN : GL_LINE_LOOP, 0, 4);
     }
 
     glDisableVertexAttribArray(CelestiaGLProgram::ColorAttributeIndex);
     glDisableVertexAttribArray(CelestiaGLProgram::TextureCoord0AttributeIndex);
     glDisableVertexAttribArray(CelestiaGLProgram::VertexCoordAttributeIndex);
+    if (lineAsTriangles)
+    {
+        glDisableVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex);
+        glDisableVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex);
+    }
 }
 
 void Renderer::setRenderRegion(int x, int y, int width, int height, bool withScissor)
@@ -5551,13 +5654,18 @@ bool Renderer::getInfo(map<string, string>& info) const
 #endif
 
     GLint pointSizeRange[2];
+    GLfloat lineWidthRange[2];
 #ifdef GL_ES
     glGetIntegerv(GL_ALIASED_POINT_SIZE_RANGE, pointSizeRange);
+    glGetFloatv(GL_ALIASED_LINE_WIDTH_RANGE, lineWidthRange);
 #else
     glGetIntegerv(GL_SMOOTH_POINT_SIZE_RANGE, pointSizeRange);
+    glGetFloatv(GL_SMOOTH_LINE_WIDTH_RANGE, lineWidthRange);
 #endif
     info["PointSizeMin"] = to_string(pointSizeRange[0]);
     info["PointSizeMax"] = to_string(pointSizeRange[1]);
+    info["LineWidthMin"] = to_string(lineWidthRange[0]);
+    info["LineWidthMax"] = to_string(lineWidthRange[1]);
 
 #ifndef GL_ES
     GLfloat pointSizeGran = 0;

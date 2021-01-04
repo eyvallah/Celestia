@@ -84,7 +84,7 @@ constexpr const unsigned maxSections = 360;
 
 static void
 renderTerminator(Renderer* renderer,
-                 const vector<Vector3f>& pos,
+                 const vector<LineStripEnd>& pos,
                  const Color& color,
                  const Matrices& mvp)
 {
@@ -94,30 +94,56 @@ renderTerminator(Renderer* renderer,
      * Because of this we make calculations on a CPU and stream results to GPU.
      */
 
+    using AttributesType = celgl::VertexObject::AttributesType;
+
     ShaderProperties shadprop;
     shadprop.texUsage = ShaderProperties::VertexColors;
     shadprop.lightModel = ShaderProperties::UnlitModel;
+
+    bool lineAsTriangles = renderer->shouldDrawLineAsTriangles();
+    if (lineAsTriangles)
+        shadprop.texUsage |= ShaderProperties::LineAsTriangles;
+
     auto *prog = renderer->getShaderManager().getShader(shadprop);
     if (prog == nullptr)
         return;
 
     auto &vo = renderer->getVertexObject(VOType::Terminator, GL_ARRAY_BUFFER, 0, GL_STREAM_DRAW);
 
-    vo.bindWritable();
+    vo.bindWritable(lineAsTriangles ? AttributesType::Default : AttributesType::Alternative1);
     if (!vo.initialized())
     {
-        vo.setBufferSize(maxSections * sizeof(Vector3f));
+        vo.setBufferSize((maxSections + 2) * 2 * sizeof(LineStripEnd));
         vo.allocate();
-        vo.setVertices(3, GL_FLOAT);
+
+        // Attributes for lines drawn as triangles
+        vo.setVertices(3, GL_FLOAT, false, sizeof(LineStripEnd), 0);
+        vo.setVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex,
+                                3, GL_FLOAT, false, sizeof(LineStripEnd)
+                                , 2 * sizeof(LineStripEnd) + offsetof(LineStripEnd, point));
+        vo.setVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex,
+                                1, GL_FLOAT, false, sizeof(LineStripEnd)
+                                , offsetof(LineStripEnd, scale));
+
+        // Attributes for lines drawn as lines
+        vo.setVertices(3, GL_FLOAT, false, 2 * sizeof(LineStripEnd), 0, AttributesType::Alternative1);
     }
 
-    vo.setBufferData(pos.data(), 0, pos.size() * sizeof(Vector3f));
+    vo.setBufferData(pos.data(), 0, pos.size() * sizeof(LineStripEnd));
 
     prog->use();
     prog->setMVPMatrices(*mvp.projection, *mvp.modelview);
     glVertexAttrib(CelestiaGLProgram::ColorAttributeIndex, color);
-
-    vo.draw(GL_LINE_LOOP, pos.size());
+    if (lineAsTriangles)
+    {
+        prog->lineWidthX = renderer->getLineWidthX();
+        prog->lineWidthY = renderer->getLineWidthY();
+        vo.draw(GL_TRIANGLE_STRIP, pos.size() - 2);
+    }
+    else
+    {
+        vo.draw(GL_LINE_STRIP, (pos.size() - 2) / 2, 0);
+    }
 
     vo.unbind();
 }
@@ -198,17 +224,19 @@ VisibleRegion::render(Renderer* renderer,
     Vector3d e_ = e.cwiseProduct(recipSemiAxes);
     double ee = e_.squaredNorm();
 
-    vector<Vector3f> pos;
-    pos.reserve(nSections);
+    vector<LineStripEnd> pos;
+    pos.reserve((nSections + 2) * 2);
 
-    for (unsigned i = 0; i < nSections; i++)
+    for (unsigned i = 0; i <= nSections + 1; i++)
     {
         double theta = (double) i / (double) (nSections) * 2.0 * PI;
         Vector3d w = cos(theta) * uAxis + sin(theta) * vAxis;
 
         Vector3d toCenter = ellipsoidTangent(recipSemiAxes, w, e, e_, ee);
         toCenter *= maxSemiAxis * scale;
-        pos.push_back(toCenter.cast<float>());
+        Vector3f thisPoint = toCenter.cast<float>();
+        pos.emplace_back(thisPoint, -0.5);
+        pos.emplace_back(thisPoint, 0.5);
     }
 
     Affine3f transform = Translation3f(position) * qf.conjugate();

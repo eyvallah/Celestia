@@ -25,14 +25,14 @@ using namespace celestia;
 
 
 unsigned int PlanetographicGrid::circleSubdivisions = 100;
-float* PlanetographicGrid::xyCircle = nullptr;
-float* PlanetographicGrid::xzCircle = nullptr;
+std::vector<LineStripEnd> PlanetographicGrid::xyCircle;
+std::vector<LineStripEnd> PlanetographicGrid::xzCircle;
 
 
 PlanetographicGrid::PlanetographicGrid(const Body& _body) :
     body(_body)
 {
-    if (xyCircle == nullptr)
+    if (xyCircle.empty())
         InitializeGeometry();
     setTag("planetographic grid");
     setIAULongLatConvention();
@@ -95,6 +95,9 @@ PlanetographicGrid::render(Renderer* renderer,
     ShaderProperties shadprop;
     shadprop.texUsage = ShaderProperties::VertexColors;
     shadprop.lightModel = ShaderProperties::UnlitModel;
+    bool lineAsTriangles = renderer->shouldDrawLineAsTriangles(2.0f);
+    if (lineAsTriangles)
+        shadprop.texUsage |= ShaderProperties::LineAsTriangles;
     auto *prog = renderer->getShaderManager().getShader(shadprop);
     if (prog == nullptr)
         return;
@@ -129,8 +132,22 @@ PlanetographicGrid::render(Renderer* renderer,
     Matrix4f modelView = *m.modelview * transform.matrix();
 
     glEnableVertexAttribArray(CelestiaGLProgram::VertexCoordAttributeIndex);
-    glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
-                          3, GL_FLOAT, GL_FALSE, 0, xzCircle);
+    if (lineAsTriangles)
+    {
+        glEnableVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex);
+        glEnableVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex);
+        glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
+                              3, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &xzCircle[0].point);
+        glVertexAttribPointer(CelestiaGLProgram::NextVCoordAttributeIndex,
+                              3, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &xzCircle[2].point);
+        glVertexAttribPointer(CelestiaGLProgram::ScaleFactorAttributeIndex,
+                              1, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &xzCircle[0].scale);
+    }
+    else
+    {
+        glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
+                              3, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd) * 2, &xzCircle[0].point);
+    }
 
     // Only show the coordinate labels if the body is sufficiently large on screen
     bool showCoordinateLabels = false;
@@ -146,6 +163,8 @@ PlanetographicGrid::render(Renderer* renderer,
     }
 
     prog->use();
+    float lineWidthX = renderer->getLineWidthX();
+    float lineWidthY = renderer->getLineWidthY();
 
     for (float latitude = -90.0f + latitudeStep; latitude < 90.0f; latitude += latitudeStep)
     {
@@ -156,17 +175,37 @@ PlanetographicGrid::render(Renderer* renderer,
         {
             glVertexAttrib(CelestiaGLProgram::ColorAttributeIndex,
                            Renderer::PlanetEquatorColor);
-            glLineWidth(2.0f * renderer->getScreenDpi() / 96.0f);
+            if (lineAsTriangles)
+            {
+                prog->lineWidthX = 2.0f * lineWidthX;
+                prog->lineWidthY = 2.0f * lineWidthY;
+            }
+            else
+            {
+                glLineWidth(renderer->getRasterizedLineWidth(2.0f));
+            }
         }
         else
         {
             glVertexAttrib(CelestiaGLProgram::ColorAttributeIndex,
                            Renderer::PlanetographicGridColor);
+            if (lineAsTriangles)
+            {
+                prog->lineWidthX = lineWidthX;
+                prog->lineWidthY = lineWidthY;
+            }
         }
         prog->setMVPMatrices(projection, modelView * vecgl::translate(0.0f, sin(phi), 0.0f) * vecgl::scale(r));
-        glDrawArrays(GL_LINE_LOOP, 0, circleSubdivisions);
-
-        glLineWidth(1.0f * renderer->getScreenDpi() / 96.0f);
+        if (lineAsTriangles)
+        {
+            glDrawArrays(GL_TRIANGLE_STRIP, 0, xzCircle.size() - 2);
+        }
+        else
+        {
+            glDrawArrays(GL_LINE_STRIP, 0, (xzCircle.size() - 2) / 2);
+            if (latitude == 0.0f)
+                glLineWidth(renderer->getRasterizedLineWidth(1.0f));
+        }
 
         if (showCoordinateLabels)
         {
@@ -185,15 +224,30 @@ PlanetographicGrid::render(Renderer* renderer,
         }
     }
 
-    glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
-                          3, GL_FLOAT, GL_FALSE, 0, xyCircle);
+    if (lineAsTriangles)
+    {
+        glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
+                              3, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &xyCircle[0].point);
+        glVertexAttribPointer(CelestiaGLProgram::NextVCoordAttributeIndex,
+                              3, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &xyCircle[2].point);
+        glVertexAttribPointer(CelestiaGLProgram::ScaleFactorAttributeIndex,
+                              1, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd), &xyCircle[0].scale);
+    }
+    else
+    {
+        glVertexAttribPointer(CelestiaGLProgram::VertexCoordAttributeIndex,
+                              3, GL_FLOAT, GL_FALSE, sizeof(LineStripEnd) * 2, &xyCircle[0].point);
+    }
 
     glVertexAttrib(CelestiaGLProgram::ColorAttributeIndex,
                    Renderer::PlanetographicGridColor);
     for (float longitude = 0.0f; longitude <= 180.0f; longitude += longitudeStep)
     {
         prog->setMVPMatrices(projection, modelView * vecgl::rotate(AngleAxisf(degToRad(longitude), Vector3f::UnitY())));
-        glDrawArrays(GL_LINE_LOOP, 0, circleSubdivisions);
+        if (lineAsTriangles)
+            glDrawArrays(GL_TRIANGLE_STRIP, 0, xyCircle.size() - 2);
+        else
+            glDrawArrays(GL_LINE_STRIP, 0, (xyCircle.size() - 2) / 2);
 
         if (showCoordinateLabels)
         {
@@ -247,6 +301,11 @@ PlanetographicGrid::render(Renderer* renderer,
     }
 
     glDisableVertexAttribArray(CelestiaGLProgram::VertexCoordAttributeIndex);
+    if (lineAsTriangles)
+    {
+        glDisableVertexAttribArray(CelestiaGLProgram::NextVCoordAttributeIndex);
+        glDisableVertexAttribArray(CelestiaGLProgram::ScaleFactorAttributeIndex);
+    }
 
     renderer->enableBlending();
     renderer->setBlendingFactors(GL_SRC_ALPHA, GL_ONE);
@@ -291,18 +350,18 @@ PlanetographicGrid::setIAULongLatConvention()
 void
 PlanetographicGrid::InitializeGeometry()
 {
-    xyCircle = new float[circleSubdivisions * 3];
-    xzCircle = new float[circleSubdivisions * 3];
-    for (unsigned int i = 0; i < circleSubdivisions; i++)
+    xyCircle.reserve((circleSubdivisions + 2) * 2);
+    xzCircle.reserve((circleSubdivisions + 2) * 2);
+    for (unsigned int i = 0; i <= circleSubdivisions + 1; i++)
     {
         float theta = (float) (2.0 * PI) * (float) i / (float) circleSubdivisions;
         float s, c;
         sincos(theta, s, c);
-        xyCircle[i * 3 + 0] = c;
-        xyCircle[i * 3 + 1] = s;
-        xyCircle[i * 3 + 2] = 0.0f;
-        xzCircle[i * 3 + 0] = c;
-        xzCircle[i * 3 + 1] = 0.0f;
-        xzCircle[i * 3 + 2] = s;
+        Vector3f thisPointXY(c, s, 0.0f);
+        Vector3f thisPointXZ(c, 0.0f, s);
+        xyCircle.emplace_back(thisPointXY, -0.5f);
+        xyCircle.emplace_back(thisPointXY,  0.5f);
+        xzCircle.emplace_back(thisPointXZ, -0.5f);
+        xzCircle.emplace_back(thisPointXZ,  0.5f);
     }
 }
