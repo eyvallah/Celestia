@@ -1006,7 +1006,7 @@ msgstr "Орбиты"
 msgid "Organize Bookmarks…"
 msgstr "Упорядочить закладки…"
 
-# Mac, Other location labels
+# Mac, Other location labels; Android/iOS, Other objects to choose from in Eclipse Finder
 msgid "Other"
 msgstr "Прочее"
 
@@ -1050,7 +1050,7 @@ msgstr "Введите описание содержимого."
 msgid "Please enter a new name."
 msgstr "Введите новое название."
 
-# Mac, In Go to
+# Mac, In Go to; Android/iOS, Enter the name of an object in Eclipse Finder
 msgid "Please enter an object name."
 msgstr "Введите название объекта."
 

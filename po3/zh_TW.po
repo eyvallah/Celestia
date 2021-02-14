@@ -999,7 +999,7 @@ msgstr "軌道"
 msgid "Organize Bookmarks…"
 msgstr "Organize Bookmarks…"
 
-# Mac, Other location labels
+# Mac, Other location labels; Android/iOS, Other objects to choose from in Eclipse Finder
 msgid "Other"
 msgstr "其他"
 
@@ -1043,7 +1043,7 @@ msgstr ""
 msgid "Please enter a new name."
 msgstr ""
 
-# Mac, In Go to
+# Mac, In Go to; Android/iOS, Enter the name of an object in Eclipse Finder
 msgid "Please enter an object name."
 msgstr ""
 

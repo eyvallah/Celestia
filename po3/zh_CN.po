@@ -1006,7 +1006,7 @@ msgstr "轨道"
 msgid "Organize Bookmarks…"
 msgstr "管理书签…"
 
-# Mac, Other location labels
+# Mac, Other location labels; Android/iOS, Other objects to choose from in Eclipse Finder
 msgid "Other"
 msgstr "其他"
 
@@ -1050,7 +1050,7 @@ msgstr "请输入内容介绍。"
 msgid "Please enter a new name."
 msgstr "请输入新名称。"
 
-# Mac, In Go to
+# Mac, In Go to; Android/iOS, Enter the name of an object in Eclipse Finder
 msgid "Please enter an object name."
 msgstr "请输入天体名称。"
 
