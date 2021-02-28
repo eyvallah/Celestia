@@ -1080,6 +1080,10 @@ msgstr "Предпочитания"
 msgid "Preferences…"
 msgstr "Предпочитания…"
 
+# Android/iOS, Privacy Policy and Service Agreement
+msgid "Privacy Policy and Service Agreement"
+msgstr ""
+
 # Mac, Quit Celestia
 msgid "Quit"
 msgstr "Изход"

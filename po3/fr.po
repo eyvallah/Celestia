@@ -1072,6 +1072,10 @@ msgstr ""
 msgid "Preferences…"
 msgstr "Préférences…"
 
+# Android/iOS, Privacy Policy and Service Agreement
+msgid "Privacy Policy and Service Agreement"
+msgstr ""
+
 # Mac, Quit Celestia
 msgid "Quit"
 msgstr ""

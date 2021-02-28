@@ -1079,6 +1079,10 @@ msgstr "偏好设置"
 msgid "Preferences…"
 msgstr "偏好设置…"
 
+# Android/iOS, Privacy Policy and Service Agreement
+msgid "Privacy Policy and Service Agreement"
+msgstr "隐私政策与服务协议"
+
 # Mac, Quit Celestia
 msgid "Quit"
 msgstr "退出"
