@@ -18,10 +18,12 @@
 
 using namespace std;
 
+#if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP)
 void SetMouseCursor(LPCTSTR lpCursor);
 void CenterWindow(HWND hParent, HWND hWnd);
 void RemoveButtonDefaultStyle(HWND hWnd);
 void AddButtonDefaultStyle(HWND hWnd);
+#endif
 const char* CurrentCP();
 std::string UTF8ToCurrentCP(const std::string& str);
 std::string CurrentCPToUTF8(const std::string& str);

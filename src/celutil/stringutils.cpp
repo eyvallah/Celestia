@@ -11,6 +11,7 @@
 // of the License, or (at your option) any later version.
 
 #include "stringutils.h"
+#include <cctype>
 
 using namespace std;
 

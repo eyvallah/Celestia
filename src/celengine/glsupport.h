@@ -17,11 +17,9 @@
 #define GL_COMPRESSED_RGBA_S3TC_DXT5_EXT                                           0x83F3
 #define GL_CLAMP_TO_BORDER_OES                                                     0x812D
 #define GL_TEXTURE_BORDER_COLOR_OES                                                0x1004
-#if defined(__APPLE__) || defined(ANDROID)
 #define GL_GLEXT_PROTOTYPES
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
-#endif
 /*
 #include <GLES2/gl2.h>
 #define GL_GLEXT_PROTOTYPES 1

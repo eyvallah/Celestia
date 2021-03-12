@@ -961,7 +961,7 @@ static size_t greekChunkLength(const std::string& str)
         npos = true;
     }
 
-    if (sp != 0 && isdigit(str[sp - 1]))
+    if (sp != 0 && str[sp - 1] >= -1 && isdigit(str[sp - 1]))
         while(sp != 0 && isdigit(str[sp - 1])) sp--;
     else if (npos)
         sp = std::string::npos;

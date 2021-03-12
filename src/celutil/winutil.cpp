@@ -12,6 +12,7 @@
 
 using namespace std;
 
+#if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP)
 void SetMouseCursor(LPCTSTR lpCursor)
 {
     HCURSOR hNewCrsr;
@@ -53,6 +54,7 @@ void AddButtonDefaultStyle(HWND hWnd)
         ::GetWindowLong(hWnd, GWL_STYLE) | BS_DEFPUSHBUTTON);
     InvalidateRect(hWnd, nullptr, TRUE);
 }
+#endif
 
 const char* CurrentCP()
 {

@@ -100,6 +100,7 @@ fs::path PathExp(const fs::path& filename)
 fs::path HomeDir()
 {
 #ifdef _WIN32
+#if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY != WINAPI_FAMILY_APP)
     wstring p(MAX_PATH + 1, 0);
     if (SUCCEEDED(SHGetFolderPathW(nullptr, CSIDL_PROFILE, nullptr, 0, &p[0])))
         return fs::path(p);
@@ -120,6 +121,7 @@ fs::path HomeDir()
     s = _wgetenv(L"HOME");
     if (s != nullptr)
         return fs::path(s);
+#endif
 #else
     const auto *home = getenv("HOME");
     if (home != nullptr)
@@ -137,7 +139,10 @@ fs::path HomeDir()
 
 fs::path WriteableDataPath()
 {
-#if defined(_WIN32)
+#ifdef _WIN32
+#if defined(WINAPI_FAMILY) && (WINAPI_FAMILY == WINAPI_FAMILY_APP)
+    return "";
+#else
     char s[MAX_PATH + 1];
     if (SUCCEEDED(SHGetFolderPathA(nullptr, CSIDL_APPDATA, nullptr, 0, &s[0])))
         return PathExp(s) / "Celestia";
@@ -146,7 +151,7 @@ fs::path WriteableDataPath()
     const char *p = getenv("APPDATA");
     p = p != nullptr ? p : "~\\AppData\\Roaming";
     return PathExp(p) / "Celestia";
-
+#endif
 #elif defined(__APPLE__)
     return PathExp("~/Library/Application Support/Celestia");
 

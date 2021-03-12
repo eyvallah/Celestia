@@ -15,6 +15,10 @@
 #include <celutil/utf8.h>
 #include <celengine/glsupport.h>
 #include <celengine/render.h>
+#ifdef generic
+#undef generic
+#define generic GENERIC
+#endif
 #include <ft2build.h>
 #include FT_FREETYPE_H
 #include "truetypefont.h"
