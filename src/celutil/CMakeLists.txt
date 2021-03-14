@@ -11,10 +11,14 @@ set(CELUTIL_SOURCES
   filetype.h
   formatnum.cpp
   formatnum.h
+  fsutils.cpp
+  fsutils.h
   #memorypool.cpp
   #memorypool.h
   reshandle.h
   resmanager.h
+  stringutils.cpp
+  stringutils.h
   strnatcmp.cpp
   strnatcmp.h
   timer.cpp

@@ -40,7 +40,7 @@ public:
     lua_State* getState() const;
 
     int loadScript(std::istream&, const fs::path&);
-    int loadScript(const fs::path&);
+    int loadScript(const std::string&);
     bool init(CelestiaCore*);
 
     std::string getErrorMessage();
@@ -64,7 +64,7 @@ public:
     bool handleTickEvent(double dt);
 
     // Lua hook handling
-    void setLuaPath(const string& s);
+    void setLuaPath(const std::string& s);
     void allowSystemAccess();
     void allowLuaPackageAccess();
     void setLuaHookEventHandlerEnabled(bool);
