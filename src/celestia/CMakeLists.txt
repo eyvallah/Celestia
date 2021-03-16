@@ -1,6 +1,8 @@
 set(CELESTIA_SOURCES
   celestiacore.cpp
   celestiacore.h
+  celestiastate.cpp
+  celestiastate.h
   configfile.cpp
   configfile.h
   destination.cpp
@@ -64,6 +66,10 @@ set_target_properties(celestia PROPERTIES
 
 if(ENABLE_SPICE)
   target_link_libraries(celestia CSPICE::CSPICE)
+endif()
+
+if(APPLE)
+  target_link_libraries(celestia "-framework Foundation")
 endif()
 
 cotire(celestia)
