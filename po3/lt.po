@@ -56,11 +56,19 @@ msgstr ""
 msgid "10c"
 msgstr ""
 
+# Windows, 10x time speed
+msgid "10x Faster"
+msgstr " greičiau"
+
+# Windows, 0.1x time speed
+msgid "10x Slower"
+msgstr " lėčiau"
+
 # Android/iOS, About Celstia...
 msgid "About"
 msgstr ""
 
-# Mac, System menu item
+# Mac/Windows, System menu item
 msgid "About Celestia"
 msgstr "Apie Celestia"
 
@@ -72,7 +80,7 @@ msgstr "Abs. ryšk"
 msgid "Add"
 msgstr ""
 
-# Mac, Add a new bookmark
+# Mac/Windows, Add a new bookmark
 msgid "Add Bookmark"
 msgstr "Įtraukti žymelę"
 
@@ -84,7 +92,7 @@ msgstr ""
 msgid "Add-on directory does not exist."
 msgstr ""
 
-# Android/iOS
+# Android/iOS/Windows
 msgid "Add-ons"
 msgstr ""
 
@@ -100,13 +108,13 @@ msgstr ""
 msgid "Ahead"
 msgstr ""
 
-# Android/iOS/Mac, Alternative textures to display
+# Android/iOS/Mac/Windows, Alternative textures to display
 msgid "Alternate Surfaces"
-msgstr ""
+msgstr "Alternatyvus paviršius"
 
 # Android/iOS/Mac, In setting
 msgid "Ambient Light"
-msgstr ""
+msgstr "Aplinkos šviesa"
 
 # iOS
 msgid "An external screen is connected, do you want to display Celestia on the external screen?"
@@ -116,19 +124,19 @@ msgstr ""
 msgid "and:"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Anti-aliasing"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Asteroids"
 msgstr "Asteroidai"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Atmospheres"
 msgstr "Atmosfera"
 
-# Mac, Astronomical unit
+# Mac/Windows, Astronomical unit
 msgid "au"
 msgstr "av"
 
@@ -136,7 +144,11 @@ msgstr "av"
 msgid "Authors"
 msgstr "Autoriai"
 
-# Android/iOS, Authors for an add-on
+# Windows, Authors for Celestia
+msgid "Authors:"
+msgstr ""
+
+# Android/iOS/Windows, Authors for an add-on
 #, c-format
 msgid "Authors: %s"
 msgstr ""
@@ -152,7 +164,7 @@ msgstr ""
 
 # Mac, Undo an operation
 msgid "Back"
-msgstr ""
+msgstr "Atgal"
 
 # Mac, Beginning time (for eclipse)
 msgid "Beginning"
@@ -166,11 +178,15 @@ msgstr ""
 msgid "Bookmark Organizer"
 msgstr ""
 
-# Android/iOS/Mac, URL bookmarks
+# Android/iOS/Mac/Windows, URL bookmarks
 msgid "Bookmarks"
 msgstr "Žymelės"
 
-# Android/iOS/Mac
+# Windows, Constellation boundaries
+msgid "Boundaries"
+msgstr "Ribos"
+
+# Android/iOS/Mac/Windows
 msgid "Brightest Stars"
 msgstr "Ryškiausias"
 
@@ -178,9 +194,9 @@ msgstr "Ryškiausias"
 msgid "Bring All to Front"
 msgstr ""
 
-# Android/iOS/Mac, Object browser
+# Android/iOS/Mac/Windows, Object browser
 msgid "Browser"
-msgstr ""
+msgstr "Dangaus naršyklė"
 
 # Mac
 msgid "c (lightspeed)"
@@ -194,7 +210,7 @@ msgstr ""
 msgid "Camera Control"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Cancel"
 msgstr "Atšaukti"
 
@@ -202,11 +218,11 @@ msgstr "Atšaukti"
 msgid "Cannot add object"
 msgstr ""
 
-# Mac, Record a video in Celestia
-msgid "Capture Video"
-msgstr "Įrašyti video"
+# Windows, Take a screenshot in Celestia
+msgid "Capture Image"
+msgstr "Padaryti ekr. atvaizdą"
 
-# Android/iOS, Add-on categories
+# Android/iOS/Windows, Add-on categories
 msgid "Categories"
 msgstr ""
 
@@ -224,17 +240,17 @@ msgstr ""
 
 # Android/iOS/Mac, Center an object
 msgid "Center"
-msgstr ""
+msgstr "Centruoti"
 
-# Mac, Center selected object
+# Mac/Windows, Center selected object
 msgid "Center Selection"
-msgstr "&Pasirinkimą į centrą\tC"
+msgstr "Pasirinkimą į centrą"
 
 # Mac, Choose another location for celestia.cfg and data to load
 msgid "Change Config File"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Chase"
 msgstr "Surišti"
 
@@ -242,33 +258,37 @@ msgstr "Surišti"
 msgid "Choose Config File"
 msgstr ""
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Circle"
 msgstr "Apskritimas"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Cities"
 msgstr "Miestai"
 
 # Mac
 msgid "Close"
-msgstr ""
+msgstr "Užverti"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Cloud Shadows"
 msgstr "Debesų šešėliai"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Clouds"
 msgstr "Debesys"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Comet Tails"
 msgstr "Kometų uodegos"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Comets"
 msgstr "Kometos"
+
+# Windows, Compute for eclipses
+msgid "Compute"
+msgstr "Skaičiuoti"
 
 # Android/iOS/Mac, celestia.cfg
 msgid "Config File"
@@ -286,7 +306,7 @@ msgstr ""
 msgid "Constellation Labels"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Constellations"
 msgstr "Žvaigždynai"
 
@@ -298,19 +318,19 @@ msgstr "Žvaigždynai lotyniškai"
 msgid "Coordinate:"
 msgstr ""
 
-# Mac, Copy current URL to pasteboard
+# Mac/Windows, Copy current URL to pasteboard
 msgid "Copy URL"
-msgstr ""
+msgstr "Nukopijuoti URL"
 
 # Android, Copying default data from APK
 msgid "Copying data…"
 msgstr ""
 
-# Android/iOS/Mac, Location labels
-msgid "Crater"
-msgstr ""
+# Android/iOS/Mac/Windows, Location labels
+msgid "Craters"
+msgstr "Krateriai"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Crosshair"
 msgstr ""
 
@@ -355,21 +375,21 @@ msgstr ""
 msgid "Deep Sky Objects"
 msgstr "Gilaus dangaus objektai"
 
-# Androd/iOS/Mac
+# Androd/iOS/Mac/Windows
 msgid "Default"
 msgstr ""
 
-# Android/iOS
+# Android/iOS/Windows
 msgid "Delete"
 msgstr "Trinti"
 
-# Mac, Delete current view (in split view mode)
+# Mac/Windows, Delete current view (in split view mode)
 msgid "Delete Active View"
-msgstr ""
+msgstr "Ištrinti aktyvų vaizdą"
 
-# Mac, Delete views other than current view (in split view mode)
+# Mac/Windows, Delete views other than current view (in split view mode)
 msgid "Delete Other Views"
-msgstr ""
+msgstr "Vientisas vaizdas"
 
 # iOS, Title for share link
 msgid "Description"
@@ -383,7 +403,11 @@ msgstr ""
 msgid "Development"
 msgstr ""
 
-# Android/iOS/Mac, Marker
+# Windows, Constellation diagrams
+msgid "Diagrams"
+msgstr "Diagramos"
+
+# Android/iOS/Mac/Windows, Marker
 msgid "Diamond"
 msgstr "Deimantas"
 
@@ -391,7 +415,7 @@ msgstr "Deimantas"
 msgid "Direction"
 msgstr ""
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Disk"
 msgstr "Diskas"
 
@@ -427,7 +451,7 @@ msgstr ""
 msgid "Down"
 msgstr ""
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Down Arrow"
 msgstr "Rodyklę žemyn"
 
@@ -439,7 +463,11 @@ msgstr ""
 msgid "DOWNLOADING"
 msgstr ""
 
-# Android/iOS/Mac, Tab for deep sky objects in Star Browser
+# Windows, View Options
+msgid "DSO Labels"
+msgstr "GD pavadinimai"
+
+# Android/iOS/Mac/Windows, Tab for deep sky objects in Star Browser
 msgid "DSOs"
 msgstr ""
 
@@ -447,21 +475,25 @@ msgstr ""
 msgid "Duration"
 msgstr "Trukmė"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Dwarf Planets"
 msgstr "Nykštukinės planetos"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Eclipse Finder"
 msgstr "Užtemimų paiška"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Eclipse Shadows"
 msgstr "Užtemimų šešėliai"
 
-# Android/iOS/Mac, Grids
+# Android/iOS/Mac/Windows, Grids
 msgid "Ecliptic"
 msgstr "Ekliptika"
+
+# Windows, View Options
+msgid "Ecliptic Line"
+msgstr "Ekliptikos linija"
 
 # iOS, Enter edit mode for favorite items
 msgid "Edit"
@@ -471,11 +503,15 @@ msgstr ""
 msgid "End Time"
 msgstr ""
 
+# Windows, In eclipse finder, range of time to find eclipse in
+msgid "End time:"
+msgstr ""
+
 # Mac, In eclipse finder
 msgid "Enter name of planet or moon"
 msgstr ""
 
-# Android/iOS/Mac, Grids
+# Android/iOS/Mac/Windows, Grids
 msgid "Equatorial"
 msgstr "Pusiaujo"
 
@@ -484,13 +520,13 @@ msgstr "Pusiaujo"
 msgid "Equatorial radius: %s"
 msgstr ""
 
-# Android/iOS
+# Android/iOS/Windows
 msgid "Error loading data, fallback to original configuration."
 msgstr ""
 
-# Android, Exit Celestia
+# Android/Windows, Exit Celestia
 msgid "Exit"
-msgstr ""
+msgstr "Išeiti"
 
 # iOS
 msgid "Failed to connect to the external screen."
@@ -526,7 +562,7 @@ msgstr ""
 
 # Mac
 msgid "Fatal Error"
-msgstr ""
+msgstr "Klaida"
 
 # Android/iOS, Favorites (currently bookmarks and scripts)
 msgid "Favorites"
@@ -536,13 +572,21 @@ msgstr ""
 msgid "Features"
 msgstr "Rodyti savybes"
 
-# Mac, File menu
-msgid "File"
-msgstr ""
+# Windows
+msgid "Fewer Stars Visible"
+msgstr "Mažiau žvaigždžių"
 
-# Android/iOS/Mac, Marker
+# Mac/Windows, File menu
+msgid "File"
+msgstr "Failas"
+
+# Android/iOS/Mac/Windows, Marker
 msgid "Filled Square"
 msgstr "Miesto aikštė"
+
+# Windows, View Options
+msgid "Filter Stars"
+msgstr ""
 
 # Android/iOS/Mac, Find (eclipses)
 msgid "Find"
@@ -552,9 +596,17 @@ msgstr ""
 msgid "Find Eclipses cast on:"
 msgstr ""
 
-# Android/iOS/Mac
+# Windows, Enter name for new created folder
+msgid "Folder name"
+msgstr "Aplanko pavadinimas"
+
+# Android/iOS/Mac/Windows
 msgid "Follow"
 msgstr "Sekti"
+
+# Windows
+msgid "Follow Selection"
+msgstr "Sekti pasirinkimą"
 
 # Mac, Format for time
 msgid "Format:"
@@ -562,37 +614,37 @@ msgstr ""
 
 # Mac, Redo an operation
 msgid "Forward"
-msgstr ""
+msgstr "Pirmyn"
 
-# Mac, Frame rate for capturing video
-msgid "Frame rate:"
-msgstr "Rėmelio norma:"
+# Windows, Freeze time
+msgid "Freeze"
+msgstr "Sustabdyti"
 
-# Android/iOS/Mac, Star style
+# Android/iOS/Mac/Windows, Star style
 msgid "Fuzzy Points"
-msgstr "&Išplaukę taškai"
+msgstr "Išplaukę taškai"
 
-# Android/iOS/Mac, Grids
+# Android/iOS/Mac/Windows, Grids
 msgid "Galactic"
 msgstr "Galaktika"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Galaxies"
 msgstr "Galaktikos"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Galaxies (Barred Spiral)"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Galaxies (Elliptical)"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Galaxies (Irregular)"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Galaxies (Spiral)"
 msgstr ""
 
@@ -608,27 +660,27 @@ msgstr ""
 msgid "Generating sharing link…"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Globulars"
 msgstr "Kamuoliniai spiečiai"
 
-# Android/iOS/Mac, Go to an object
+# Android/iOS/Mac/Windows, Go to an object
 msgid "Go"
-msgstr ""
+msgstr "Aplankyti"
 
-# Mac
+# Mac/Windows
 msgid "Go to Object"
-msgstr ""
+msgstr "Aplankyti objektą"
 
 # Mac
 msgid "Go to Object…"
-msgstr ""
+msgstr "Aplankyti objektą…"
 
-# Mac, Go to selected object
+# Mac/Windows, Go to selected object
 msgid "Go to Selection"
-msgstr ""
+msgstr "Aplankyti pasirinktą"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Grids"
 msgstr "Tinkleliai"
 
@@ -644,9 +696,9 @@ msgstr ""
 msgid "Has rings"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Help"
-msgstr ""
+msgstr "Pagalba"
 
 # Mac, System menu item, hide Celestia window
 msgid "Hide Celestia"
@@ -656,11 +708,11 @@ msgstr ""
 msgid "Hide Others"
 msgstr ""
 
-# Android/iOS/Mac, HiDPI support in display
+# Android/iOS/Mac/Windows, HiDPI support in display
 msgid "HiDPI"
 msgstr ""
 
-# Android/iOS/Mac, High resolution
+# Android/iOS/Mac/Windows, High resolution
 msgid "High"
 msgstr "Aukšta"
 
@@ -672,7 +724,7 @@ msgstr ""
 msgid "Home (Sol)"
 msgstr ""
 
-# Android/iOS/Mac, Grids
+# Android/iOS/Mac/Windows, Grids
 msgid "Horizontal"
 msgstr "Horizontaliai"
 
@@ -696,7 +748,7 @@ msgstr ""
 
 # Mac, HUD display
 msgid "Info"
-msgstr "&Info"
+msgstr "Info"
 
 # Android/iOS, HUD display
 msgid "Info Display"
@@ -710,7 +762,15 @@ msgstr ""
 msgid "Information"
 msgstr ""
 
-# Android/iOS, Title for the list of installed add-ons
+# Windows, View Options
+msgid "Information Text"
+msgstr "Informacinis tekstas"
+
+# Windows, Install an add-on
+msgid "Install"
+msgstr ""
+
+# Android/iOS/Windows, Title for the list of installed add-ons
 msgid "Installed"
 msgstr ""
 
@@ -722,7 +782,7 @@ msgstr ""
 msgid "Julian Date:"
 msgstr ""
 
-# Mac, Unit
+# Mac/Windows, Unit
 msgid "km"
 msgstr "km"
 
@@ -735,7 +795,7 @@ msgstr ""
 msgid "Label Density"
 msgstr ""
 
-# Mac, Labels to display
+# Mac/Windows, Labels to display
 msgid "Labels"
 msgstr "Pavadinimų ypatybės"
 
@@ -743,13 +803,17 @@ msgstr "Pavadinimų ypatybės"
 msgid "Land"
 msgstr ""
 
-# Android/iOS/Mac, Location labels
+# Android/iOS/Mac/Windows, Location labels
 msgid "Landing Sites"
 msgstr "Nusileidimo vietos"
 
 # Android, Display language setting
 msgid "Language"
 msgstr ""
+
+# Mac, Constellation in Latin names
+msgid "Latin Names"
+msgstr "Lotyniški pavadinimai"
 
 # Mac, Coordinates
 msgid "Latitude"
@@ -759,7 +823,7 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Left Arrow"
 msgstr "Rodyklę kairėn"
 
@@ -768,7 +832,7 @@ msgstr "Rodyklę kairėn"
 msgid "Length of day: %s"
 msgstr ""
 
-# Android/iOS, Celestia loading failed
+# Android/iOS/Windows, Celestia loading failed
 #, c-format
 msgid "Loading Celestia failed…"
 msgstr ""
@@ -778,7 +842,7 @@ msgstr ""
 msgid "Loading configuration…"
 msgstr ""
 
-# Android/iOS, Celestia initialization, loading file
+# Android/iOS/Windows, Celestia initialization, loading file
 #, c-format
 msgid "Loading: %s"
 msgstr ""
@@ -795,7 +859,7 @@ msgstr ""
 msgid "Location Types"
 msgstr ""
 
-# Android/iOS/Mac, Location labels to display
+# Android/iOS/Mac/Windows, Location labels to display
 msgid "Locations"
 msgstr "Vietovės"
 
@@ -803,7 +867,7 @@ msgstr "Vietovės"
 msgid "Lock"
 msgstr "Užrakinti"
 
-# Mac
+# Mac/Windows
 msgid "Lock Phase"
 msgstr ""
 
@@ -819,19 +883,23 @@ msgstr ""
 msgid "Look Back"
 msgstr ""
 
-# Android/iOS/Mac, Low resolution
+# Android/iOS/Mac/Windows, Low resolution
 msgid "Low"
 msgstr "Žema"
 
-# Android/iOS/Mac, Location labels
-msgid "Mare"
-msgstr "Vandenynai"
-
-# Android/iOS/Mac, Mark an object
-msgid "Mark"
+# Windows, Lunar eclipses.
+msgid "Lunar"
 msgstr ""
 
-# Mac
+# Android/iOS/Mac/Windows, Location labels
+msgid "Maria (Seas)"
+msgstr "Vandenynai"
+
+# Android/iOS/Mac/Windows, Mark an object
+msgid "Mark"
+msgstr "Žymėti"
+
+# Mac/Windows
 msgid "Markers"
 msgstr "Žymekliai"
 
@@ -839,7 +907,7 @@ msgstr "Žymekliai"
 msgid "Mass"
 msgstr ""
 
-# Android/iOS/Mac, Medium resolution
+# Android/iOS/Mac/Windows, Medium resolution
 msgid "Medium"
 msgstr "Vidutinė"
 
@@ -847,21 +915,25 @@ msgstr "Vidutinė"
 msgid "Minimize"
 msgstr ""
 
-# Android/iOS, Minimum feature size that we should display a label for
-msgid "Minimum Labelled Feature Size"
-msgstr ""
+# Android/iOS/Windows, Minimum feature size that we should display a label for
+msgid "Minimum Labeled Feature Size"
+msgstr "Minimalus pavadinimo ypatybės dydis"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Minor Moons"
 msgstr "Mažieji palydovai"
 
-# Android/iOS/Mac, Location labels
-msgid "Mons"
+# Android/iOS/Mac/Windows, Location labels
+msgid "Montes (Mountains)"
 msgstr "Monsas"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Moons"
 msgstr "Palydovai"
+
+# Windows
+msgid "More Stars Visible"
+msgstr "Daugiau žvaigždžių"
 
 # Android/iOS, Guide to control Celestia with a mouse/keyboard
 msgid "Mouse/Keyboard Controls"
@@ -879,19 +951,27 @@ msgstr ""
 msgid "Name"
 msgstr "Pavadinimas"
 
-# Android/iOS/Mac
+# Windows, Navigation menu
+msgid "Navigation"
+msgstr "Žvalgymas"
+
+# Android/iOS/Mac/Windows
 msgid "Nearest Stars"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Nebulae"
 msgstr "Ūkai"
 
-# Mac, Create a folder in bookmark organizer
+# Mac/Windows, Create a folder in bookmark organizer
 msgid "New Folder"
 msgstr "Naujas aplankas…"
 
-# Android/iOS/Mac
+# Windows, Enter new name for a bookmark node
+msgid "New name"
+msgstr "Naujas pavadinimas"
+
+# Android/iOS/Mac/Windows
 msgid "Night Lights"
 msgstr ""
 
@@ -901,7 +981,7 @@ msgstr ""
 
 # Mac, In Go to
 msgid "No object name entered"
-msgstr ""
+msgstr "Objekto pavadinimas"
 
 # Android/iOS/Mac, No overview for an object
 msgid "No overview available."
@@ -911,7 +991,7 @@ msgstr ""
 msgid "No response"
 msgstr ""
 
-# Android/iOS/Mac, Empty HUD display
+# Android/iOS/Mac/Windows, Empty HUD display
 msgid "None"
 msgstr "Nėra"
 
@@ -927,17 +1007,21 @@ msgstr ""
 
 # Android/iOS, In eclipse finder, object to find eclipse with
 msgid "Object"
-msgstr ""
+msgstr "Objektas"
 
 # Android/iOS, Labels
 msgid "Object Labels"
 msgstr ""
 
-# Android/iOS/Mac
+# Windows
+msgid "Object name:"
+msgstr "Objekto pavadinimas:"
+
+# Android/iOS/Mac/Windows
 msgid "Object not found"
 msgstr ""
 
-# Mac, In Go to
+# Mac, In Go to, Windows, In eclipse finder, object to find eclipse with
 msgid "Object:"
 msgstr ""
 
@@ -945,7 +1029,7 @@ msgstr ""
 msgid "Objects"
 msgstr "Objektai"
 
-# Android/iOS/Mac, Location labels
+# Android/iOS/Mac/Windows, Location labels
 msgid "Observatories"
 msgstr "Observatorijos"
 
@@ -957,15 +1041,19 @@ msgstr ""
 msgid "Official Website"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "OK"
 msgstr "Gerai"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Open Clusters"
 msgstr "Padrikieji spiečiai"
 
-# Android/iOS/Mac, Request user consent to open a URL
+# Windows, Open folder for customization
+msgid "Open Custom Folder"
+msgstr ""
+
+# Android/iOS/Mac/Windows, Request user consent to open a URL
 msgid "Open URL?"
 msgstr ""
 
@@ -973,7 +1061,7 @@ msgstr ""
 msgid "Open Web URL"
 msgstr ""
 
-# Mac
+# Mac/Windows
 msgid "OpenGL Info"
 msgstr "OpenGL info"
 
@@ -985,27 +1073,27 @@ msgstr ""
 msgid "Operation not permitted."
 msgstr ""
 
-# Mac
-msgid "Orbit Synchronously"
-msgstr ""
-
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Orbits"
 msgstr "Orbitos"
 
-# Mac
-msgid "Organize Bookmarks…"
+# Windows, View Options
+msgid "Orbits/Labels"
 msgstr ""
 
-# Mac, Other location labels; Android/iOS, Other objects to choose from in Eclipse Finder
+# Mac/Windows
+msgid "Organize Bookmarks…"
+msgstr "Rūšiuoti žymeles…"
+
+# Mac/Windows, Other location labels; Android/iOS, Other objects to choose from in Eclipse Finder
 msgid "Other"
-msgstr ""
+msgstr "Kitos savybės"
 
 # Android/iOS, Other settings
 msgid "Others"
 msgstr ""
 
-# Mac, Paste URL from pasteboard
+# Mac/Windows, Paste URL from pasteboard
 msgid "Paste URL"
 msgstr ""
 
@@ -1021,7 +1109,7 @@ msgstr ""
 msgid "Planet Rings"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Planets"
 msgstr "Planetos"
 
@@ -1054,21 +1142,21 @@ msgstr ""
 msgid "Please restart Celestia"
 msgstr ""
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Plus"
 msgstr "Plius"
 
-# Android/iOS/Mac, Star style
+# Android/iOS/Mac/Windows, Star style
 msgid "Points"
-msgstr "&Taškai"
+msgstr "Taškai"
 
 # Mac, Settings window title
 msgid "Preferences"
-msgstr ""
+msgstr "Celestia nustatymai"
 
-# Mac, Settings
+# iOS/Mac, Settings
 msgid "Preferences…"
-msgstr ""
+msgstr "Informaciniai ženklai"
 
 # Android/iOS, Privacy Policy and Service Agreement
 msgid "Privacy Policy and Service Agreement"
@@ -1087,7 +1175,7 @@ msgstr ""
 msgid "RA: %dh %dm %.2fs"
 msgstr ""
 
-# Mac, In Go to, specify the distance based on the object radius
+# Mac/Windows, In Go to, specify the distance based on the object radius
 msgid "radii"
 msgstr "spindulys"
 
@@ -1095,17 +1183,17 @@ msgstr "spindulys"
 msgid "Radius"
 msgstr ""
 
-# Mac, Reset time speed to 1x
+# Mac/Windows, Reset time speed to 1x
 msgid "Real Time"
-msgstr ""
+msgstr "Realus laikas"
 
 # Mac, In Eclipse Finder
 msgid "Receiver"
 msgstr ""
 
-# Android/iOS/Mac, Reference vectors for an object
+# Android/iOS/Mac/Windows, Reference vectors for an object
 msgid "Reference Vectors"
-msgstr ""
+msgstr "Informaciniai ženklai"
 
 # Android/iOS
 msgid "Reference vectors are only visible for the current selected solar system object."
@@ -1113,16 +1201,20 @@ msgstr ""
 
 # Android/iOS, Button to refresh this list
 msgid "Refresh"
-msgstr ""
+msgstr "Atnaujinti"
 
-# Android/iOS, Release date for an add-on
+# Android/iOS/Windows, Release date for an add-on
 #, c-format
 msgid "Release date: %s"
 msgstr ""
 
-# Android, Rename a favorite item (currently bookmark)
+# Android/Windows, Rename a favorite item (currently bookmark)
 msgid "Rename"
 msgstr ""
+
+# Windows, Render menu
+msgid "Render"
+msgstr "Vaizdavimas"
 
 # Android/iOS, Information about renderer
 msgid "Render Info"
@@ -1156,23 +1248,23 @@ msgstr ""
 msgid "Resolution:"
 msgstr "Skyros:"
 
-# Mac, Traveling backward
-msgid "Reverse"
-msgstr ""
-
 # Android/iOS, Reverse camera direction
 msgid "Reverse Direction"
 msgstr ""
+
+# Mac/Windows
+msgid "Reverse Time"
+msgstr "Laiko reversas"
 
 # Mac, Yaw angle right
 msgid "Right"
 msgstr ""
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Right Arrow"
 msgstr "Rodyklę dešinėn"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Ring Shadows"
 msgstr "Žiedų šešėliai"
 
@@ -1180,27 +1272,27 @@ msgstr "Žiedų šešėliai"
 msgid "Roll"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Run Demo"
-msgstr ""
+msgstr "Rodyti Demo"
 
-# Android/iOS/Mac, Request user consent to run a script
+# Android/iOS/Mac/Windows, Request user consent to run a script
 msgid "Run script?"
 msgstr ""
 
-# Mac
+# iOS/Mac/Windows
 msgid "Run Script…"
 msgstr ""
 
-# Android/iOS/Mac, Star style
+# Android/iOS/Mac/Windows, Star style
 msgid "Scaled Discs"
-msgstr "Scaled &diskai"
+msgstr "Scaled diskai"
 
 # Android/iOS
 msgid "Script Control"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Scripts"
 msgstr "Scenarijai"
 
@@ -1212,33 +1304,49 @@ msgstr ""
 msgid "Search"
 msgstr "Ieškoti"
 
-# Android/iOS/Mac, Select an object
+# Android/iOS/Mac/Windows, Select an object
 msgid "Select"
-msgstr ""
+msgstr "Parinkti"
 
 # Mac, Select next view (in split view)
 msgid "Select Next View"
 msgstr ""
 
+# Windows, Select an object
+msgid "Select Object"
+msgstr "Pasirinkite objektą"
+
+# Windows
+msgid "Select Sol"
+msgstr "Pasirinkti Saulę"
+
 # Android, Select simulation time
 msgid "Select Time"
 msgstr ""
+
+# Android, Select a destination in tour guide
+msgid "Select your destination:"
+msgstr "Pasirinkit kelionės tikslą:"
 
 # Mac, System menu
 msgid "Services"
 msgstr ""
 
-# Mac, Button to confirm selected simulation time
+# Windows, Set date to eclipse date and view eclipse
+msgid "Set Date and Go to Planet"
+msgstr "Nustatykite laiką ir aplankykite planetą"
+
+# Mac/Windows, Button to confirm selected simulation time
 msgid "Set Time"
 msgstr "Nustatyti laiką…"
 
-# Mac, Select simulation time
+# Mac/Windows, Select simulation time
 msgid "Set Time…"
-msgstr ""
+msgstr "Nustatyti laiką…"
 
-# Android/iOS, Set simulation time to device
+# Android/iOS/Windows, Set simulation time to device
 msgid "Set to Current Time"
-msgstr ""
+msgstr "Nustatyti dabartinį laiką"
 
 # Android/iOS
 msgid "Settings"
@@ -1248,11 +1356,15 @@ msgstr "Nustatymai"
 msgid "Share"
 msgstr ""
 
+# Windows, Whether to show an object in View Options
+msgid "Show"
+msgstr ""
+
 # Mac, System menu item, Show all windows
 msgid "Show All"
 msgstr ""
 
-# Android/iOS/Mac, Reference vector
+# Android/iOS/Mac/Windows, Reference vector
 msgid "Show Body Axes"
 msgstr "Rodyti kūno ašis"
 
@@ -1262,17 +1374,21 @@ msgstr "Rodyti kontūrus"
 
 # Mac
 msgid "Show Constellation Labels"
-msgstr ""
+msgstr "Rodyti žvaigždynų pavadinimus"
 
 # Mac
 msgid "Show Constellations"
-msgstr ""
+msgstr "Rodyti žvaigždynus"
 
 # Android/iOS, Show a list of destinations in guide
 msgid "Show Destinations"
 msgstr ""
 
-# Android/iOS/Mac, Reference vector
+# Windows, Location Label Settings
+msgid "Show Features"
+msgstr "Rodyti savybes"
+
+# Android/iOS/Mac/Windows, Reference vector
 msgid "Show Frame Axes"
 msgstr "Rodyti rėmelio ašis"
 
@@ -1280,31 +1396,35 @@ msgstr "Rodyti rėmelio ašis"
 msgid "Show Info"
 msgstr ""
 
+# Windows, Location Label Settings
+msgid "Show Label Features"
+msgstr ""
+
 # Mac
 msgid "Show Locations"
-msgstr ""
+msgstr "Rodyti slėnius"
 
 # Android/iOS/Mac
 msgid "Show Markers"
-msgstr ""
+msgstr "Rodyti žymeklius"
 
 # Mac
 msgid "Show Orbits"
-msgstr ""
+msgstr "Rodyti orbitas"
 
-# Android/iOS/Mac, Reference vector
+# Android/iOS/Mac/Windows, Reference vector
 msgid "Show Planetographic Grid"
 msgstr "Rodyti planetografinį tinklelį"
 
-# Android/iOS/Mac, Reference vector
+# Android/iOS/Mac/Windows, Reference vector
 msgid "Show Sun Direction"
 msgstr "Rodyti saulės kryptį"
 
-# Android/iOS/Mac, Reference vector
+# Android/iOS/Mac/Windows, Reference vector
 msgid "Show Terminator"
 msgstr "Rodyti terminatorių"
 
-# Android/iOS/Mac, Reference vector
+# Android/iOS/Mac/Windows, Reference vector
 msgid "Show Velocity Vector"
 msgstr "Rodyti greičio vektorių"
 
@@ -1326,45 +1446,53 @@ msgstr ""
 msgid "Smooth Lines"
 msgstr ""
 
-# Android/iOS/Mac, Tab for solar system in Star Browser
+# Windows, Solar eclipses.
+msgid "Solar"
+msgstr "saulė"
+
+# Android/iOS/Mac/Windows, Tab for solar system in Star Browser
 msgid "Solar System"
 msgstr "Saulės sistema"
 
-# Android/iOS/Mac, Plural
+# Android/iOS/Mac/Windows, Plural
 msgid "Spacecraft"
 msgstr "Kosminiai aparatai"
 
-# Mac, Split view
+# Mac/Windows, Split view
 msgid "Split Horizontally"
-msgstr ""
+msgstr "Padalinti horizontaliai"
 
-# Mac, Split view
+# Mac/Windows, Split view
 msgid "Split Vertically"
-msgstr ""
+msgstr "Padalinti vertikaliai"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Square"
 msgstr "Aikštė"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Star Style"
-msgstr ""
+msgstr "Žvaigždžių stiliai"
 
 # Mac
 msgid "Star Style:"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows, Tab for stars in Star Browser
 msgid "Stars"
 msgstr "Žvaigždės"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Stars with Planets"
 msgstr ""
 
 # Android/iOS, In eclipse finder, range of time to find eclipse in
 msgid "Start Time"
-msgstr ""
+msgstr "Pradžia"
+
+# Windows, In eclipse finder, range of time to find eclipse in
+msgid "Start time"
+msgstr "Pradžia"
 
 # Mac, Interupt the process of finding eclipse
 msgid "Stop"
@@ -1386,25 +1514,29 @@ msgstr ""
 msgid "Switched to object mode"
 msgstr ""
 
-# Android/iOS
+# Android/iOS/Mac/Windows
 msgid "Sync Orbit"
 msgstr "Sinchronizuoti orbitą"
+
+# Windows
+msgid "Sync Orbit Selection"
+msgstr "Sinchronizuoti objekto orbitą"
 
 # Android/iOS
 msgid "Tap the mode button on the sidebar to switch between object mode and camera mode."
 msgstr ""
 
-# Android/iOS/Mac, Location labels
-msgid "Terra"
+# Android/iOS/Mac/Windows, Location labels
+msgid "Terrae (Land masses)"
 msgstr "Žemynai"
 
-# Android/iOS/Mac, Terse HUD display
+# Android/iOS/Mac/Windows, Terse HUD display
 msgid "Terse"
 msgstr "Glaustas"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Texture Resolution"
-msgstr ""
+msgstr "Tekstūrų rezoliucijos"
 
 # Mac
 msgid "Texture Resolution:"
@@ -1414,7 +1546,7 @@ msgstr ""
 msgid "Third Party Dependencies"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Time"
 msgstr "Laikas"
 
@@ -1442,13 +1574,17 @@ msgstr ""
 msgid "Toggle FPS Display"
 msgstr ""
 
-# Mac, Track an object
+# Windows
+msgid "Tour Guide"
+msgstr "Kelionė su gidu"
+
+# Mac/Windows, Track an object
 msgid "Track"
 msgstr ""
 
-# Mac, Track selected object
+# Mac/Windows, Track selected object
 msgid "Track Selection"
-msgstr ""
+msgstr "Tako pasirinkimas"
 
 # Android/iOS, Translators for Celestia
 msgid "Translators"
@@ -1458,7 +1594,7 @@ msgstr ""
 msgid "Travel"
 msgstr ""
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Triangle"
 msgstr "Trikampis"
 
@@ -1487,7 +1623,11 @@ msgstr ""
 msgid "Unable to uninstall add-on."
 msgstr ""
 
-# Android/iOS/Mac
+# Windows, Uninstall an add-on
+msgid "Uninstall"
+msgstr ""
+
+# Android/iOS/Mac/Windows
 msgid "Unknown"
 msgstr "Nežinoma klaida atidarant scenarijų"
 
@@ -1495,9 +1635,9 @@ msgstr "Nežinoma klaida atidarant scenarijų"
 msgid "Unknown error"
 msgstr ""
 
-# Android/iOS/Mac, Unmark an object
+# Android/iOS/Mac/Windows, Unmark an object
 msgid "Unmark"
-msgstr ""
+msgstr "Nuimti žym."
 
 # Android/iOS, Unmark all objects
 msgid "Unmark All"
@@ -1505,6 +1645,10 @@ msgstr ""
 
 # Android/iOS, String not in correct format
 msgid "Unrecognized time string."
+msgstr ""
+
+# Android
+msgid "Unsupported action."
 msgstr ""
 
 # Mac, Default name for a newly created folder
@@ -1515,7 +1659,7 @@ msgstr ""
 msgid "Up"
 msgstr ""
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Up Arrow"
 msgstr "Rodyklę aukštyn"
 
@@ -1527,6 +1671,10 @@ msgstr ""
 msgid "Use Add-ons and Scripts"
 msgstr ""
 
+# Windows
+msgid "User Guide"
+msgstr ""
+
 # Android/iOS/Mac
 msgid "UTC"
 msgstr "UTC"
@@ -1535,15 +1683,15 @@ msgstr "UTC"
 msgid "UTC Offset"
 msgstr "UTC kompensacija"
 
-# Android/iOS/Mac, Location labels
-msgid "Vallis"
+# Android/iOS/Mac/Windows, Location labels
+msgid "Valles (Valleys)"
 msgstr "Slėniai"
 
 # Mac, Menu for velocity of traveling
 msgid "Velocity"
 msgstr ""
 
-# Android/iOS/Mac, Verbose HUD display
+# Android/iOS/Mac/Windows, Verbose HUD display
 msgid "Verbose"
 msgstr "Pilnas"
 
@@ -1551,17 +1699,21 @@ msgstr "Pilnas"
 msgid "Version"
 msgstr ""
 
-# Mac, Menu for split views
+# Windows, Render options
+msgid "View Options"
+msgstr "Rodymo nustatymai"
+
+# Mac/Windows, Menu for split views
 msgid "Views"
-msgstr ""
+msgstr "Rodymas"
 
 # Android/iOS/Mac, Location labels
 msgid "Volcanoes"
 msgstr "Vulkanas"
 
-# Android/iOS, Web info for an object
+# Android/iOS/Windows, Web info for an object
 msgid "Web Info"
-msgstr ""
+msgstr "Info"
 
 # Android/iOS, Welcome message
 msgid "Welcome to Celestia"
@@ -1571,7 +1723,7 @@ msgstr ""
 msgid "Window"
 msgstr ""
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "X"
 msgstr "X"
 

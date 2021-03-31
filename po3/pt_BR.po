@@ -57,11 +57,19 @@ msgstr "1000 km/s"
 msgid "10c"
 msgstr "10c"
 
+# Windows, 10x time speed
+msgid "10x Faster"
+msgstr "10x Mais Rápido"
+
+# Windows, 0.1x time speed
+msgid "10x Slower"
+msgstr "10x Mais Lento"
+
 # Android/iOS, About Celstia...
 msgid "About"
 msgstr "Sobre"
 
-# Mac, System menu item
+# Mac/Windows, System menu item
 msgid "About Celestia"
 msgstr "Sobre o Celestia"
 
@@ -73,7 +81,7 @@ msgstr "Mag. absoluta"
 msgid "Add"
 msgstr "Adicionar"
 
-# Mac, Add a new bookmark
+# Mac/Windows, Add a new bookmark
 msgid "Add Bookmark"
 msgstr "Adicionar Favorito"
 
@@ -85,7 +93,7 @@ msgstr "Adicionar novo…"
 msgid "Add-on directory does not exist."
 msgstr ""
 
-# Android/iOS
+# Android/iOS/Windows
 msgid "Add-ons"
 msgstr ""
 
@@ -101,7 +109,7 @@ msgstr "Avançado"
 msgid "Ahead"
 msgstr "À Frente"
 
-# Android/iOS/Mac, Alternative textures to display
+# Android/iOS/Mac/Windows, Alternative textures to display
 msgid "Alternate Surfaces"
 msgstr "Superfícies Alternativas"
 
@@ -117,19 +125,19 @@ msgstr ""
 msgid "and:"
 msgstr "e:"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Anti-aliasing"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Asteroids"
 msgstr "Asteroides"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Atmospheres"
 msgstr "Atmosferas"
 
-# Mac, Astronomical unit
+# Mac/Windows, Astronomical unit
 msgid "au"
 msgstr "ua"
 
@@ -137,7 +145,11 @@ msgstr "ua"
 msgid "Authors"
 msgstr "Autores"
 
-# Android/iOS, Authors for an add-on
+# Windows, Authors for Celestia
+msgid "Authors:"
+msgstr ""
+
+# Android/iOS/Windows, Authors for an add-on
 #, c-format
 msgid "Authors: %s"
 msgstr ""
@@ -167,11 +179,15 @@ msgstr "Entre:"
 msgid "Bookmark Organizer"
 msgstr "Organizador de Favoritos"
 
-# Android/iOS/Mac, URL bookmarks
+# Android/iOS/Mac/Windows, URL bookmarks
 msgid "Bookmarks"
 msgstr "Favoritos"
 
-# Android/iOS/Mac
+# Windows, Constellation boundaries
+msgid "Boundaries"
+msgstr "Mostrar Fronteiras"
+
+# Android/iOS/Mac/Windows
 msgid "Brightest Stars"
 msgstr "Estrelas Mais Brilhantes"
 
@@ -179,7 +195,7 @@ msgstr "Estrelas Mais Brilhantes"
 msgid "Bring All to Front"
 msgstr "Trazer Todos à Frente"
 
-# Android/iOS/Mac, Object browser
+# Android/iOS/Mac/Windows, Object browser
 msgid "Browser"
 msgstr "Navegador"
 
@@ -195,7 +211,7 @@ msgstr ""
 msgid "Camera Control"
 msgstr "Controle da Câmera"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -203,11 +219,11 @@ msgstr "Cancelar"
 msgid "Cannot add object"
 msgstr "Não pôde adicionar objeto"
 
-# Mac, Record a video in Celestia
-msgid "Capture Video"
-msgstr "Capturar Vídeo"
+# Windows, Take a screenshot in Celestia
+msgid "Capture Image"
+msgstr "Capturar Imagem"
 
-# Android/iOS, Add-on categories
+# Android/iOS/Windows, Add-on categories
 msgid "Categories"
 msgstr ""
 
@@ -227,7 +243,7 @@ msgstr "Ajuda do Celestia"
 msgid "Center"
 msgstr "Centralizar"
 
-# Mac, Center selected object
+# Mac/Windows, Center selected object
 msgid "Center Selection"
 msgstr "Centralizar na Seleção"
 
@@ -235,7 +251,7 @@ msgstr "Centralizar na Seleção"
 msgid "Change Config File"
 msgstr "Alterar Arquivo de Configuração"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Chase"
 msgstr "Perseguir"
 
@@ -243,33 +259,37 @@ msgstr "Perseguir"
 msgid "Choose Config File"
 msgstr "Escolher Arquivo de Configuração"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Circle"
 msgstr "Círculo"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Cities"
 msgstr "Cidades"
 
 # Mac
 msgid "Close"
-msgstr ""
+msgstr "Fechar"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Cloud Shadows"
 msgstr "Sombras das Nuvens"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Clouds"
 msgstr "Nuvens"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Comet Tails"
 msgstr "Caudas de Cometa"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Comets"
 msgstr "Cometas"
+
+# Windows, Compute for eclipses
+msgid "Compute"
+msgstr "Calcular"
 
 # Android/iOS/Mac, celestia.cfg
 msgid "Config File"
@@ -287,7 +307,7 @@ msgstr "Confirmar e Reiniciar"
 msgid "Constellation Labels"
 msgstr "Nomes das Constelações"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Constellations"
 msgstr "Constelações"
 
@@ -299,7 +319,7 @@ msgstr "Constelações em Latim"
 msgid "Coordinate:"
 msgstr "Coordenadas:"
 
-# Mac, Copy current URL to pasteboard
+# Mac/Windows, Copy current URL to pasteboard
 msgid "Copy URL"
 msgstr "Copiar URL"
 
@@ -307,11 +327,11 @@ msgstr "Copiar URL"
 msgid "Copying data…"
 msgstr "Copiando dados…"
 
-# Android/iOS/Mac, Location labels
-msgid "Crater"
+# Android/iOS/Mac/Windows, Location labels
+msgid "Craters"
 msgstr "Crateras"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Crosshair"
 msgstr "Mira"
 
@@ -356,19 +376,19 @@ msgstr "DEC: %d° %d′ %.2f″"
 msgid "Deep Sky Objects"
 msgstr "Objetos do Céu Profundo"
 
-# Androd/iOS/Mac
+# Androd/iOS/Mac/Windows
 msgid "Default"
 msgstr "Padrão"
 
-# Android/iOS
+# Android/iOS/Windows
 msgid "Delete"
 msgstr "Apagar"
 
-# Mac, Delete current view (in split view mode)
+# Mac/Windows, Delete current view (in split view mode)
 msgid "Delete Active View"
 msgstr "Apagar Visão Ativa"
 
-# Mac, Delete views other than current view (in split view mode)
+# Mac/Windows, Delete views other than current view (in split view mode)
 msgid "Delete Other Views"
 msgstr "Apagar Outras Visões"
 
@@ -384,7 +404,11 @@ msgstr ""
 msgid "Development"
 msgstr ""
 
-# Android/iOS/Mac, Marker
+# Windows, Constellation diagrams
+msgid "Diagrams"
+msgstr "Diagramas"
+
+# Android/iOS/Mac/Windows, Marker
 msgid "Diamond"
 msgstr "Losango"
 
@@ -392,7 +416,7 @@ msgstr "Losango"
 msgid "Direction"
 msgstr "Direção"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Disk"
 msgstr "Disco"
 
@@ -428,7 +452,7 @@ msgstr "Duplo clique no item para abrir ou control-clique para menu contextual. 
 msgid "Down"
 msgstr "Baixo"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Down Arrow"
 msgstr "Seta para Baixo"
 
@@ -440,7 +464,11 @@ msgstr ""
 msgid "DOWNLOADING"
 msgstr ""
 
-# Android/iOS/Mac, Tab for deep sky objects in Star Browser
+# Windows, View Options
+msgid "DSO Labels"
+msgstr "Legendas DSO"
+
+# Android/iOS/Mac/Windows, Tab for deep sky objects in Star Browser
 msgid "DSOs"
 msgstr "Objetos do Céu Profundo"
 
@@ -448,20 +476,24 @@ msgstr "Objetos do Céu Profundo"
 msgid "Duration"
 msgstr "Duração"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Dwarf Planets"
 msgstr "Planetas Anões"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Eclipse Finder"
 msgstr "Buscador de Eclipses"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Eclipse Shadows"
 msgstr "Sombras dos Eclipses"
 
-# Android/iOS/Mac, Grids
+# Android/iOS/Mac/Windows, Grids
 msgid "Ecliptic"
+msgstr "Eclíptica"
+
+# Windows, View Options
+msgid "Ecliptic Line"
 msgstr "Eclíptica"
 
 # iOS, Enter edit mode for favorite items
@@ -472,11 +504,15 @@ msgstr "Editar"
 msgid "End Time"
 msgstr ""
 
+# Windows, In eclipse finder, range of time to find eclipse in
+msgid "End time:"
+msgstr ""
+
 # Mac, In eclipse finder
 msgid "Enter name of planet or moon"
 msgstr "Digite o nome de um planeta ou lua"
 
-# Android/iOS/Mac, Grids
+# Android/iOS/Mac/Windows, Grids
 msgid "Equatorial"
 msgstr "Equatorial"
 
@@ -485,13 +521,13 @@ msgstr "Equatorial"
 msgid "Equatorial radius: %s"
 msgstr "Raio equatorial: %s"
 
-# Android/iOS
+# Android/iOS/Windows
 msgid "Error loading data, fallback to original configuration."
 msgstr "Erro ao carregar os dados, configurações originais retornadas."
 
-# Android, Exit Celestia
+# Android/Windows, Exit Celestia
 msgid "Exit"
-msgstr ""
+msgstr "Sair"
 
 # iOS
 msgid "Failed to connect to the external screen."
@@ -537,13 +573,21 @@ msgstr "Favoritos"
 msgid "Features"
 msgstr "Recursos"
 
-# Mac, File menu
+# Windows
+msgid "Fewer Stars Visible"
+msgstr "Menos Estrelas Visíveis"
+
+# Mac/Windows, File menu
 msgid "File"
 msgstr "Arquivo"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Filled Square"
 msgstr "Quadrado Preenchido"
+
+# Windows, View Options
+msgid "Filter Stars"
+msgstr "Filtrar Estrelas"
 
 # Android/iOS/Mac, Find (eclipses)
 msgid "Find"
@@ -553,9 +597,17 @@ msgstr "Procurar"
 msgid "Find Eclipses cast on:"
 msgstr "Encontrar eclipses em:"
 
-# Android/iOS/Mac
+# Windows, Enter name for new created folder
+msgid "Folder name"
+msgstr "Nome da Pasta"
+
+# Android/iOS/Mac/Windows
 msgid "Follow"
 msgstr "Seguir"
+
+# Windows
+msgid "Follow Selection"
+msgstr "Seguir a Selecção"
 
 # Mac, Format for time
 msgid "Format:"
@@ -565,35 +617,35 @@ msgstr "Formato:"
 msgid "Forward"
 msgstr "Adiante"
 
-# Mac, Frame rate for capturing video
-msgid "Frame rate:"
-msgstr "Quadros por segundo:"
+# Windows, Freeze time
+msgid "Freeze"
+msgstr "Pausar"
 
-# Android/iOS/Mac, Star style
+# Android/iOS/Mac/Windows, Star style
 msgid "Fuzzy Points"
 msgstr "Pontos Indistintos"
 
-# Android/iOS/Mac, Grids
+# Android/iOS/Mac/Windows, Grids
 msgid "Galactic"
 msgstr "Galática"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Galaxies"
 msgstr "Galáxias"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Galaxies (Barred Spiral)"
 msgstr "Galáxias (Espirais Barradas)"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Galaxies (Elliptical)"
 msgstr "Galáxias (Elípticas)"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Galaxies (Irregular)"
 msgstr "Galáxias (Irregulares)"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Galaxies (Spiral)"
 msgstr "Galáxias (Espirais)"
 
@@ -609,15 +661,15 @@ msgstr "Geral"
 msgid "Generating sharing link…"
 msgstr "Gerando link de compartilhamento…"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Globulars"
 msgstr "Globulares"
 
-# Android/iOS/Mac, Go to an object
+# Android/iOS/Mac/Windows, Go to an object
 msgid "Go"
 msgstr "Ir para"
 
-# Mac
+# Mac/Windows
 msgid "Go to Object"
 msgstr "Ir para Objeto"
 
@@ -625,11 +677,11 @@ msgstr "Ir para Objeto"
 msgid "Go to Object…"
 msgstr "Ir para Objeto…"
 
-# Mac, Go to selected object
+# Mac/Windows, Go to selected object
 msgid "Go to Selection"
 msgstr "Ir para Seleção"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Grids"
 msgstr "Grades"
 
@@ -645,7 +697,7 @@ msgstr "Possui atmosfera"
 msgid "Has rings"
 msgstr "Possui anéis"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Help"
 msgstr "Ajuda"
 
@@ -657,11 +709,11 @@ msgstr "Esconder Celestia"
 msgid "Hide Others"
 msgstr "Esconder Outros"
 
-# Android/iOS/Mac, HiDPI support in display
+# Android/iOS/Mac/Windows, HiDPI support in display
 msgid "HiDPI"
 msgstr ""
 
-# Android/iOS/Mac, High resolution
+# Android/iOS/Mac/Windows, High resolution
 msgid "High"
 msgstr "Alta"
 
@@ -673,7 +725,7 @@ msgstr "Histórico"
 msgid "Home (Sol)"
 msgstr "Origem (Sol)"
 
-# Android/iOS/Mac, Grids
+# Android/iOS/Mac/Windows, Grids
 msgid "Horizontal"
 msgstr "Horizontal"
 
@@ -717,7 +769,15 @@ msgstr "Exibição de Informações:"
 msgid "Information"
 msgstr "Informação"
 
-# Android/iOS, Title for the list of installed add-ons
+# Windows, View Options
+msgid "Information Text"
+msgstr "Texto Informativo"
+
+# Windows, Install an add-on
+msgid "Install"
+msgstr ""
+
+# Android/iOS/Windows, Title for the list of installed add-ons
 msgid "Installed"
 msgstr ""
 
@@ -729,7 +789,7 @@ msgstr ""
 msgid "Julian Date:"
 msgstr "Data Juliana:"
 
-# Mac, Unit
+# Mac/Windows, Unit
 msgid "km"
 msgstr "km"
 
@@ -742,7 +802,7 @@ msgstr "L: %d° %d′ %.2f″"
 msgid "Label Density"
 msgstr "Densidade de Nomes"
 
-# Mac, Labels to display
+# Mac/Windows, Labels to display
 msgid "Labels"
 msgstr "Nomes"
 
@@ -750,13 +810,17 @@ msgstr "Nomes"
 msgid "Land"
 msgstr ""
 
-# Android/iOS/Mac, Location labels
+# Android/iOS/Mac/Windows, Location labels
 msgid "Landing Sites"
 msgstr "Locais de Pouso"
 
 # Android, Display language setting
 msgid "Language"
 msgstr ""
+
+# Mac, Constellation in Latin names
+msgid "Latin Names"
+msgstr "Nomes em Latim"
 
 # Mac, Coordinates
 msgid "Latitude"
@@ -766,7 +830,7 @@ msgstr "Latitude"
 msgid "Left"
 msgstr "Esquerda"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Left Arrow"
 msgstr "Seta Esquerda"
 
@@ -775,7 +839,7 @@ msgstr "Seta Esquerda"
 msgid "Length of day: %s"
 msgstr "Duração do dia: %s"
 
-# Android/iOS, Celestia loading failed
+# Android/iOS/Windows, Celestia loading failed
 #, c-format
 msgid "Loading Celestia failed…"
 msgstr "Falha ao carregar o Celestia…"
@@ -785,7 +849,7 @@ msgstr "Falha ao carregar o Celestia…"
 msgid "Loading configuration…"
 msgstr "Carregando configuração…"
 
-# Android/iOS, Celestia initialization, loading file
+# Android/iOS/Windows, Celestia initialization, loading file
 #, c-format
 msgid "Loading: %s"
 msgstr "Carregando: %s"
@@ -802,7 +866,7 @@ msgstr "Localização"
 msgid "Location Types"
 msgstr "Tipos de Localização"
 
-# Android/iOS/Mac, Location labels to display
+# Android/iOS/Mac/Windows, Location labels to display
 msgid "Locations"
 msgstr "Localizações"
 
@@ -810,7 +874,7 @@ msgstr "Localizações"
 msgid "Lock"
 msgstr "Fixar"
 
-# Mac
+# Mac/Windows
 msgid "Lock Phase"
 msgstr "Fixar Fase"
 
@@ -826,19 +890,23 @@ msgstr "Longitude"
 msgid "Look Back"
 msgstr "Olhar para Trás"
 
-# Android/iOS/Mac, Low resolution
+# Android/iOS/Mac/Windows, Low resolution
 msgid "Low"
 msgstr "Baixa"
 
-# Android/iOS/Mac, Location labels
-msgid "Mare"
+# Windows, Lunar eclipses.
+msgid "Lunar"
+msgstr ""
+
+# Android/iOS/Mac/Windows, Location labels
+msgid "Maria (Seas)"
 msgstr "Mares"
 
-# Android/iOS/Mac, Mark an object
+# Android/iOS/Mac/Windows, Mark an object
 msgid "Mark"
 msgstr "Marcar"
 
-# Mac
+# Mac/Windows
 msgid "Markers"
 msgstr "Marcadores"
 
@@ -846,7 +914,7 @@ msgstr "Marcadores"
 msgid "Mass"
 msgstr "Massa"
 
-# Android/iOS/Mac, Medium resolution
+# Android/iOS/Mac/Windows, Medium resolution
 msgid "Medium"
 msgstr "Média"
 
@@ -854,21 +922,25 @@ msgstr "Média"
 msgid "Minimize"
 msgstr "Minimizar"
 
-# Android/iOS, Minimum feature size that we should display a label for
-msgid "Minimum Labelled Feature Size"
-msgstr ""
+# Android/iOS/Windows, Minimum feature size that we should display a label for
+msgid "Minimum Labeled Feature Size"
+msgstr "Tamanho Mínimo da Feição Legendada"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Minor Moons"
 msgstr "Luas Menores"
 
-# Android/iOS/Mac, Location labels
-msgid "Mons"
+# Android/iOS/Mac/Windows, Location labels
+msgid "Montes (Mountains)"
 msgstr "Montes"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Moons"
 msgstr "Luas"
+
+# Windows
+msgid "More Stars Visible"
+msgstr "Mais Estrelas Visíveis"
 
 # Android/iOS, Guide to control Celestia with a mouse/keyboard
 msgid "Mouse/Keyboard Controls"
@@ -886,19 +958,27 @@ msgstr "Afastar-se"
 msgid "Name"
 msgstr "Nome"
 
-# Android/iOS/Mac
+# Windows, Navigation menu
+msgid "Navigation"
+msgstr "Navegação"
+
+# Android/iOS/Mac/Windows
 msgid "Nearest Stars"
 msgstr "Estrelas Mais Próximas"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Nebulae"
 msgstr "Nebulosas"
 
-# Mac, Create a folder in bookmark organizer
+# Mac/Windows, Create a folder in bookmark organizer
 msgid "New Folder"
 msgstr "Nova Pasta"
 
-# Android/iOS/Mac
+# Windows, Enter new name for a bookmark node
+msgid "New name"
+msgstr "Novo Nome"
+
+# Android/iOS/Mac/Windows
 msgid "Night Lights"
 msgstr "Luzes Noturnas"
 
@@ -918,7 +998,7 @@ msgstr "Resumo não disponível."
 msgid "No response"
 msgstr "Sem resposta"
 
-# Android/iOS/Mac, Empty HUD display
+# Android/iOS/Mac/Windows, Empty HUD display
 msgid "None"
 msgstr "Nenhuma"
 
@@ -936,17 +1016,21 @@ msgstr ""
 
 # Android/iOS, In eclipse finder, object to find eclipse with
 msgid "Object"
-msgstr ""
+msgstr "Objecto"
 
 # Android/iOS, Labels
 msgid "Object Labels"
 msgstr "Nomes de Objetos"
 
-# Android/iOS/Mac
+# Windows
+msgid "Object name:"
+msgstr "Nome do Objecto"
+
+# Android/iOS/Mac/Windows
 msgid "Object not found"
 msgstr "Objeto não encontrado"
 
-# Mac, In Go to
+# Mac, In Go to, Windows, In eclipse finder, object to find eclipse with
 msgid "Object:"
 msgstr "Objeto:"
 
@@ -954,7 +1038,7 @@ msgstr "Objeto:"
 msgid "Objects"
 msgstr "Objetos"
 
-# Android/iOS/Mac, Location labels
+# Android/iOS/Mac/Windows, Location labels
 msgid "Observatories"
 msgstr "Observatórios"
 
@@ -966,15 +1050,19 @@ msgstr "Ocultador"
 msgid "Official Website"
 msgstr "Website Oficial"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "OK"
 msgstr "OK"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Open Clusters"
 msgstr "Aglomerados Abertos"
 
-# Android/iOS/Mac, Request user consent to open a URL
+# Windows, Open folder for customization
+msgid "Open Custom Folder"
+msgstr ""
+
+# Android/iOS/Mac/Windows, Request user consent to open a URL
 msgid "Open URL?"
 msgstr "Abrir URL?"
 
@@ -982,7 +1070,7 @@ msgstr "Abrir URL?"
 msgid "Open Web URL"
 msgstr "Abrir URL Online"
 
-# Mac
+# Mac/Windows
 msgid "OpenGL Info"
 msgstr "Informações do OpenGL"
 
@@ -994,19 +1082,19 @@ msgstr "Abrindo arquivo ou URL externo…"
 msgid "Operation not permitted."
 msgstr "Operação não permitida."
 
-# Mac
-msgid "Orbit Synchronously"
-msgstr "Orbitar Sincronicamente"
-
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Orbits"
 msgstr "Órbitas"
 
-# Mac
+# Windows, View Options
+msgid "Orbits/Labels"
+msgstr ""
+
+# Mac/Windows
 msgid "Organize Bookmarks…"
 msgstr "Organizar Favoritos…"
 
-# Mac, Other location labels; Android/iOS, Other objects to choose from in Eclipse Finder
+# Mac/Windows, Other location labels; Android/iOS, Other objects to choose from in Eclipse Finder
 msgid "Other"
 msgstr "Outro"
 
@@ -1014,7 +1102,7 @@ msgstr "Outro"
 msgid "Others"
 msgstr "Outros"
 
-# Mac, Paste URL from pasteboard
+# Mac/Windows, Paste URL from pasteboard
 msgid "Paste URL"
 msgstr "Colar URL"
 
@@ -1030,7 +1118,7 @@ msgstr "Levantar/Baixar"
 msgid "Planet Rings"
 msgstr "Anéis"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Planets"
 msgstr "Planetas"
 
@@ -1063,11 +1151,11 @@ msgstr ""
 msgid "Please restart Celestia"
 msgstr "Favor reiniciar o Celestia"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Plus"
 msgstr "Sinal de Mais"
 
-# Android/iOS/Mac, Star style
+# Android/iOS/Mac/Windows, Star style
 msgid "Points"
 msgstr "Pontos"
 
@@ -1075,7 +1163,7 @@ msgstr "Pontos"
 msgid "Preferences"
 msgstr "Preferências"
 
-# Mac, Settings
+# iOS/Mac, Settings
 msgid "Preferences…"
 msgstr "Preferências…"
 
@@ -1096,7 +1184,7 @@ msgstr "Sair do Celestia"
 msgid "RA: %dh %dm %.2fs"
 msgstr "AR: %dh %dm %2fs"
 
-# Mac, In Go to, specify the distance based on the object radius
+# Mac/Windows, In Go to, specify the distance based on the object radius
 msgid "radii"
 msgstr "raios"
 
@@ -1104,7 +1192,7 @@ msgstr "raios"
 msgid "Radius"
 msgstr "Raio"
 
-# Mac, Reset time speed to 1x
+# Mac/Windows, Reset time speed to 1x
 msgid "Real Time"
 msgstr "Tempo Real"
 
@@ -1112,7 +1200,7 @@ msgstr "Tempo Real"
 msgid "Receiver"
 msgstr "Receptor"
 
-# Android/iOS/Mac, Reference vectors for an object
+# Android/iOS/Mac/Windows, Reference vectors for an object
 msgid "Reference Vectors"
 msgstr "Vetores de Referência"
 
@@ -1122,16 +1210,20 @@ msgstr ""
 
 # Android/iOS, Button to refresh this list
 msgid "Refresh"
-msgstr ""
+msgstr "Refrescar"
 
-# Android/iOS, Release date for an add-on
+# Android/iOS/Windows, Release date for an add-on
 #, c-format
 msgid "Release date: %s"
 msgstr ""
 
-# Android, Rename a favorite item (currently bookmark)
+# Android/Windows, Rename a favorite item (currently bookmark)
 msgid "Rename"
 msgstr "Renomear"
+
+# Windows, Render menu
+msgid "Render"
+msgstr "Renderização"
 
 # Android/iOS, Information about renderer
 msgid "Render Info"
@@ -1165,23 +1257,23 @@ msgstr "Redefinir para Padrão"
 msgid "Resolution:"
 msgstr "Resolução:"
 
-# Mac, Traveling backward
-msgid "Reverse"
-msgstr "Reverter"
-
 # Android/iOS, Reverse camera direction
 msgid "Reverse Direction"
 msgstr "Reverter Direção"
+
+# Mac/Windows
+msgid "Reverse Time"
+msgstr "Inverter o Tempo"
 
 # Mac, Yaw angle right
 msgid "Right"
 msgstr "Direita"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Right Arrow"
 msgstr "Seta Direita"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Ring Shadows"
 msgstr "Sombras dos Anéis"
 
@@ -1189,19 +1281,19 @@ msgstr "Sombras dos Anéis"
 msgid "Roll"
 msgstr "Girar"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Run Demo"
 msgstr "Rodar Demonstração"
 
-# Android/iOS/Mac, Request user consent to run a script
+# Android/iOS/Mac/Windows, Request user consent to run a script
 msgid "Run script?"
 msgstr "Rodar script?"
 
-# Mac
+# iOS/Mac/Windows
 msgid "Run Script…"
 msgstr "Rodar Script…"
 
-# Android/iOS/Mac, Star style
+# Android/iOS/Mac/Windows, Star style
 msgid "Scaled Discs"
 msgstr "Discos em Escala"
 
@@ -1209,7 +1301,7 @@ msgstr "Discos em Escala"
 msgid "Script Control"
 msgstr "Controle do Script"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Scripts"
 msgstr "Scripts"
 
@@ -1221,7 +1313,7 @@ msgstr ""
 msgid "Search"
 msgstr "Pesquisar"
 
-# Android/iOS/Mac, Select an object
+# Android/iOS/Mac/Windows, Select an object
 msgid "Select"
 msgstr "Selecionar"
 
@@ -1229,23 +1321,39 @@ msgstr "Selecionar"
 msgid "Select Next View"
 msgstr "Selecionar Próxima Visão"
 
+# Windows, Select an object
+msgid "Select Object"
+msgstr "Seleccionar Objecto"
+
+# Windows
+msgid "Select Sol"
+msgstr "Seleccionar Sol"
+
 # Android, Select simulation time
 msgid "Select Time"
 msgstr "Selecionar Hora"
+
+# Android, Select a destination in tour guide
+msgid "Select your destination:"
+msgstr "Escolha o seu destino:"
 
 # Mac, System menu
 msgid "Services"
 msgstr "Serviços"
 
-# Mac, Button to confirm selected simulation time
+# Windows, Set date to eclipse date and view eclipse
+msgid "Set Date and Go to Planet"
+msgstr "Definir Data e Ir para Planeta"
+
+# Mac/Windows, Button to confirm selected simulation time
 msgid "Set Time"
 msgstr "Definir Hora"
 
-# Mac, Select simulation time
+# Mac/Windows, Select simulation time
 msgid "Set Time…"
 msgstr "Definir Hora…"
 
-# Android/iOS, Set simulation time to device
+# Android/iOS/Windows, Set simulation time to device
 msgid "Set to Current Time"
 msgstr "Definir para Hora Atual"
 
@@ -1257,11 +1365,15 @@ msgstr "Configurações"
 msgid "Share"
 msgstr "Compartilhar"
 
+# Windows, Whether to show an object in View Options
+msgid "Show"
+msgstr "Mostrar"
+
 # Mac, System menu item, Show all windows
 msgid "Show All"
 msgstr "Mostrar Tudo"
 
-# Android/iOS/Mac, Reference vector
+# Android/iOS/Mac/Windows, Reference vector
 msgid "Show Body Axes"
 msgstr "Mostrar Eixos do Corpo"
 
@@ -1281,13 +1393,21 @@ msgstr "Mostrar Constelações"
 msgid "Show Destinations"
 msgstr ""
 
-# Android/iOS/Mac, Reference vector
+# Windows, Location Label Settings
+msgid "Show Features"
+msgstr "Mostrar as Feições"
+
+# Android/iOS/Mac/Windows, Reference vector
 msgid "Show Frame Axes"
 msgstr "Mostrar Eixos do Referencial"
 
 # Mac, Show info for an object
 msgid "Show Info"
 msgstr "Mostrar Informações"
+
+# Windows, Location Label Settings
+msgid "Show Label Features"
+msgstr ""
 
 # Mac
 msgid "Show Locations"
@@ -1301,19 +1421,19 @@ msgstr "Mostrar Marcadores"
 msgid "Show Orbits"
 msgstr "Mostrar Órbitas"
 
-# Android/iOS/Mac, Reference vector
+# Android/iOS/Mac/Windows, Reference vector
 msgid "Show Planetographic Grid"
 msgstr "Mostrar Grade Planetográfica"
 
-# Android/iOS/Mac, Reference vector
+# Android/iOS/Mac/Windows, Reference vector
 msgid "Show Sun Direction"
 msgstr "Mostrar Direção do Sol"
 
-# Android/iOS/Mac, Reference vector
+# Android/iOS/Mac/Windows, Reference vector
 msgid "Show Terminator"
 msgstr "Mostrar Terminador"
 
-# Android/iOS/Mac, Reference vector
+# Android/iOS/Mac/Windows, Reference vector
 msgid "Show Velocity Vector"
 msgstr "Mostrar Vetor de Velocidade"
 
@@ -1335,27 +1455,31 @@ msgstr "Mais Devagar"
 msgid "Smooth Lines"
 msgstr "Linhas Suaves"
 
-# Android/iOS/Mac, Tab for solar system in Star Browser
+# Windows, Solar eclipses.
+msgid "Solar"
+msgstr ""
+
+# Android/iOS/Mac/Windows, Tab for solar system in Star Browser
 msgid "Solar System"
 msgstr "Sistema Solar"
 
-# Android/iOS/Mac, Plural
+# Android/iOS/Mac/Windows, Plural
 msgid "Spacecraft"
 msgstr "Naves Espaciais"
 
-# Mac, Split view
+# Mac/Windows, Split view
 msgid "Split Horizontally"
 msgstr "Dividir na Horizontal"
 
-# Mac, Split view
+# Mac/Windows, Split view
 msgid "Split Vertically"
 msgstr "Dividir na Vertical"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Square"
 msgstr "Quadrado"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Star Style"
 msgstr "Estilo das Estrelas"
 
@@ -1363,17 +1487,21 @@ msgstr "Estilo das Estrelas"
 msgid "Star Style:"
 msgstr "Estilo das Estrelas:"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows, Tab for stars in Star Browser
 msgid "Stars"
 msgstr "Estrelas"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Stars with Planets"
 msgstr "Estrelas com Planetas"
 
 # Android/iOS, In eclipse finder, range of time to find eclipse in
 msgid "Start Time"
-msgstr ""
+msgstr "Iníciar em tele cheia"
+
+# Windows, In eclipse finder, range of time to find eclipse in
+msgid "Start time"
+msgstr "Iníciar em tele cheia"
 
 # Mac, Interupt the process of finding eclipse
 msgid "Stop"
@@ -1395,23 +1523,27 @@ msgstr "Alternado para modo de câmera"
 msgid "Switched to object mode"
 msgstr "Alternado para modo de objeto"
 
-# Android/iOS
+# Android/iOS/Mac/Windows
 msgid "Sync Orbit"
 msgstr "Sincronizar Órbita"
+
+# Windows
+msgid "Sync Orbit Selection"
+msgstr "Órbita Geoest. à volta da Selecção"
 
 # Android/iOS
 msgid "Tap the mode button on the sidebar to switch between object mode and camera mode."
 msgstr "Toque o botão de modo na barra lateral para alternar entre os modos de objeto e de câmera."
 
-# Android/iOS/Mac, Location labels
-msgid "Terra"
+# Android/iOS/Mac/Windows, Location labels
+msgid "Terrae (Land masses)"
 msgstr "Terras"
 
-# Android/iOS/Mac, Terse HUD display
+# Android/iOS/Mac/Windows, Terse HUD display
 msgid "Terse"
 msgstr "Concisa"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Texture Resolution"
 msgstr "Resolução de Textura"
 
@@ -1423,7 +1555,7 @@ msgstr "Resolução de Textura:"
 msgid "Third Party Dependencies"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Time"
 msgstr "Tempo"
 
@@ -1451,11 +1583,15 @@ msgstr "Alternar Exibição do Console"
 msgid "Toggle FPS Display"
 msgstr "Alternar Exibição de FPS"
 
-# Mac, Track an object
+# Windows
+msgid "Tour Guide"
+msgstr "Guia de Excursão"
+
+# Mac/Windows, Track an object
 msgid "Track"
 msgstr "Rastrear"
 
-# Mac, Track selected object
+# Mac/Windows, Track selected object
 msgid "Track Selection"
 msgstr "Rastrear Seleção"
 
@@ -1467,7 +1603,7 @@ msgstr "Tradutores"
 msgid "Travel"
 msgstr "Viajar"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Triangle"
 msgstr "Triângulo"
 
@@ -1496,7 +1632,11 @@ msgstr ""
 msgid "Unable to uninstall add-on."
 msgstr ""
 
-# Android/iOS/Mac
+# Windows, Uninstall an add-on
+msgid "Uninstall"
+msgstr ""
+
+# Android/iOS/Mac/Windows
 msgid "Unknown"
 msgstr "Desconhecido"
 
@@ -1504,16 +1644,20 @@ msgstr "Desconhecido"
 msgid "Unknown error"
 msgstr "Erro desconhecido"
 
-# Android/iOS/Mac, Unmark an object
+# Android/iOS/Mac/Windows, Unmark an object
 msgid "Unmark"
 msgstr "Desmarcar"
 
 # Android/iOS, Unmark all objects
 msgid "Unmark All"
-msgstr ""
+msgstr "Desmarcar Todos"
 
 # Android/iOS, String not in correct format
 msgid "Unrecognized time string."
+msgstr ""
+
+# Android
+msgid "Unsupported action."
 msgstr ""
 
 # Mac, Default name for a newly created folder
@@ -1524,7 +1668,7 @@ msgstr "Sem Título"
 msgid "Up"
 msgstr "Cima"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "Up Arrow"
 msgstr "Seta para Cima"
 
@@ -1536,6 +1680,10 @@ msgstr ""
 msgid "Use Add-ons and Scripts"
 msgstr ""
 
+# Windows
+msgid "User Guide"
+msgstr ""
+
 # Android/iOS/Mac
 msgid "UTC"
 msgstr "UTC"
@@ -1544,15 +1692,15 @@ msgstr "UTC"
 msgid "UTC Offset"
 msgstr "Desvio do UTC"
 
-# Android/iOS/Mac, Location labels
-msgid "Vallis"
+# Android/iOS/Mac/Windows, Location labels
+msgid "Valles (Valleys)"
 msgstr "Vales"
 
 # Mac, Menu for velocity of traveling
 msgid "Velocity"
 msgstr "Velocidade"
 
-# Android/iOS/Mac, Verbose HUD display
+# Android/iOS/Mac/Windows, Verbose HUD display
 msgid "Verbose"
 msgstr "Completa"
 
@@ -1560,7 +1708,11 @@ msgstr "Completa"
 msgid "Version"
 msgstr "Versão"
 
-# Mac, Menu for split views
+# Windows, Render options
+msgid "View Options"
+msgstr "Opções de Visualização"
+
+# Mac/Windows, Menu for split views
 msgid "Views"
 msgstr "Visões"
 
@@ -1568,7 +1720,7 @@ msgstr "Visões"
 msgid "Volcanoes"
 msgstr "Vulcões"
 
-# Android/iOS, Web info for an object
+# Android/iOS/Windows, Web info for an object
 msgid "Web Info"
 msgstr "Info Online"
 
@@ -1580,7 +1732,7 @@ msgstr "Bem-vindo ao Celestia"
 msgid "Window"
 msgstr "Janela"
 
-# Android/iOS/Mac, Marker
+# Android/iOS/Mac/Windows, Marker
 msgid "X"
 msgstr "X"
 
