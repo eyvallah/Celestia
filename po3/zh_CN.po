@@ -147,7 +147,7 @@ msgstr "软件作者"
 
 # Windows, Authors for Celestia
 msgid "Authors:"
-msgstr ""
+msgstr "作者："
 
 # Android/iOS/Windows, Authors for an add-on
 #, c-format
@@ -466,7 +466,7 @@ msgstr "下载中"
 
 # Windows, View Options
 msgid "DSO Labels"
-msgstr ""
+msgstr "深空天体标签"
 
 # Android/iOS/Mac/Windows, Tab for deep sky objects in Star Browser
 msgid "DSOs"
@@ -506,7 +506,7 @@ msgstr "结束时间"
 
 # Windows, In eclipse finder, range of time to find eclipse in
 msgid "End time:"
-msgstr ""
+msgstr "结束时间："
 
 # Mac, In eclipse finder
 msgid "Enter name of planet or moon"
@@ -587,7 +587,7 @@ msgstr "填充的正方形"
 
 # Windows, View Options
 msgid "Filter Stars"
-msgstr ""
+msgstr "恒星数量过滤"
 
 # Android/iOS/Mac, Find (eclipses)
 msgid "Find"
@@ -775,7 +775,7 @@ msgstr "文字信息"
 
 # Windows, Install an add-on
 msgid "Install"
-msgstr ""
+msgstr "安装"
 
 # Android/iOS/Windows, Title for the list of installed add-ons
 msgid "Installed"
@@ -896,7 +896,7 @@ msgstr "低"
 
 # Windows, Lunar eclipses.
 msgid "Lunar"
-msgstr ""
+msgstr "月食"
 
 # Android/iOS/Mac/Windows, Location labels
 msgid "Maria (Seas)"
@@ -1060,7 +1060,7 @@ msgstr "疏散星团"
 
 # Windows, Open folder for customization
 msgid "Open Custom Folder"
-msgstr ""
+msgstr "打开自定义文件夹"
 
 # Android/iOS/Mac/Windows, Request user consent to open a URL
 msgid "Open URL?"
@@ -1088,7 +1088,7 @@ msgstr "轨道"
 
 # Windows, View Options
 msgid "Orbits/Labels"
-msgstr ""
+msgstr "轨道/标签"
 
 # Mac/Windows
 msgid "Organize Bookmarks…"
@@ -1367,7 +1367,7 @@ msgstr "分享"
 
 # Windows, Whether to show an object in View Options
 msgid "Show"
-msgstr ""
+msgstr "显示"
 
 # Mac, System menu item, Show all windows
 msgid "Show All"
@@ -1407,7 +1407,7 @@ msgstr "显示简介"
 
 # Windows, Location Label Settings
 msgid "Show Label Features"
-msgstr ""
+msgstr "显示标签"
 
 # Mac
 msgid "Show Locations"
@@ -1457,7 +1457,7 @@ msgstr "线性平滑"
 
 # Windows, Solar eclipses.
 msgid "Solar"
-msgstr ""
+msgstr "日食"
 
 # Android/iOS/Mac/Windows, Tab for solar system in Star Browser
 msgid "Solar System"
@@ -1634,7 +1634,7 @@ msgstr "无法卸载插件。"
 
 # Windows, Uninstall an add-on
 msgid "Uninstall"
-msgstr ""
+msgstr "卸载"
 
 # Android/iOS/Mac/Windows
 msgid "Unknown"
@@ -1658,7 +1658,7 @@ msgstr "无法识别字符串。"
 
 # Android
 msgid "Unsupported action."
-msgstr ""
+msgstr "不支持的操作。"
 
 # Mac, Default name for a newly created folder
 msgid "Untitled"
@@ -1682,7 +1682,7 @@ msgstr "使用插件和脚本"
 
 # Windows
 msgid "User Guide"
-msgstr ""
+msgstr "用户向导"
 
 # Android/iOS/Mac
 msgid "UTC"
