@@ -4,6 +4,7 @@
 # Translators:
 # Georgi Georgiev (Жоро) <g.georgiev.shumen@gmail.com>, 2020, 2021
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: celestia 1.7.0\n"
