@@ -113,17 +113,13 @@ msgstr "画面中央へ進行"
 msgid "Alternate Surfaces"
 msgstr "テククチャ選択"
 
-# Android/iOS/Mac, In setting
+# Android/iOS/Mac/Windows, In setting
 msgid "Ambient Light"
 msgstr "周辺光"
 
 # iOS
 msgid "An external screen is connected, do you want to display Celestia on the external screen?"
 msgstr ""
-
-# Mac, Used in "Find Eclipses cast on: ... Between: ... and:"
-msgid "and:"
-msgstr "終了:"
 
 # Android/iOS/Mac/Windows
 msgid "Anti-aliasing"
@@ -154,7 +150,7 @@ msgstr ""
 msgid "Authors: %s"
 msgstr ""
 
-# Mac, Auto mag for star display
+# Mac/Windows, Auto mag for star display
 msgid "Auto Mag"
 msgstr "自動限界等級調整"
 
@@ -171,10 +167,6 @@ msgstr "前の状態へ"
 msgid "Beginning"
 msgstr "開始時刻"
 
-# Mac, Used in "Find Eclipses cast on: ... Between: ... and:"
-msgid "Between:"
-msgstr "開始:"
-
 # Mac
 msgid "Bookmark Organizer"
 msgstr "ブックマークの編集"
@@ -182,10 +174,6 @@ msgstr "ブックマークの編集"
 # Android/iOS/Mac/Windows, URL bookmarks
 msgid "Bookmarks"
 msgstr "ブックマーク"
-
-# Windows, Constellation boundaries
-msgid "Boundaries"
-msgstr "星座境界線"
 
 # Android/iOS/Mac/Windows
 msgid "Brightest Stars"
@@ -311,7 +299,7 @@ msgstr "星座名"
 msgid "Constellations"
 msgstr "星座"
 
-# Android/iOS/Mac, display constellation labels in latin
+# Android/iOS/Mac/Windows, display constellation labels in latin
 msgid "Constellations in Latin"
 msgstr "星座名ラテン語表示"
 
@@ -404,10 +392,6 @@ msgstr ""
 msgid "Development"
 msgstr ""
 
-# Windows, Constellation diagrams
-msgid "Diagrams"
-msgstr "星座線"
-
 # Android/iOS/Mac/Windows, Marker
 msgid "Diamond"
 msgstr "菱形(◇)"
@@ -420,13 +404,17 @@ msgstr "方向"
 msgid "Disk"
 msgstr "円(●)"
 
-# Android/iOS/Mac, Display settings
+# Android/iOS/Mac/Windows, Display settings
 msgid "Display"
 msgstr "表示"
 
 # Mac
 msgid "Display Light Travel Delay"
 msgstr "光速到達時間を表示"
+
+# Windows, Distance to the object (in Go to)
+msgid "Distance"
+msgstr ""
 
 # Mac, Distance to the object (in Go to)
 msgid "Distance:"
@@ -464,10 +452,6 @@ msgstr ""
 msgid "DOWNLOADING"
 msgstr ""
 
-# Windows, View Options
-msgid "DSO Labels"
-msgstr ""
-
 # Android/iOS/Mac/Windows, Tab for deep sky objects in Star Browser
 msgid "DSOs"
 msgstr "遠距離天体"
@@ -492,7 +476,7 @@ msgstr "食の影"
 msgid "Ecliptic"
 msgstr "黄道座標"
 
-# Windows, View Options
+# Android/iOS/Mac/Windows
 msgid "Ecliptic Line"
 msgstr "黄道面"
 
@@ -504,13 +488,9 @@ msgstr "編集"
 msgid "End Time"
 msgstr "終了日時"
 
-# Windows, In eclipse finder, range of time to find eclipse in
+# Mac/Windows, In eclipse finder, range of time to find eclipse in
 msgid "End time:"
 msgstr ""
-
-# Mac, In eclipse finder
-msgid "Enter name of planet or moon"
-msgstr "惑星名または衛星名を入力"
 
 # Android/iOS/Mac/Windows, Grids
 msgid "Equatorial"
@@ -528,6 +508,10 @@ msgstr "データのロードでエラーがありました。オリジナルの
 # Android/Windows, Exit Celestia
 msgid "Exit"
 msgstr "終了"
+
+# Android/iOS/Mac/Windows
+msgid "Fading Orbits"
+msgstr ""
 
 # iOS
 msgid "Failed to connect to the external screen."
@@ -553,7 +537,7 @@ msgstr "OpenGLの開始に失敗しました。"
 msgid "Failed to start renderer."
 msgstr "レンダラーの開始に失敗しました。"
 
-# Android/iOS/Mac, Control the faintest star that Celestia should display
+# Android/iOS/Mac/Windows, Control the faintest star that Celestia should display
 msgid "Faintest Stars"
 msgstr "見える恒星の調整"
 
@@ -569,7 +553,7 @@ msgstr "致命的なエラー"
 msgid "Favorites"
 msgstr "お気に入り"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Features"
 msgstr "表示設定"
 
@@ -585,17 +569,9 @@ msgstr "ファイル"
 msgid "Filled Square"
 msgstr "正方形(■)"
 
-# Windows, View Options
-msgid "Filter Stars"
-msgstr ""
-
 # Android/iOS/Mac, Find (eclipses)
 msgid "Find"
 msgstr "検索"
-
-# Mac, Used in "Find Eclipses cast on: ... Between: ... and:"
-msgid "Find Eclipses cast on:"
-msgstr "食が起きる天体:"
 
 # Windows, Enter name for new created folder
 msgid "Folder name"
@@ -609,7 +585,7 @@ msgstr "天球同期"
 msgid "Follow Selection"
 msgstr "選択した天体に天球同期で追尾"
 
-# Mac, Format for time
+# Mac/Windows, Format for time
 msgid "Format:"
 msgstr "形式:"
 
@@ -653,7 +629,7 @@ msgstr "渦巻銀河"
 msgid "Galaxy Brightness"
 msgstr "銀河の明るさ"
 
-# Mac, In settings
+# Mac/Windows, In settings
 msgid "General"
 msgstr "一般"
 
@@ -685,7 +661,7 @@ msgstr "移動"
 msgid "Grids"
 msgstr "座標"
 
-# Mac, Grids, labels, orbits, markers
+# Mac/Windows, Grids, labels, orbits, markers
 msgid "Guides"
 msgstr "ガイド"
 
@@ -761,17 +737,13 @@ msgstr "天体情報"
 msgid "Info Display"
 msgstr "天体情報表示"
 
-# Mac, HUD display
+# Mac/Windows, HUD display
 msgid "Info Display:"
 msgstr "天体情報表示:"
 
 # Android/iOS, Information of an object
 msgid "Information"
 msgstr "情報"
-
-# Windows, View Options
-msgid "Information Text"
-msgstr "天体情報表示"
 
 # Windows, Install an add-on
 msgid "Install"
@@ -798,10 +770,6 @@ msgstr "km"
 msgid "L: %d° %d′ %.2f″"
 msgstr "銀緯: %d° %d′ %.2f″"
 
-# Mac, Density of labels to display
-msgid "Label Density"
-msgstr "ラベルの密度"
-
 # Mac/Windows, Labels to display
 msgid "Labels"
 msgstr "名称表示"
@@ -818,11 +786,7 @@ msgstr "着陸地点"
 msgid "Language"
 msgstr ""
 
-# Mac, Constellation in Latin names
-msgid "Latin Names"
-msgstr "ラテン名"
-
-# Mac, Coordinates
+# Mac/Windows, Coordinates
 msgid "Latitude"
 msgstr "緯度"
 
@@ -854,7 +818,7 @@ msgstr "設定をロードしています…"
 msgid "Loading: %s"
 msgstr "ロード中: %s"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Local Time"
 msgstr "ローカル時"
 
@@ -862,7 +826,7 @@ msgstr "ローカル時"
 msgid "Location"
 msgstr "位置"
 
-# Mac, Type of locations to display
+# Mac/Windows, Type of locations to display
 msgid "Location Types"
 msgstr "地名タイプ"
 
@@ -882,7 +846,7 @@ msgstr "2天体同期"
 msgid "Long press on stepper to change orientation."
 msgstr "'+'または'-'を長押しして方向を変更します。"
 
-# Mac, Coordinates
+# Mac/Windows, Coordinates
 msgid "Longitude"
 msgstr "経度"
 
@@ -906,7 +870,7 @@ msgstr "海洋"
 msgid "Mark"
 msgstr "マーカー"
 
-# Mac/Windows
+# Android/iOS/Mac/Windows
 msgid "Markers"
 msgstr "マーカー"
 
@@ -922,13 +886,17 @@ msgstr "中"
 msgid "Minimize"
 msgstr "最小化"
 
-# Android/iOS/Windows, Minimum feature size that we should display a label for
+# Android/iOS/Mac/Windows, Minimum feature size that we should display a label for
 msgid "Minimum Labeled Feature Size"
 msgstr "地名表示詳細度"
 
 # Android/iOS/Mac/Windows
 msgid "Minor Moons"
 msgstr "小衛星"
+
+# Mac/Windows
+msgid "Miscellaneous"
+msgstr ""
 
 # Android/iOS/Mac/Windows, Location labels
 msgid "Montes (Mountains)"
@@ -1023,6 +991,10 @@ msgid "Object Labels"
 msgstr "天体名表示"
 
 # Windows
+msgid "Object Name"
+msgstr ""
+
+# Mac/Windows
 msgid "Object name:"
 msgstr "天体名:"
 
@@ -1086,21 +1058,21 @@ msgstr "操作は許可されていません。"
 msgid "Orbits"
 msgstr "軌道"
 
-# Windows, View Options
-msgid "Orbits/Labels"
-msgstr ""
-
 # Mac/Windows
 msgid "Organize Bookmarks…"
 msgstr "ブックマークを編集…"
 
-# Mac/Windows, Other location labels; Android/iOS, Other objects to choose from in Eclipse Finder
+# Android/iOS/Mac/Windows, Other location labels; Android/iOS, Other objects to choose from in Eclipse Finder
 msgid "Other"
 msgstr "その他"
 
 # Android/iOS, Other settings
 msgid "Others"
 msgstr "その他"
+
+# Android/iOS/Mac/Windows
+msgid "Partial Trajectories"
+msgstr ""
 
 # Mac/Windows, Paste URL from pasteboard
 msgid "Paste URL"
@@ -1114,7 +1086,7 @@ msgstr "停止"
 msgid "Pitch"
 msgstr "視点を上下に振る"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Planet Rings"
 msgstr "惑星の輪"
 
@@ -1229,11 +1201,11 @@ msgstr "レンダリング"
 msgid "Render Info"
 msgstr "レンダリング情報"
 
-# Android/iOS, Render parameters in setting
+# Android/iOS/Mac/Windows, Render parameters in setting
 msgid "Render Parameters"
 msgstr "レンダリング設定"
 
-# Mac, In settings
+# Mac/Windows, In settings
 msgid "Renderer"
 msgstr "レンダリング"
 
@@ -1357,17 +1329,13 @@ msgstr "時刻設定…"
 msgid "Set to Current Time"
 msgstr "現在時刻に設定"
 
-# Android/iOS
+# Android/iOS/Windows
 msgid "Settings"
 msgstr "設定"
 
 # Android/iOS
 msgid "Share"
 msgstr "共有"
-
-# Windows, Whether to show an object in View Options
-msgid "Show"
-msgstr ""
 
 # Mac, System menu item, Show all windows
 msgid "Show All"
@@ -1377,25 +1345,21 @@ msgstr "すべてを表示"
 msgid "Show Body Axes"
 msgstr "自転座標系の軸を表示"
 
-# Android/iOS/Mac, Show constellation boundaries
+# Android/iOS/Mac/Windows, Show constellation boundaries
 msgid "Show Boundaries"
 msgstr "星座境界線を表示"
 
-# Mac
+# Mac/Windows
 msgid "Show Constellation Labels"
 msgstr "星座名を表示"
 
-# Mac
+# Android/iOS/Mac/Windows
 msgid "Show Constellations"
 msgstr "星座線を表示"
 
 # Android/iOS, Show a list of destinations in guide
 msgid "Show Destinations"
 msgstr ""
-
-# Windows, Location Label Settings
-msgid "Show Features"
-msgstr "表示する地名"
 
 # Android/iOS/Mac/Windows, Reference vector
 msgid "Show Frame Axes"
@@ -1405,19 +1369,15 @@ msgstr "公転座標系の軸を表示"
 msgid "Show Info"
 msgstr "情報を表示"
 
-# Windows, Location Label Settings
-msgid "Show Label Features"
-msgstr ""
-
-# Mac
+# Android/iOS/Mac/Windows
 msgid "Show Locations"
 msgstr "地名を表示"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "Show Markers"
 msgstr "マーカーを表示"
 
-# Mac
+# Android/iOS/Mac/Windows
 msgid "Show Orbits"
 msgstr "軌道を表示"
 
@@ -1451,7 +1411,7 @@ msgstr "大きさ: %s"
 msgid "Slower"
 msgstr "遅く"
 
-# Mac, Smooth lines for rendering
+# Mac/Windows, Smooth lines for rendering
 msgid "Smooth Lines"
 msgstr "線を滑らかに"
 
@@ -1483,7 +1443,7 @@ msgstr "正方形(□)"
 msgid "Star Style"
 msgstr "恒星表示方法"
 
-# Mac
+# Mac/Windows
 msgid "Star Style:"
 msgstr "恒星表示方法:"
 
@@ -1499,9 +1459,9 @@ msgstr "惑星が存在する恒星"
 msgid "Start Time"
 msgstr "開始日時"
 
-# Windows, In eclipse finder, range of time to find eclipse in
-msgid "Start time"
-msgstr "開始日時"
+# Mac/Windows, In eclipse finder, range of time to find eclipse in
+msgid "Start time:"
+msgstr ""
 
 # Mac, Interupt the process of finding eclipse
 msgid "Stop"
@@ -1543,11 +1503,11 @@ msgstr "陸地"
 msgid "Terse"
 msgstr "普通"
 
-# Android/iOS/Mac/Windows
+# Android/iOS/Windows
 msgid "Texture Resolution"
 msgstr "テクスチャ解像度"
 
-# Mac
+# Mac/Windows
 msgid "Texture Resolution:"
 msgstr "テクスチャ解像度:"
 
@@ -1567,13 +1527,17 @@ msgstr "時間コントロール"
 msgid "Time Zone"
 msgstr "タイムゾーン"
 
-# Mac
+# Mac/Windows
 msgid "Time Zone:"
 msgstr "タイムゾーン:"
 
 # Mac, Set simulation time based on Julian date
 msgid "Time:"
 msgstr "時刻:"
+
+# Android/iOS/Mac/Windows
+msgid "Tinted Illumination"
+msgstr ""
 
 # Android/iOS, Toggle console log display on overlay
 msgid "Toggle Console Display"
@@ -1684,11 +1648,11 @@ msgstr ""
 msgid "User Guide"
 msgstr ""
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "UTC"
 msgstr "世界時"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 msgid "UTC Offset"
 msgstr "協定世界時との差"
 
@@ -1708,15 +1672,11 @@ msgstr "多い"
 msgid "Version"
 msgstr "バージョン"
 
-# Windows, Render options
-msgid "View Options"
-msgstr "表示オプション"
-
 # Mac/Windows, Menu for split views
 msgid "Views"
 msgstr "ビュー"
 
-# Android/iOS/Mac, Location labels
+# Android/iOS/Mac/Windows, Location labels
 msgid "Volcanoes"
 msgstr "火山"
 
