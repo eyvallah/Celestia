@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: celestia 1.7.0\n"
 "Report-Msgid-Bugs-To: team@celestia.space\n"
 "POT-Creation-Date: 2020-04-15 20:22+0800\n"
-"PO-Revision-Date: 2020-11-24 15:45+0300\n"
+"PO-Revision-Date: 2021-04-09 18:36+0300\n"
 "Last-Translator: Askaniy Anpilogov <aaskaniy@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -119,7 +119,7 @@ msgstr "Подсветка"
 
 # iOS
 msgid "An external screen is connected, do you want to display Celestia on the external screen?"
-msgstr "Внешний экран подключен, вы хотите отобразить Celestia на внешнем экране?"
+msgstr "Внешний дисплей подключён, подтверждаете его использование для Celestia?"
 
 # Android/iOS/Mac/Windows
 msgid "Anti-aliasing"
@@ -143,12 +143,12 @@ msgstr "В разработке принимали участие"
 
 # Windows, Authors for Celestia
 msgid "Authors:"
-msgstr ""
+msgstr "В разработке принимали участие:"
 
 # Android/iOS/Windows, Authors for an add-on
 #, c-format
 msgid "Authors: %s"
-msgstr "Авторы: %s"
+msgstr "Создатели: %s"
 
 # Mac/Windows, Auto mag for star display
 msgid "Auto Mag"
@@ -406,7 +406,7 @@ msgstr "Круг"
 
 # Android/iOS/Mac/Windows, Display settings
 msgid "Display"
-msgstr "Визуализация"
+msgstr "Показывать"
 
 # Mac
 msgid "Display Light Travel Delay"
@@ -414,7 +414,7 @@ msgstr "Отобразить световое запаздывание"
 
 # Windows, Distance to the object (in Go to)
 msgid "Distance"
-msgstr ""
+msgstr "Расстояние"
 
 # Mac, Distance to the object (in Go to)
 msgid "Distance:"
@@ -486,11 +486,11 @@ msgstr "Редактировать"
 
 # Android/iOS, In eclipse finder, range of time to find eclipse in
 msgid "End Time"
-msgstr "Время окончания"
+msgstr "До"
 
 # Mac/Windows, In eclipse finder, range of time to find eclipse in
 msgid "End time:"
-msgstr ""
+msgstr "До:"
 
 # Android/iOS/Mac/Windows, Grids
 msgid "Equatorial"
@@ -511,7 +511,7 @@ msgstr "Выйти"
 
 # Android/iOS/Mac/Windows
 msgid "Fading Orbits"
-msgstr ""
+msgstr "Затухающие орбиты"
 
 # iOS
 msgid "Failed to connect to the external screen."
@@ -555,7 +555,7 @@ msgstr "Избранное"
 
 # Android/iOS/Mac/Windows
 msgid "Features"
-msgstr "Графика"
+msgstr "Отображать"
 
 # Windows
 msgid "Fewer Stars Visible"
@@ -663,7 +663,7 @@ msgstr "Координатная сетка"
 
 # Mac/Windows, Grids, labels, orbits, markers
 msgid "Guides"
-msgstr "Вспомогательные элементы"
+msgstr "Элементы"
 
 # Android/iOS/Mac, Indicate that an object has atmosphere
 msgid "Has atmosphere"
@@ -707,7 +707,7 @@ msgstr "Горизонтальная"
 
 # Android/iOS, Sharing option, image
 msgid "Image"
-msgstr ""
+msgstr "Изображение"
 
 # Android/iOS
 msgid ""
@@ -735,11 +735,11 @@ msgstr "Информация"
 
 # Android/iOS, HUD display
 msgid "Info Display"
-msgstr "Отображение информации"
+msgstr "Информация"
 
 # Mac/Windows, HUD display
 msgid "Info Display:"
-msgstr "Отображение информации:"
+msgstr "Информация:"
 
 # Android/iOS, Information of an object
 msgid "Information"
@@ -747,7 +747,7 @@ msgstr "Об объекте"
 
 # Windows, Install an add-on
 msgid "Install"
-msgstr ""
+msgstr "Скачать"
 
 # Android/iOS/Windows, Title for the list of installed add-ons
 msgid "Installed"
@@ -772,7 +772,7 @@ msgstr "L: %d° %d′ %.2f″"
 
 # Mac/Windows, Labels to display
 msgid "Labels"
-msgstr "Название"
+msgstr "Названия"
 
 # Android/iOS, Go to surface of an object
 msgid "Land"
@@ -860,7 +860,7 @@ msgstr "Низкое"
 
 # Windows, Lunar eclipses.
 msgid "Lunar"
-msgstr ""
+msgstr "Лунные"
 
 # Android/iOS/Mac/Windows, Location labels
 msgid "Maria (Seas)"
@@ -896,7 +896,7 @@ msgstr "Малые спутники"
 
 # Mac/Windows
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Другое"
 
 # Android/iOS/Mac/Windows, Location labels
 msgid "Montes (Mountains)"
@@ -992,7 +992,7 @@ msgstr "Названия объектов"
 
 # Windows
 msgid "Object Name"
-msgstr ""
+msgstr "Название объекта"
 
 # Mac/Windows
 msgid "Object name:"
@@ -1024,7 +1024,7 @@ msgstr "Официальный сайт"
 
 # Android/iOS/Mac/Windows
 msgid "OK"
-msgstr "Ок"
+msgstr "OK"
 
 # Android/iOS/Mac/Windows
 msgid "Open Clusters"
@@ -1032,7 +1032,7 @@ msgstr "Рассеянные скопления"
 
 # Windows, Open folder for customization
 msgid "Open Custom Folder"
-msgstr ""
+msgstr "Открыть кастомизируемую папку"
 
 # Android/iOS/Mac/Windows, Request user consent to open a URL
 msgid "Open URL?"
@@ -1072,7 +1072,7 @@ msgstr "Прочее"
 
 # Android/iOS/Mac/Windows
 msgid "Partial Trajectories"
-msgstr ""
+msgstr "Неполные траектории"
 
 # Mac/Windows, Paste URL from pasteboard
 msgid "Paste URL"
@@ -1141,7 +1141,7 @@ msgstr "Настройки…"
 
 # Android/iOS, Privacy Policy and Service Agreement
 msgid "Privacy Policy and Service Agreement"
-msgstr ""
+msgstr "Политика конфиденциальности и условия пользования"
 
 # Mac, Quit Celestia
 msgid "Quit"
@@ -1170,7 +1170,7 @@ msgstr "Прямой ход времени"
 
 # Mac, In Eclipse Finder
 msgid "Receiver"
-msgstr "Получатель"
+msgstr "Затмеваемый"
 
 # Android/iOS/Mac/Windows, Reference vectors for an object
 msgid "Reference Vectors"
@@ -1207,7 +1207,7 @@ msgstr "Параметры рендеринга"
 
 # Mac/Windows, In settings
 msgid "Renderer"
-msgstr "Видеокарта"
+msgstr "Графика"
 
 # Android, Finished requesting permission needed for Celestia
 msgid "Requesting permission finished"
@@ -1417,7 +1417,7 @@ msgstr "Сгладить линии"
 
 # Windows, Solar eclipses.
 msgid "Solar"
-msgstr ""
+msgstr "Солнечные"
 
 # Android/iOS/Mac/Windows, Tab for solar system in Star Browser
 msgid "Solar System"
@@ -1457,11 +1457,11 @@ msgstr "Звёзды с планетами"
 
 # Android/iOS, In eclipse finder, range of time to find eclipse in
 msgid "Start Time"
-msgstr "Время начала"
+msgstr "От"
 
 # Mac/Windows, In eclipse finder, range of time to find eclipse in
 msgid "Start time:"
-msgstr ""
+msgstr "От:"
 
 # Mac, Interupt the process of finding eclipse
 msgid "Stop"
@@ -1537,7 +1537,7 @@ msgstr "Время:"
 
 # Android/iOS/Mac/Windows
 msgid "Tinted Illumination"
-msgstr ""
+msgstr "Тонированное освещение"
 
 # Android/iOS, Toggle console log display on overlay
 msgid "Toggle Console Display"
@@ -1581,11 +1581,11 @@ msgstr "Тип"
 
 # Mac
 msgid "Unable to capture video"
-msgstr "Нельзя записать видео"
+msgstr "Не удаётся записать видео"
 
 # Android/iOS, Failed to generate an image for sharing
 msgid "Unable to generate image."
-msgstr ""
+msgstr "Не удаётся захватить изображение."
 
 # Android, Custom config/data directory path have to be under a specific path
 #, c-format
@@ -1598,7 +1598,7 @@ msgstr "Не удаётся удалить дополнение."
 
 # Windows, Uninstall an add-on
 msgid "Uninstall"
-msgstr ""
+msgstr "Удалить"
 
 # Android/iOS/Mac/Windows
 msgid "Unknown"
@@ -1622,7 +1622,7 @@ msgstr "Формат времени не распознан."
 
 # Android
 msgid "Unsupported action."
-msgstr ""
+msgstr "Неподдерживаемое действие."
 
 # Mac, Default name for a newly created folder
 msgid "Untitled"
@@ -1638,7 +1638,7 @@ msgstr "Стрелка вверх"
 
 # Android/iOS, Sharing option, URL
 msgid "URL"
-msgstr ""
+msgstr "Ссылка"
 
 # Android/iOS, URL for Use Add-ons and Scripts wiki
 msgid "Use Add-ons and Scripts"
@@ -1646,7 +1646,7 @@ msgstr "Как установить дополнения и сценарии"
 
 # Windows
 msgid "User Guide"
-msgstr ""
+msgstr "Руководство пользователя"
 
 # Android/iOS/Mac/Windows
 msgid "UTC"
@@ -1654,7 +1654,7 @@ msgstr "UTC"
 
 # Android/iOS/Mac/Windows
 msgid "UTC Offset"
-msgstr "Смещение UTC"
+msgstr "Смещение по UTC"
 
 # Android/iOS/Mac/Windows, Location labels
 msgid "Valles (Valleys)"
