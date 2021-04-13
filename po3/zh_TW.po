@@ -168,7 +168,7 @@ msgstr "開始"
 
 # Mac
 msgid "Bookmark Organizer"
-msgstr "Bookmark Organizer"
+msgstr "管理書籤"
 
 # Android/iOS/Mac/Windows, URL bookmarks
 msgid "Bookmarks"
@@ -288,7 +288,7 @@ msgstr "配置會在重啟後生效。"
 
 # Mac, Confirm and relaunch Celestia
 msgid "Confirm and Relaunch"
-msgstr "Confirm and Relaunch"
+msgstr "確認並重啟"
 
 # Android/iOS
 msgid "Constellation Labels"
@@ -304,7 +304,7 @@ msgstr "以拉丁文顯示星座"
 
 # Mac, Longitude and latitude (in Go to)
 msgid "Coordinate:"
-msgstr "Coordinate:"
+msgstr "座標: "
 
 # Mac/Windows, Copy current URL to pasteboard
 msgid "Copy URL"
@@ -320,7 +320,7 @@ msgstr "隕坑(Craters)"
 
 # Android/iOS/Mac/Windows, Marker
 msgid "Crosshair"
-msgstr "Crosshair"
+msgstr "瞄準線"
 
 # Android, Current display language
 msgid "Current Language"
@@ -538,7 +538,7 @@ msgstr "無法啟用渲染器。"
 
 # Android/iOS/Mac/Windows, Control the faintest star that Celestia should display
 msgid "Faintest Stars"
-msgstr "Faintest Stars"
+msgstr "最暗的星"
 
 # Mac, Make time go faster
 msgid "Faster"
@@ -630,7 +630,7 @@ msgstr "星系亮度"
 
 # Mac/Windows, In settings
 msgid "General"
-msgstr "General"
+msgstr "通用"
 
 # Android/iOS
 msgid "Generating sharing link…"
@@ -738,7 +738,7 @@ msgstr "資訊顯示"
 
 # Mac/Windows, HUD display
 msgid "Info Display:"
-msgstr "Info Display:"
+msgstr "資訊顯示 :"
 
 # Android/iOS, Information of an object
 msgid "Information"
@@ -791,7 +791,7 @@ msgstr "語言: "
 
 # Mac/Windows, Coordinates
 msgid "Latitude"
-msgstr "Latitude"
+msgstr "緯度"
 
 # Mac, Yaw angle left
 msgid "Left"
@@ -831,7 +831,7 @@ msgstr "位置"
 
 # Mac/Windows, Type of locations to display
 msgid "Location Types"
-msgstr "Location Types"
+msgstr "位置型別"
 
 # Android/iOS/Mac/Windows, Location labels to display
 msgid "Locations"
@@ -851,7 +851,7 @@ msgstr "長按來控制方向。"
 
 # Mac/Windows, Coordinates
 msgid "Longitude"
-msgstr "Longitude"
+msgstr "經度"
 
 # Mac, Reverse camera direction
 msgid "Look Back"
@@ -871,7 +871,7 @@ msgstr "海(Mare)"
 
 # Android/iOS/Mac/Windows, Mark an object
 msgid "Mark"
-msgstr "Mark"
+msgstr "標記"
 
 # Android/iOS/Mac/Windows
 msgid "Markers"
@@ -919,11 +919,11 @@ msgstr "滑鼠/鍵盤控制"
 
 # Mac, Move closer to the object
 msgid "Move Closer"
-msgstr "Move Closer"
+msgstr "拉近"
 
 # Mac, Move farther away from the object
 msgid "Move Farther"
-msgstr "Move Farther"
+msgstr "推遠"
 
 # Mac, Name of an object
 msgid "Name"
@@ -1043,7 +1043,7 @@ msgstr "開啟URL？"
 
 # Mac, Open web URL for an object
 msgid "Open Web URL"
-msgstr "Open Web URL"
+msgstr "開啟網頁"
 
 # Mac/Windows
 msgid "OpenGL Info"
@@ -1063,7 +1063,7 @@ msgstr "軌道"
 
 # Mac/Windows
 msgid "Organize Bookmarks…"
-msgstr "Organize Bookmarks…"
+msgstr "管理書籤…"
 
 # Android/iOS/Mac/Windows, Other location labels; Android/iOS, Other objects to choose from in Eclipse Finder
 msgid "Other"
@@ -1083,7 +1083,7 @@ msgstr "貼上網址"
 
 # Mac, Pause time
 msgid "Pause"
-msgstr "Pause"
+msgstr "暫停"
 
 # Android/iOS/Mac, Camera control
 msgid "Pitch"
@@ -1173,7 +1173,7 @@ msgstr "實時"
 
 # Mac, In Eclipse Finder
 msgid "Receiver"
-msgstr "Receiver"
+msgstr "觀測地"
 
 # Android/iOS/Mac/Windows, Reference vectors for an object
 msgid "Reference Vectors"
@@ -1210,7 +1210,7 @@ msgstr "渲染引數"
 
 # Mac/Windows, In settings
 msgid "Renderer"
-msgstr "Renderer"
+msgstr "渲染"
 
 # Android, Finished requesting permission needed for Celestia
 msgid "Requesting permission finished"
@@ -1222,7 +1222,7 @@ msgstr "重新執行工序指令"
 
 # Mac, Reset celestia.cfg, data directory location
 msgid "Reset"
-msgstr "Reset"
+msgstr "重置"
 
 # Android/iOS, Reset celestia.cfg, data directory location
 msgid "Reset to Default"
@@ -1382,7 +1382,7 @@ msgstr "標記"
 
 # Android/iOS/Mac/Windows
 msgid "Show Orbits"
-msgstr "Show Orbits"
+msgstr "顯示軌道"
 
 # Android/iOS/Mac/Windows, Reference vector
 msgid "Show Planetographic Grid"
@@ -1448,7 +1448,7 @@ msgstr "恆星樣式"
 
 # Mac/Windows
 msgid "Star Style:"
-msgstr "Star Style:"
+msgstr "恆星樣式 :"
 
 # Android/iOS/Mac/Windows, Tab for stars in Star Browser
 msgid "Stars"
@@ -1512,7 +1512,7 @@ msgstr "紋理解析度"
 
 # Mac/Windows
 msgid "Texture Resolution:"
-msgstr "Texture Resolution:"
+msgstr "紋理解析度: "
 
 # Android/iOS, URL for Third Party Dependencies wiki
 msgid "Third Party Dependencies"
@@ -1613,7 +1613,7 @@ msgstr "未知錯誤"
 
 # Android/iOS/Mac/Windows, Unmark an object
 msgid "Unmark"
-msgstr "Unmark"
+msgstr "取消標記"
 
 # Android/iOS, Unmark all objects
 msgid "Unmark All"
@@ -1705,4 +1705,4 @@ msgstr "Yaw"
 
 # Android/iOS, Zoom in/out on FOV/object  Mac, System menu item, Zoom a window
 msgid "Zoom"
-msgstr "Zoom"
+msgstr "縮放"
