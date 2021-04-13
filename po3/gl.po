@@ -142,7 +142,7 @@ msgstr "Autores"
 
 # Windows, Authors for Celestia
 msgid "Authors:"
-msgstr ""
+msgstr "Autores:"
 
 # Android/iOS/Windows, Authors for an add-on
 #, c-format
@@ -779,6 +779,10 @@ msgstr "Lugares de Aterraxe"
 msgid "Language"
 msgstr ""
 
+# Windows, Display language setting
+msgid "Language:"
+msgstr ""
+
 # Mac/Windows, Coordinates
 msgid "Latitude"
 msgstr ""
@@ -995,7 +999,7 @@ msgstr ""
 
 # Mac, In Go to, Windows, In eclipse finder, object to find eclipse with
 msgid "Object:"
-msgstr ""
+msgstr "Obxecto:"
 
 # Android/iOS
 msgid "Objects"
@@ -1436,7 +1440,7 @@ msgstr "Estilo das Estrelas"
 
 # Mac/Windows
 msgid "Star Style:"
-msgstr ""
+msgstr "Estilo das Estrelas:"
 
 # Android/iOS/Mac/Windows, Tab for stars in Star Browser
 msgid "Stars"
@@ -1500,7 +1504,7 @@ msgstr "Resolución da Textura"
 
 # Mac/Windows
 msgid "Texture Resolution:"
-msgstr ""
+msgstr "Resolución da Textura:"
 
 # Android/iOS, URL for Third Party Dependencies wiki
 msgid "Third Party Dependencies"
@@ -1524,7 +1528,7 @@ msgstr ""
 
 # Mac, Set simulation time based on Julian date
 msgid "Time:"
-msgstr ""
+msgstr "Hora:"
 
 # Android/iOS/Mac/Windows
 msgid "Tinted Illumination"

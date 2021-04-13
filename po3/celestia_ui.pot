@@ -779,6 +779,10 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
+# Windows, Display language setting
+msgid "Language:"
+msgstr ""
+
 # Mac/Windows, Coordinates
 msgid "Latitude"
 msgstr ""

@@ -142,7 +142,7 @@ msgstr "Auteurs"
 
 # Windows, Authors for Celestia
 msgid "Authors:"
-msgstr ""
+msgstr "Auteurs:"
 
 # Android/iOS/Windows, Authors for an add-on
 #, c-format
@@ -777,6 +777,10 @@ msgstr "Sites d'atterrissage"
 
 # Android, Display language setting
 msgid "Language"
+msgstr ""
+
+# Windows, Display language setting
+msgid "Language:"
 msgstr ""
 
 # Mac/Windows, Coordinates
@@ -1502,7 +1506,7 @@ msgstr "Résolution des textures"
 
 # Mac/Windows
 msgid "Texture Resolution:"
-msgstr ""
+msgstr "Résolution des textures:"
 
 # Android/iOS, URL for Third Party Dependencies wiki
 msgid "Third Party Dependencies"

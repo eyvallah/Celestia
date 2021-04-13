@@ -143,7 +143,7 @@ msgstr "Autoren"
 
 # Windows, Authors for Celestia
 msgid "Authors:"
-msgstr ""
+msgstr "Autoren:"
 
 # Android/iOS/Windows, Authors for an add-on
 #, c-format
@@ -784,6 +784,10 @@ msgstr "Landeplätze"
 
 # Android, Display language setting
 msgid "Language"
+msgstr ""
+
+# Windows, Display language setting
+msgid "Language:"
 msgstr ""
 
 # Mac/Windows, Coordinates

@@ -786,6 +786,10 @@ msgstr "Места посадок"
 msgid "Language"
 msgstr "Язык"
 
+# Windows, Display language setting
+msgid "Language:"
+msgstr "Язык:"
+
 # Mac/Windows, Coordinates
 msgid "Latitude"
 msgstr "Широта"

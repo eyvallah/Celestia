@@ -142,7 +142,7 @@ msgstr "저자"
 
 # Windows, Authors for Celestia
 msgid "Authors:"
-msgstr ""
+msgstr "저자: "
 
 # Android/iOS/Windows, Authors for an add-on
 #, c-format
@@ -779,6 +779,10 @@ msgstr "착륙지점"
 msgid "Language"
 msgstr ""
 
+# Windows, Display language setting
+msgid "Language:"
+msgstr ""
+
 # Mac/Windows, Coordinates
 msgid "Latitude"
 msgstr ""
@@ -995,7 +999,7 @@ msgstr "천체"
 
 # Mac, In Go to, Windows, In eclipse finder, object to find eclipse with
 msgid "Object:"
-msgstr ""
+msgstr "천체이름: "
 
 # Android/iOS
 msgid "Objects"
@@ -1436,7 +1440,7 @@ msgstr "항성 모양"
 
 # Mac/Windows
 msgid "Star Style:"
-msgstr ""
+msgstr "항성 모양: "
 
 # Android/iOS/Mac/Windows, Tab for stars in Star Browser
 msgid "Stars"
@@ -1500,7 +1504,7 @@ msgstr "해상도"
 
 # Mac/Windows
 msgid "Texture Resolution:"
-msgstr ""
+msgstr "해상도: "
 
 # Android/iOS, URL for Third Party Dependencies wiki
 msgid "Third Party Dependencies"
@@ -1524,7 +1528,7 @@ msgstr ""
 
 # Mac, Set simulation time based on Julian date
 msgid "Time:"
-msgstr ""
+msgstr "현재 시각: "
 
 # Android/iOS/Mac/Windows
 msgid "Tinted Illumination"

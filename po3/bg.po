@@ -788,6 +788,10 @@ msgstr "Места на приземяване"
 msgid "Language"
 msgstr "Език"
 
+# Windows, Display language setting
+msgid "Language:"
+msgstr "Език:"
+
 # Mac/Windows, Coordinates
 msgid "Latitude"
 msgstr "Географска ширина"

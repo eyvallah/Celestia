@@ -143,12 +143,12 @@ msgstr "软件作者"
 
 # Windows, Authors for Celestia
 msgid "Authors:"
-msgstr "作者："
+msgstr "作者: "
 
 # Android/iOS/Windows, Authors for an add-on
 #, c-format
 msgid "Authors: %s"
-msgstr "作者：%s"
+msgstr "作者: %s"
 
 # Mac/Windows, Auto mag for star display
 msgid "Auto Mag"
@@ -305,7 +305,7 @@ msgstr "拉丁名星座标签"
 
 # Mac, Longitude and latitude (in Go to)
 msgid "Coordinate:"
-msgstr "坐标："
+msgstr "坐标: "
 
 # Mac/Windows, Copy current URL to pasteboard
 msgid "Copy URL"
@@ -490,7 +490,7 @@ msgstr "结束时间"
 
 # Mac/Windows, In eclipse finder, range of time to find eclipse in
 msgid "End time:"
-msgstr "结束时间："
+msgstr "结束时间: "
 
 # Android/iOS/Mac/Windows, Grids
 msgid "Equatorial"
@@ -499,7 +499,7 @@ msgstr "赤道坐标系"
 # Android/iOS/Mac
 #, c-format
 msgid "Equatorial radius: %s"
-msgstr "赤道半径：%s"
+msgstr "赤道半径: %s"
 
 # Android/iOS/Windows
 msgid "Error loading data, fallback to original configuration."
@@ -587,7 +587,7 @@ msgstr "跟随所选天体"
 
 # Mac/Windows, Format for time
 msgid "Format:"
-msgstr "格式："
+msgstr "格式: "
 
 # Mac, Redo an operation
 msgid "Forward"
@@ -759,7 +759,7 @@ msgstr "已安装"
 
 # Mac, Set simulation time based on Julian date
 msgid "Julian Date:"
-msgstr "儒略日："
+msgstr "儒略日: "
 
 # Mac/Windows, Unit
 msgid "km"
@@ -786,6 +786,10 @@ msgstr "着陆点"
 msgid "Language"
 msgstr "语言"
 
+# Windows, Display language setting
+msgid "Language:"
+msgstr "语言: "
+
 # Mac/Windows, Coordinates
 msgid "Latitude"
 msgstr "纬度"
@@ -801,7 +805,7 @@ msgstr "左箭头"
 # Android/iOS/Mac
 #, c-format
 msgid "Length of day: %s"
-msgstr "日长：%s"
+msgstr "日长: %s"
 
 # Android/iOS/Windows, Celestia loading failed
 #, c-format
@@ -816,7 +820,7 @@ msgstr "加载配置…"
 # Android/iOS/Windows, Celestia initialization, loading file
 #, c-format
 msgid "Loading: %s"
-msgstr "加载中：%s"
+msgstr "加载中: %s"
 
 # Android/iOS/Mac/Windows
 msgid "Local Time"
@@ -972,14 +976,14 @@ msgstr "无"
 
 # Android/iOS
 msgid "Note: restarting Celestia is needed to use any new installed add-on."
-msgstr "注意：需要重新启动 Celestia 以使用新插件。"
+msgstr "注意: 需要重新启动 Celestia 以使用新插件。"
 
 # Mac, Hint for specifying time in eclipse finder
 msgid ""
 "Note:\n"
 "Specifying a large time interval may cause long search times and a very large number of results."
 msgstr ""
-"注意：\n"
+"注意: \n"
 "计算较长的时间范围会需要更多的时间，且可能会产生过多的数据结果。"
 
 # Android/iOS, In eclipse finder, object to find eclipse with
@@ -996,7 +1000,7 @@ msgstr "天体名称"
 
 # Mac/Windows
 msgid "Object name:"
-msgstr "天体名称："
+msgstr "天体名称: "
 
 # Android/iOS/Mac/Windows
 msgid "Object not found"
@@ -1004,7 +1008,7 @@ msgstr "找不到对象"
 
 # Mac, In Go to, Windows, In eclipse finder, object to find eclipse with
 msgid "Object:"
-msgstr "目标："
+msgstr "目标: "
 
 # Android/iOS
 msgid "Objects"
@@ -1187,7 +1191,7 @@ msgstr "刷新"
 # Android/iOS/Windows, Release date for an add-on
 #, c-format
 msgid "Release date: %s"
-msgstr "发布日期：%s"
+msgstr "发布日期: %s"
 
 # Android/Windows, Rename a favorite item (currently bookmark)
 msgid "Rename"
@@ -1307,7 +1311,7 @@ msgstr "选择时间"
 
 # Android, Select a destination in tour guide
 msgid "Select your destination:"
-msgstr "选择目标："
+msgstr "选择目标: "
 
 # Mac, System menu
 msgid "Services"
@@ -1400,7 +1404,7 @@ msgstr "显示速度向量"
 # Android/iOS/Mac
 #, c-format
 msgid "Sidereal rotation period: %s"
-msgstr "自转周期：%s"
+msgstr "自转周期: %s"
 
 # Android/iOS/Mac, Size of an object
 #, c-format
@@ -1461,7 +1465,7 @@ msgstr "开始时间"
 
 # Mac/Windows, In eclipse finder, range of time to find eclipse in
 msgid "Start time:"
-msgstr "开始时间："
+msgstr "开始时间: "
 
 # Mac, Interupt the process of finding eclipse
 msgid "Stop"
@@ -1509,7 +1513,7 @@ msgstr "纹理分辨率"
 
 # Mac/Windows
 msgid "Texture Resolution:"
-msgstr "纹理分辨率："
+msgstr "纹理分辨率: "
 
 # Android/iOS, URL for Third Party Dependencies wiki
 msgid "Third Party Dependencies"
@@ -1529,11 +1533,11 @@ msgstr "时区"
 
 # Mac/Windows
 msgid "Time Zone:"
-msgstr "时区："
+msgstr "时区: "
 
 # Mac, Set simulation time based on Julian date
 msgid "Time:"
-msgstr "时间："
+msgstr "时间: "
 
 # Android/iOS/Mac/Windows
 msgid "Tinted Illumination"
