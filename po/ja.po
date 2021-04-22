@@ -815,10 +815,6 @@ msgstr "ハバナ"
 msgid "Helsinki"
 msgstr "ヘルシンキ"
 
-#: ??
-msgid "Hong Kong"
-msgstr "香港"
-
 #: ../data/data.cpp:197
 msgid "Honiara"
 msgstr "ホニアラ"
@@ -1062,10 +1058,6 @@ msgstr "ヌーメア"
 #: ../data/data.cpp:258
 msgid "Nuku'alofa"
 msgstr "ヌクアロファ"
-
-#: ??
-msgid "Nur-Sultan"
-msgstr "ヌルスルタン"
 
 #: ../data/data.cpp:259
 msgid "Nuuk"

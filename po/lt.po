@@ -809,10 +809,6 @@ msgstr "Havana"
 msgid "Helsinki"
 msgstr "Helsinkis"
 
-#: ??
-msgid "Hong Kong"
-msgstr ""
-
 #: ../data/data.cpp:197
 msgid "Honiara"
 msgstr "Honiara"
@@ -1056,10 +1052,6 @@ msgstr "Numėja"
 #: ../data/data.cpp:258
 msgid "Nuku'alofa"
 msgstr "Nukalofa"
-
-#: ??
-msgid "Nur-Sultan"
-msgstr ""
 
 #: ../data/data.cpp:259
 msgid "Nuuk"

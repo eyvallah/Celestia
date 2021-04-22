@@ -807,10 +807,6 @@ msgstr ""
 msgid "Helsinki"
 msgstr ""
 
-#: ??
-msgid "Hong Kong"
-msgstr ""
-
 #: ../data/data.cpp:197
 msgid "Honiara"
 msgstr ""
@@ -1053,10 +1049,6 @@ msgstr ""
 
 #: ../data/data.cpp:258
 msgid "Nuku'alofa"
-msgstr ""
-
-#: ??
-msgid "Nur-Sultan"
 msgstr ""
 
 #: ../data/data.cpp:259
