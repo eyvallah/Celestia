@@ -185,7 +185,7 @@ msgstr "Вывести всё на передний план"
 
 # Android/iOS/Mac/Windows, Object browser
 msgid "Browser"
-msgstr "Обозреватель"
+msgstr "Каталог"
 
 # Mac
 msgid "c (lightspeed)"
@@ -221,7 +221,7 @@ msgstr "Celestia"
 
 # Mac, Object browser
 msgid "Celestia Browser"
-msgstr "Обозреватель"
+msgstr "Каталог"
 
 # Mac
 msgid "Celestia Help"
@@ -675,7 +675,7 @@ msgstr "Есть кольца"
 
 # Android/iOS/Mac/Windows
 msgid "Help"
-msgstr "Помощь"
+msgstr "Справка"
 
 # Mac, System menu item, hide Celestia window
 msgid "Hide Celestia"
@@ -1299,7 +1299,7 @@ msgstr "Выбрать следующий экран"
 
 # Windows, Select an object
 msgid "Select Object"
-msgstr "Выбор объекта"
+msgstr "Найти объект"
 
 # Windows
 msgid "Select Sol"
@@ -1489,7 +1489,7 @@ msgstr "Включён режим работы с объектом"
 
 # Android/iOS/Mac/Windows
 msgid "Sync Orbit"
-msgstr "Синхронное вращение"
+msgstr "Синх. вращение"
 
 # Windows
 msgid "Sync Orbit Selection"
