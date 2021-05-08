@@ -132,7 +132,7 @@ msgstr ""
 msgid "Atmospheres"
 msgstr ""
 
-# Mac/Windows, Astronomical unit
+# Android/iOS/Mac/Windows, Astronomical unit
 msgid "au"
 msgstr ""
 
@@ -411,7 +411,7 @@ msgstr ""
 msgid "Display Light Travel Delay"
 msgstr ""
 
-# Windows, Distance to the object (in Go to)
+# Android/iOS/Windows, Distance to the object (in Go to)
 msgid "Distance"
 msgstr ""
 
@@ -644,7 +644,7 @@ msgstr ""
 msgid "Go"
 msgstr ""
 
-# Mac/Windows
+# Android/iOS/Mac/Windows
 msgid "Go to Object"
 msgstr ""
 
@@ -754,7 +754,7 @@ msgstr ""
 msgid "Julian Date:"
 msgstr ""
 
-# Mac/Windows, Unit
+# Android/iOS/Mac/Windows, Unit
 msgid "km"
 msgstr ""
 
@@ -783,7 +783,7 @@ msgstr ""
 msgid "Language:"
 msgstr ""
 
-# Mac/Windows, Coordinates
+# Android/iOS/Mac/Windows, Coordinates
 msgid "Latitude"
 msgstr ""
 
@@ -843,7 +843,7 @@ msgstr ""
 msgid "Long press on stepper to change orientation."
 msgstr ""
 
-# Mac/Windows, Coordinates
+# Android/iOS/Mac/Windows, Coordinates
 msgid "Longitude"
 msgstr ""
 
@@ -977,7 +977,7 @@ msgid ""
 "Specifying a large time interval may cause long search times and a very large number of results."
 msgstr ""
 
-# Android/iOS, In eclipse finder, object to find eclipse with
+# Android/iOS, In eclipse finder, object to find eclipse with, or in go to
 msgid "Object"
 msgstr ""
 
@@ -1105,7 +1105,7 @@ msgstr ""
 msgid "Please enter a new name."
 msgstr ""
 
-# Mac, In Go to; Android/iOS, Enter the name of an object in Eclipse Finder
+# Android/iOS/Mac, In Go to; Android/iOS, Enter the name of an object in Eclipse Finder
 msgid "Please enter an object name."
 msgstr ""
 
@@ -1151,7 +1151,7 @@ msgstr ""
 msgid "RA: %dh %dm %.2fs"
 msgstr ""
 
-# Mac/Windows, In Go to, specify the distance based on the object radius
+# Android/iOS/Mac/Windows, In Go to, specify the distance based on the object radius
 msgid "radii"
 msgstr ""
 
