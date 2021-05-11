@@ -62,10 +62,6 @@
 
 #include "imagecapture.h"
 
-// TODO: proper gettext
-#define C_(a, b) (b)
-
-
 using namespace Eigen;
 using namespace std;
 using namespace astro::literals;
@@ -104,7 +100,7 @@ static bool is_valid_directory(const fs::path& dir)
     std::error_code ec;
     if (!fs::is_directory(dir, ec))
     {
-        fmt::fprintf(cerr, "Path %s doesn't exist or isn't a directory", dir);
+        fmt::fprintf(cerr, _("Path %s doesn't exist or isn't a directory"), dir);
         return false;
     }
 
@@ -1189,7 +1185,7 @@ void CelestiaCore::charEntered(const char *c_p, int modifiers)
                 switch (newPath)
                 {
                 case GLContext::GLPath_GLSL:
-                    flash(_("Render path: OpenGL 2.0"));
+                    flash(_("Render path: OpenGL 2.1"));
                     break;
                 }
                 context->setRenderPath(newPath);
@@ -3205,7 +3201,7 @@ void CelestiaCore::renderOverlay()
         if (!sim->getTrackedObject().empty())
         {
             fmt::fprintf(*overlay, _("Track %s\n"),
-                         C_("Track", getSelectionName(sim->getTrackedObject(), *u)));
+                         CX_("Track", getSelectionName(sim->getTrackedObject(), *u)));
         }
         else
         {
@@ -3221,21 +3217,21 @@ void CelestiaCore::renderOverlay()
             {
             case ObserverFrame::Ecliptical:
                 fmt::fprintf(*overlay, _("Follow %s\n"),
-                             C_("Follow", getSelectionName(refObject, *u)));
+                             CX_("Follow", getSelectionName(refObject, *u)));
                 break;
             case ObserverFrame::BodyFixed:
                 fmt::fprintf(*overlay, _("Sync Orbit %s\n"),
-                             C_("Sync", getSelectionName(refObject, *u)));
+                             CX_("Sync", getSelectionName(refObject, *u)));
                 break;
             case ObserverFrame::PhaseLock:
                 fmt::fprintf(*overlay, _("Lock %s -> %s\n"),
-                             C_("Lock", getSelectionName(refObject, *u)),
-                             C_("LockTo", getSelectionName(sim->getFrame()->getTargetObject(), *u)));
+                             CX_("Lock", getSelectionName(refObject, *u)),
+                             CX_("LockTo", getSelectionName(sim->getFrame()->getTargetObject(), *u)));
                 break;
 
             case ObserverFrame::Chase:
                 fmt::fprintf(*overlay, _("Chase %s\n"),
-                             C_("Chase", getSelectionName(refObject, *u)));
+                             CX_("Chase", getSelectionName(refObject, *u)));
                 break;
 
             default:
@@ -3613,7 +3609,7 @@ class SolarSystemLoader
 
         if (find(begin(skip), end(skip), filepath) != end(skip))
         {
-            fmt::fprintf(clog, _("Skipping skiped solar system catalog: %s\n"), filepath.string());
+            fmt::fprintf(clog, _("Skipping solar system catalog: %s\n"), filepath.string());
             return;
         }
         fmt::fprintf(clog, _("Loading solar system catalog: %s\n"), filepath.string());
@@ -3659,7 +3655,7 @@ template <class OBJDB> class CatalogLoader
 
         if (find(begin(skip), end(skip), filepath) != end(skip))
         {
-            fmt::fprintf(clog, _("Skipping skiped %s catalog: %s\n"), typeDesc, filepath.string());
+            fmt::fprintf(clog, _("Skipping %s catalog: %s\n"), typeDesc, filepath.string());
             return;
         }
         fmt::fprintf(clog, _("Loading %s catalog: %s\n"), typeDesc, filepath.string());
@@ -3800,6 +3796,7 @@ bool CelestiaCore::initSimulation(const fs::path& configFileName,
                 if (!fs::is_directory(fn.path(), ec))
                     entries.push_back(fn.path());
             }
+            std::sort(begin(entries), end(entries));
             for (const auto& fn : entries)
                 loader.process(fn);
         }
