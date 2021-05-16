@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: celestia 1.7.0\n"
 "Report-Msgid-Bugs-To: team@celestia.space\n"
 "POT-Creation-Date: 2020-04-15 20:22+0800\n"
-"PO-Revision-Date: 2021-04-05 13:16+0300\n"
+"PO-Revision-Date: 2021-05-16 15:44+0300\n"
 "Last-Translator: Georgi Georgiev (Жоро) <g.georgiev.shumen@gmail.com>\n"
 "Language-Team: Bulgarian <g.georgiev.shumen@gmail.com>\n"
 "Language: bg\n"
@@ -77,7 +77,7 @@ msgstr "За Celestia"
 
 # Mac, Absolute magnitude
 msgid "Abs. mag"
-msgstr "Абс. зв. величина"
+msgstr "Абс. величина"
 
 # Android, Add a new item (bookmark)
 msgid "Add"
@@ -121,7 +121,7 @@ msgstr "Фонова светлина"
 
 # iOS
 msgid "An external screen is connected, do you want to display Celestia on the external screen?"
-msgstr "Свързан е външен екран, искате ли Celestia да се покаже на външния екран?"
+msgstr "Свързан е външен екран, искате ли Celestia да го използва?"
 
 # Android/iOS/Mac/Windows
 msgid "Anti-aliasing"
@@ -154,7 +154,7 @@ msgstr "Автори: %s"
 
 # Mac/Windows, Auto mag for star display
 msgid "Auto Mag"
-msgstr "Авт. зв. величина"
+msgstr "Авт. величина"
 
 # Android/iOS/Mac, Galactic coordinates
 #, c-format
@@ -360,11 +360,11 @@ msgstr "Отстраняване на грешки"
 # Android/iOS/Mac, Equatorial coordinate
 #, c-format
 msgid "DEC: %d° %d′ %.2f″"
-msgstr "DEC: %d° %d′ %.2f″"
+msgstr "δ: %d° %d′ %.2f″"
 
 # Android/iOS/Mac
 msgid "Deep Sky Objects"
-msgstr "Обекти от дълбокия космос"
+msgstr "Обекти от дълбокото небе"
 
 # Androd/iOS/Mac/Windows
 msgid "Default"
@@ -456,7 +456,7 @@ msgstr "ИЗТЕГЛЯНЕ"
 
 # Android/iOS/Mac/Windows, Tab for deep sky objects in Star Browser
 msgid "DSOs"
-msgstr "ОДК"
+msgstr "ОДН"
 
 # Mac, Duration for an eclipse
 msgid "Duration"
@@ -480,11 +480,11 @@ msgstr "Еклиптична"
 
 # Android/iOS/Mac/Windows
 msgid "Ecliptic Line"
-msgstr ""
+msgstr "Еклиптична линия"
 
 # iOS, Enter edit mode for favorite items
 msgid "Edit"
-msgstr "Редактиране"
+msgstr "Редактирай"
 
 # Android/iOS, In eclipse finder, range of time to find eclipse in
 msgid "End Time"
@@ -513,7 +513,7 @@ msgstr "Изход"
 
 # Android/iOS/Mac/Windows
 msgid "Fading Orbits"
-msgstr ""
+msgstr "Избледняване на орбитите"
 
 # iOS
 msgid "Failed to connect to the external screen."
@@ -537,7 +537,7 @@ msgstr "Неуспешно стартиране на OpenGL."
 
 # Mac
 msgid "Failed to start renderer."
-msgstr "Неуспешно стартиране на рендъра."
+msgstr "Неуспешно стартиране на възпроизвеждането."
 
 # Android/iOS/Mac/Windows, Control the faintest star that Celestia should display
 msgid "Faintest Stars"
@@ -902,7 +902,7 @@ msgstr "Астероидни спътници"
 
 # Mac/Windows
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Разни"
 
 # Android/iOS/Mac/Windows, Location labels
 msgid "Montes (Mountains)"
@@ -962,11 +962,11 @@ msgstr "Няма данни"
 
 # Mac, In Go to
 msgid "No object name entered"
-msgstr "Не е въведено наименование на обекта"
+msgstr "Наименованието на обекта не е въведено"
 
 # Android/iOS/Mac, No overview for an object
 msgid "No overview available."
-msgstr "Не е наличен общ преглед."
+msgstr "Общият преглед не е наличен."
 
 # iOS, No response received for a request
 msgid "No response"
@@ -1078,7 +1078,7 @@ msgstr "Други"
 
 # Android/iOS/Mac/Windows
 msgid "Partial Trajectories"
-msgstr ""
+msgstr "Частични траектории"
 
 # Mac/Windows, Paste URL from pasteboard
 msgid "Paste URL"
@@ -1114,11 +1114,11 @@ msgstr "Моля, въведете описание на съдържаниет�
 
 # iOS, Message for renaming a favorite item (currently bookmark)
 msgid "Please enter a new name."
-msgstr "Моля, въведете ново наименование."
+msgstr "Моля, въведете новото наименование."
 
 # Mac, In Go to; Android/iOS, Enter the name of an object in Eclipse Finder
 msgid "Please enter an object name."
-msgstr "Моля, въведете наименование на обекта."
+msgstr "Моля, въведете наименованието на обекта."
 
 # Android/iOS
 #, c-format
@@ -1160,7 +1160,7 @@ msgstr "Изход от Celestia"
 # Android/iOS/Mac, Equatorial coordinate
 #, c-format
 msgid "RA: %dh %dm %.2fs"
-msgstr "RA: %dh %dm %.2fs"
+msgstr "α: %dh %dm %.2fs"
 
 # Mac/Windows, In Go to, specify the distance based on the object radius
 msgid "radii"
@@ -1184,7 +1184,7 @@ msgstr "Референтни вектори"
 
 # Android/iOS
 msgid "Reference vectors are only visible for the current selected solar system object."
-msgstr "Референтните вектори са видими само за текущия обект от слънчевата система."
+msgstr "Референтните вектори са видими само за текущия обект от Слънчевата система."
 
 # Android/iOS, Button to refresh this list
 msgid "Refresh"
@@ -1201,19 +1201,19 @@ msgstr "Преименувай"
 
 # Windows, Render menu
 msgid "Render"
-msgstr "Рендър"
+msgstr "Възпроизвеждане"
 
 # Android/iOS, Information about renderer
 msgid "Render Info"
-msgstr "Информация за рендъра"
+msgstr "Информация за възпроизвеждането"
 
 # Android/iOS/Mac/Windows, Render parameters in setting
 msgid "Render Parameters"
-msgstr "Параметри на рендъра"
+msgstr "Параметри на възпроизвеждането"
 
 # Mac/Windows, In settings
 msgid "Renderer"
-msgstr "Рендър"
+msgstr "Възпроизвеждане"
 
 # Android, Finished requesting permission needed for Celestia
 msgid "Requesting permission finished"
@@ -1543,7 +1543,7 @@ msgstr "Време:"
 
 # Android/iOS/Mac/Windows
 msgid "Tinted Illumination"
-msgstr ""
+msgstr "Тонирано осветление"
 
 # Android/iOS, Toggle console log display on overlay
 msgid "Toggle Console Display"
@@ -1600,7 +1600,7 @@ msgstr "Пътят не е разпознат, моля, изберете път
 
 # Android/iOS
 msgid "Unable to uninstall add-on."
-msgstr "Добавката не може да се деинсталира."
+msgstr "Добавката не може да се премахне."
 
 # Windows, Uninstall an add-on
 msgid "Uninstall"
@@ -1624,7 +1624,7 @@ msgstr "Размаркирай всички"
 
 # Android/iOS, String not in correct format
 msgid "Unrecognized time string."
-msgstr "Неизвестен времеви формат."
+msgstr "Неизвестен формат на времето."
 
 # Android
 msgid "Unsupported action."
