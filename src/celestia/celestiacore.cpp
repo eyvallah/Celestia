@@ -328,21 +328,21 @@ void CelestiaCore::cancelScript()
 }
 
 
-void CelestiaCore::runScript(const fs::path& filename)
+void CelestiaCore::runScript(const fs::path& filename, bool i18n)
 {
     cancelScript();
-    auto localeFilename = LocaleFilename(filename);
+    auto maybeLocaleFilename = i18n ? LocaleFilename(filename) : filename;
 
-    if (m_legacyPlugin->isOurFile(localeFilename))
+    if (m_legacyPlugin->isOurFile(maybeLocaleFilename))
     {
-        m_script = m_legacyPlugin->loadScript(localeFilename);
+        m_script = m_legacyPlugin->loadScript(maybeLocaleFilename);
         if (m_script != nullptr)
             scriptState = sim->getPauseState() ? ScriptPaused : ScriptRunning;
     }
 #ifdef CELX
-    else if (m_luaPlugin->isOurFile(localeFilename))
+    else if (m_luaPlugin->isOurFile(maybeLocaleFilename))
     {
-        m_script = m_luaPlugin->loadScript(localeFilename);
+        m_script = m_luaPlugin->loadScript(maybeLocaleFilename);
         if (m_script != nullptr)
             scriptState = sim->getPauseState() ? ScriptPaused : ScriptRunning;
     }
@@ -3790,11 +3790,14 @@ bool CelestiaCore::initSimulation(const fs::path& configFileName,
                 continue;
 
             entries.clear();
-            for (const auto& fn : fs::recursive_directory_iterator(dir))
+            std::error_code ec;
+            auto iter = fs::recursive_directory_iterator(dir, ec);
+            for (; iter != end(iter); iter.increment(ec))
             {
-                std::error_code ec;
-                if (!fs::is_directory(fn.path(), ec))
-                    entries.push_back(fn.path());
+                if (ec)
+                    continue;
+                if (!fs::is_directory(iter->path(), ec))
+                    entries.push_back(iter->path());
             }
             std::sort(begin(entries), end(entries));
             for (const auto& fn : entries)
@@ -3838,11 +3841,14 @@ bool CelestiaCore::initSimulation(const fs::path& configFileName,
                 continue;
 
             entries.clear();
-            for (const auto& fn : fs::recursive_directory_iterator(dir))
+            std::error_code ec;
+            auto iter = fs::recursive_directory_iterator(dir, ec);
+            for (; iter != end(iter); iter.increment(ec))
             {
-                std::error_code ec;
-                if (!fs::is_directory(fn.path(), ec))
-                    entries.push_back(fn.path());
+                if (ec)
+                    continue;
+                if (!fs::is_directory(iter->path(), ec))
+                    entries.push_back(iter->path());
             }
             sort(begin(entries), end(entries));
             for(const auto& fn : entries)
@@ -4147,11 +4153,14 @@ bool CelestiaCore::readStars(const CelestiaConfig& cfg,
                 continue;
 
             entries.clear();
-            for (const auto& fn : fs::recursive_directory_iterator(dir))
+            std::error_code ec;
+            auto iter = fs::recursive_directory_iterator(dir, ec);
+            for (; iter != end(iter); iter.increment(ec))
             {
-                std::error_code ec;
-                if (!fs::is_directory(fn.path(), ec))
-                    entries.push_back(fn.path());
+                if (ec)
+                    continue;
+                if (!fs::is_directory(iter->path(), ec))
+                    entries.push_back(iter->path());
             }
             std::sort(begin(entries), end(entries));
             for (const auto& fn : entries)
