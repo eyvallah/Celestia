@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: celestia 1.7.0\n"
 "Report-Msgid-Bugs-To: team@celestia.space\n"
 "POT-Creation-Date: 2020-04-15 20:22+0800\n"
-"PO-Revision-Date: 2021-04-09 18:36+0300\n"
+"PO-Revision-Date: 2021-05-17 22:45+0300\n"
 "Last-Translator: Askaniy Anpilogov <aaskaniy@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: \n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 2.4.3\n"
 
 # Android/iOS/Mac
 #, c-format
@@ -135,7 +135,7 @@ msgstr "Атмосферы"
 
 # Mac/Windows, Astronomical unit
 msgid "au"
-msgstr "а.е."
+msgstr "в а.е."
 
 # Android/iOS, Authors for Celestia
 msgid "Authors"
@@ -209,7 +209,7 @@ msgstr "Не удаётся добавить объект"
 
 # Windows, Take a screenshot in Celestia
 msgid "Capture Image"
-msgstr "Сохранить изображение"
+msgstr "Снимок экрана"
 
 # Android/iOS/Windows, Add-on categories
 msgid "Categories"
@@ -386,7 +386,7 @@ msgstr "Описание"
 
 # Android/iOS, A list of destinations in guide
 msgid "Destinations"
-msgstr "Направления"
+msgstr "Путеводитель"
 
 # Android/iOS, URL for Development wiki
 msgid "Development"
@@ -478,7 +478,7 @@ msgstr "Эклиптическая"
 
 # Android/iOS/Mac/Windows
 msgid "Ecliptic Line"
-msgstr "Линия эклиптики"
+msgstr "Эклиптика"
 
 # iOS, Enter edit mode for favorite items
 msgid "Edit"
@@ -763,7 +763,7 @@ msgstr "Юлианская дата:"
 
 # Mac/Windows, Unit
 msgid "km"
-msgstr "км"
+msgstr "в км"
 
 # Android/iOS/Mac, Galactic coordinates
 #, c-format
@@ -960,7 +960,7 @@ msgstr "Нет данных"
 
 # Mac, In Go to
 msgid "No object name entered"
-msgstr "Нет объекта с указанным именем"
+msgstr "Нет объекта с указанным названием"
 
 # Android/iOS/Mac, No overview for an object
 msgid "No overview available."
@@ -1162,7 +1162,7 @@ msgstr "Прямое восхождение: %dh %dm %.2fs"
 
 # Mac/Windows, In Go to, specify the distance based on the object radius
 msgid "radii"
-msgstr "рад."
+msgstr "в радиусах"
 
 # Mac, Radius of an object
 msgid "Radius"
@@ -1283,7 +1283,7 @@ msgstr "Сценарии"
 
 # Android/iOS, URL for Scripts and URLs wiki
 msgid "Scripts and URLs"
-msgstr "Как использовать сценарии и ссылки"
+msgstr "Сценарии и ссылки"
 
 # Android/iOS
 msgid "Search"
@@ -1363,7 +1363,7 @@ msgstr "Показывать созвездия"
 
 # Android/iOS, Show a list of destinations in guide
 msgid "Show Destinations"
-msgstr "Показывать направления"
+msgstr "Открыть путеводитель"
 
 # Android/iOS/Mac/Windows, Reference vector
 msgid "Show Frame Axes"
@@ -1449,7 +1449,7 @@ msgstr "Отрисовка звёзд"
 
 # Mac/Windows
 msgid "Star Style:"
-msgstr "Отрисовка звёзд:"
+msgstr "Звёзды как:"
 
 # Android/iOS/Mac/Windows, Tab for stars in Star Browser
 msgid "Stars"
@@ -1646,7 +1646,7 @@ msgstr "Ссылка"
 
 # Android/iOS, URL for Use Add-ons and Scripts wiki
 msgid "Use Add-ons and Scripts"
-msgstr "Как установить дополнения и сценарии"
+msgstr "Как использовать дополнения"
 
 # Windows
 msgid "User Guide"
