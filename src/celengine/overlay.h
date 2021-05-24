@@ -18,8 +18,12 @@
 class Color;
 class Overlay;
 class Renderer;
-class Rect;
 class TextureFont;
+
+namespace celestia
+{
+class Rect;
+}
 
 // Custom streambuf class to support C++ operator style output.  The
 // output is completely unbuffered so that it can coexist with printf
@@ -61,7 +65,7 @@ class Overlay : public std::ostream
     void end();
 
     void setWindowSize(int, int);
-    void setFont(TextureFont*);
+    void setFont(const std::shared_ptr<TextureFont>&);
 
     void setColor(float r, float g, float b, float a);
     void setColor(const Color& c);
@@ -75,7 +79,7 @@ class Overlay : public std::ostream
         return renderer;
     };
 
-    void drawRectangle(const Rect&);
+    void drawRectangle(const celestia::Rect&);
 
     void beginText();
     void endText();
@@ -86,7 +90,7 @@ class Overlay : public std::ostream
  private:
     int windowWidth{ 1 };
     int windowHeight{ 1 };
-    TextureFont* font{ nullptr };
+    std::shared_ptr<TextureFont> font{ nullptr };
     bool useTexture{ false };
     bool fontChanged{ false };
     int textBlock{ 0 };

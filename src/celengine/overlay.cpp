@@ -55,7 +55,7 @@ void Overlay::setWindowSize(int w, int h)
     windowHeight = h;
 }
 
-void Overlay::setFont(TextureFont* f)
+void Overlay::setFont(const std::shared_ptr<TextureFont>& f)
 {
     if (f != font)
     {
@@ -166,7 +166,7 @@ void Overlay::print(const char* s)
     }
 }
 
-void Overlay::drawRectangle(const Rect& r)
+void Overlay::drawRectangle(const celestia::Rect& r)
 {
     if (useTexture && r.tex == nullptr)
         useTexture = false;

@@ -955,7 +955,7 @@ void CelestiaCore::charEntered(const char *c_p, int modifiers)
                     typedText = string(typedText, 0, typedText.size() - 1);
                     if (typedText.size() > 0)
                     {
-                        typedTextCompletion = sim->getObjectCompletion(typedText, (renderer->getLabelMode() & Renderer::LocationLabels) != 0);
+                        typedTextCompletion = sim->getObjectCompletion(typedText, true, (renderer->getLabelMode() & Renderer::LocationLabels) != 0);
                     } else {
                         typedTextCompletion.clear();
                     }
@@ -1120,7 +1120,7 @@ void CelestiaCore::charEntered(const char *c_p, int modifiers)
             }
             else
             {
-                MarkerRepresentation markerRep(MarkerRepresentation::Diamond);
+                celestia::MarkerRepresentation markerRep(celestia::MarkerRepresentation::Diamond);
                 markerRep.setSize(10.0f);
                 markerRep.setColor({0.0f, 1.0f, 0.0f, 0.9f});
 
@@ -3269,20 +3269,6 @@ void CelestiaCore::renderOverlay()
                 {
                     lastSelection = sel;
                     selectionNames = sim->getUniverse()->getStarCatalog()->getStarNameList(*sel.star());
-                    // Skip displaying the English name if a localized version is present.
-                    string starName = sim->getUniverse()->getStarCatalog()->getStarName(*sel.star());
-                    string locStarName = sim->getUniverse()->getStarCatalog()->getStarName(*sel.star(), true);
-                    if (sel.star()->getIndex() == 0 && selectionNames.find("Sun") != string::npos && strcmp("Sun", _("Sun")) != 0)
-                    {
-                        string::size_type startPos = selectionNames.find("Sun");
-                        string::size_type endPos = selectionNames.find(_("Sun"));
-                        selectionNames = selectionNames.erase(startPos, endPos - startPos);
-                    }
-                    else if (selectionNames.find(starName) != string::npos && starName != locStarName)
-                    {
-                        string::size_type startPos = selectionNames.find(locStarName);
-                        selectionNames = selectionNames.substr(startPos);
-                    }
                 }
 
                 overlay->setFont(titleFont);
@@ -3443,7 +3429,7 @@ void CelestiaCore::renderOverlay()
         overlay->setFont(titleFont);
         overlay->savePos();
         int rectHeight = fontHeight * 3.0f + screenDpi / 25.4f * 9.3f + titleFontHeight;
-        Rect r(0, 0, width, safeAreaInsets.bottom + rectHeight);
+        celestia::Rect r(0, 0, width, safeAreaInsets.bottom + rectHeight);
         r.setColor(consoleColor);
         overlay->drawRectangle(r);
         overlay->moveBy(safeAreaInsets.left, safeAreaInsets.bottom + rectHeight - titleFontHeight);
@@ -3526,12 +3512,12 @@ void CelestiaCore::renderOverlay()
         overlay->savePos();
         Color color(1.0f, 0.0f, 0.0f, 1.0f);
         overlay->setColor(color);
-        Rect r((width - movieWidth) / 2 - 1,
+        celestia::Rect r((width - movieWidth) / 2 - 1,
                (height - movieHeight) / 2 - 1,
                movieWidth + 1,
                movieHeight + 1);
         r.setColor(color);
-        r.setType(Rect::Type::BorderOnly);
+        r.setType(celestia::Rect::Type::BorderOnly);
         overlay->drawRectangle(r);
         overlay->moveBy((float) ((width - movieWidth) / 2),
                         (float) ((height + movieHeight) / 2 + 2));
@@ -3961,7 +3947,7 @@ bool CelestiaCore::initSimulation(const fs::path& configFileName,
     return true;
 }
 
-static TextureFont*
+static std::shared_ptr<TextureFont>
 LoadFontHelper(const Renderer* renderer, const fs::path& p)
 {
     if (p.is_absolute())
@@ -4038,7 +4024,7 @@ bool CelestiaCore::initRenderer()
     }
     else
     {
-        TextureFont* labelFont = LoadFontHelper(renderer, config->labelFont);
+        auto labelFont = LoadFontHelper(renderer, config->labelFont);
         if (labelFont == nullptr)
         {
             renderer->setFont(Renderer::FontNormal, font);
@@ -4267,6 +4253,25 @@ void CelestiaCore::setRendererFont(const fs::path& fontPath, int collectionIndex
     if (f != nullptr)
         f->buildTexture();
     renderer->setFont(fontStyle, f);
+}
+
+void CelestiaCore::clearFonts()
+{
+    if (overlay)
+        overlay->setFont(nullptr);
+    if (console)
+        console->setFont(nullptr);
+
+    titleFont = nullptr;
+    font = nullptr;
+
+    if (renderer)
+    {
+        for (int i = Renderer::FontNormal; i < Renderer::FontCount; i += 1)
+        {
+            renderer->setFont((Renderer::FontStyle)i, nullptr);
+        }
+    }
 }
 
 int CelestiaCore::getTimeZoneBias() const
@@ -4654,7 +4659,7 @@ bool CelestiaCore::initLuaHook(ProgressNotifier* progressNotifier)
 void CelestiaCore::setTypedText(const char *c_p)
 {
     typedText += string(c_p);
-    typedTextCompletion = sim->getObjectCompletion(typedText, (renderer->getLabelMode() & Renderer::LocationLabels) != 0);
+    typedTextCompletion = sim->getObjectCompletion(typedText, true, (renderer->getLabelMode() & Renderer::LocationLabels) != 0);
     typedTextCompletionIdx = -1;
 #ifdef AUTO_COMPLETION
     if (typedTextCompletion.size() == 1)
