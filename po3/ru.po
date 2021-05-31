@@ -17,22 +17,22 @@ msgstr ""
 "Language-Team: \n"
 "X-Generator: Poedit 2.4.3\n"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "%.2f days"
 msgstr "%.2f сут."
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "%.2f hours"
 msgstr "%.2f ч."
 
-# Android/iOS/Mac, Unit kilometer
+# Android/iOS/Mac/Windows, Unit kilometer
 #, c-format
 msgid "%d km"
 msgstr "%d км"
 
-# Android/iOS/Mac, Unit meter
+# Android/iOS/Mac/Windows, Unit meter
 #, c-format
 msgid "%d m"
 msgstr "%d м"
@@ -133,7 +133,7 @@ msgstr "Астероиды"
 msgid "Atmospheres"
 msgstr "Атмосферы"
 
-# Mac/Windows, Astronomical unit
+# Android/iOS/Mac/Windows, Astronomical unit
 msgid "au"
 msgstr "в а.е."
 
@@ -158,6 +158,10 @@ msgstr "Автонастройка зв. величины"
 #, c-format
 msgid "B: %d° %d′ %.2f″"
 msgstr "B: %d° %d′ %.2f″"
+
+# Windows
+msgid "B: {0}° {1}′ {2:N2}″"
+msgstr ""
 
 # Mac, Undo an operation
 msgid "Back"
@@ -360,6 +364,10 @@ msgstr "Отладка"
 msgid "DEC: %d° %d′ %.2f″"
 msgstr "Склонение: %d° %d′ %.2f″"
 
+# Windows
+msgid "DEC: {0}° {1}′ {2:N2}″"
+msgstr ""
+
 # Android/iOS/Mac
 msgid "Deep Sky Objects"
 msgstr "Объекты глубокого космоса"
@@ -412,7 +420,7 @@ msgstr "Показывать"
 msgid "Display Light Travel Delay"
 msgstr "Отобразить световое запаздывание"
 
-# Windows, Distance to the object (in Go to)
+# Android/iOS/Windows, Distance to the object (in Go to)
 msgid "Distance"
 msgstr "Расстояние"
 
@@ -496,7 +504,7 @@ msgstr "До:"
 msgid "Equatorial"
 msgstr "Экваториальная"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "Equatorial radius: %s"
 msgstr "Экваториальный радиус: %s"
@@ -645,7 +653,7 @@ msgstr "Шаровые скопления"
 msgid "Go"
 msgstr "Перейти"
 
-# Mac/Windows
+# Android/iOS/Mac/Windows
 msgid "Go to Object"
 msgstr "Перейти к объекту"
 
@@ -665,11 +673,11 @@ msgstr "Координатная сетка"
 msgid "Guides"
 msgstr "Элементы"
 
-# Android/iOS/Mac, Indicate that an object has atmosphere
+# Android/iOS/Mac/Windows, Indicate that an object has atmosphere
 msgid "Has atmosphere"
 msgstr "Есть атмосфера"
 
-# Android/iOS/Mac, Indicate that an object has rings
+# Android/iOS/Mac/Windows, Indicate that an object has rings
 msgid "Has rings"
 msgstr "Есть кольца"
 
@@ -761,7 +769,7 @@ msgstr "УСТАНОВЛЕНО"
 msgid "Julian Date:"
 msgstr "Юлианская дата:"
 
-# Mac/Windows, Unit
+# Android/iOS/Mac/Windows, Unit
 msgid "km"
 msgstr "в км"
 
@@ -769,6 +777,10 @@ msgstr "в км"
 #, c-format
 msgid "L: %d° %d′ %.2f″"
 msgstr "L: %d° %d′ %.2f″"
+
+# Windows
+msgid "L: {0}° {1}′ {2:N2}″"
+msgstr ""
 
 # Mac/Windows, Labels to display
 msgid "Labels"
@@ -790,7 +802,7 @@ msgstr "Язык"
 msgid "Language:"
 msgstr "Язык:"
 
-# Mac/Windows, Coordinates
+# Android/iOS/Mac/Windows, Coordinates
 msgid "Latitude"
 msgstr "Широта"
 
@@ -802,7 +814,7 @@ msgstr "Влево"
 msgid "Left Arrow"
 msgstr "Стрелка влево"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "Length of day: %s"
 msgstr "Солнечные сутки: %s"
@@ -850,7 +862,7 @@ msgstr "Блокировка фазы"
 msgid "Long press on stepper to change orientation."
 msgstr "Удерживайте кнопки для вращения камеры."
 
-# Mac/Windows, Coordinates
+# Android/iOS/Mac/Windows, Coordinates
 msgid "Longitude"
 msgstr "Долгота"
 
@@ -962,7 +974,7 @@ msgstr "Нет данных"
 msgid "No object name entered"
 msgstr "Нет объекта с указанным названием"
 
-# Android/iOS/Mac, No overview for an object
+# Android/iOS/Mac/Windows, No overview for an object
 msgid "No overview available."
 msgstr "Обзор недоступен."
 
@@ -986,7 +998,7 @@ msgstr ""
 "Примечание:\n"
 "Указание большого временного интервала может привести к длительному поиску и большому количеству результатов."
 
-# Android/iOS, In eclipse finder, object to find eclipse with
+# Android/iOS, In eclipse finder, object to find eclipse with, or in go to
 msgid "Object"
 msgstr "Объект"
 
@@ -1114,7 +1126,7 @@ msgstr "Введите описание содержимого."
 msgid "Please enter a new name."
 msgstr "Введите новое название."
 
-# Mac, In Go to; Android/iOS, Enter the name of an object in Eclipse Finder
+# Android/iOS/Mac, In Go to; Android/iOS, Enter the name of an object in Eclipse Finder
 msgid "Please enter an object name."
 msgstr "Введите название объекта."
 
@@ -1160,7 +1172,11 @@ msgstr "Выйти из Celestia"
 msgid "RA: %dh %dm %.2fs"
 msgstr "Прямое восхождение: %dh %dm %.2fs"
 
-# Mac/Windows, In Go to, specify the distance based on the object radius
+# Windows
+msgid "RA: {0}h {1}m {2:N2}s"
+msgstr ""
+
+# Android/iOS/Mac/Windows, In Go to, specify the distance based on the object radius
 msgid "radii"
 msgstr "в радиусах"
 
@@ -1369,7 +1385,7 @@ msgstr "Открыть путеводитель"
 msgid "Show Frame Axes"
 msgstr "Показывать оси каркаса"
 
-# Mac, Show info for an object
+# Mac/Windows, Show info for an object
 msgid "Show Info"
 msgstr "Показывать информацию"
 
@@ -1401,12 +1417,12 @@ msgstr "Показывать линию терминатора"
 msgid "Show Velocity Vector"
 msgstr "Показывать направление движения"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "Sidereal rotation period: %s"
 msgstr "Звёздные сутки: %s"
 
-# Android/iOS/Mac, Size of an object
+# Android/iOS/Mac/Windows, Size of an object
 #, c-format
 msgid "Size: %s"
 msgstr "Размер: %s"

@@ -17,22 +17,22 @@ msgstr ""
 "Language-Team: \n"
 "X-Generator: Poedit 2.3\n"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "%.2f days"
 msgstr "%.2f dias"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "%.2f hours"
 msgstr "%.2f horas"
 
-# Android/iOS/Mac, Unit kilometer
+# Android/iOS/Mac/Windows, Unit kilometer
 #, c-format
 msgid "%d km"
 msgstr "%d km"
 
-# Android/iOS/Mac, Unit meter
+# Android/iOS/Mac/Windows, Unit meter
 #, c-format
 msgid "%d m"
 msgstr "%d m"
@@ -133,7 +133,7 @@ msgstr "Asteroides"
 msgid "Atmospheres"
 msgstr "Atmosferas"
 
-# Mac/Windows, Astronomical unit
+# Android/iOS/Mac/Windows, Astronomical unit
 msgid "au"
 msgstr "ua"
 
@@ -158,6 +158,10 @@ msgstr "Mag. Automática"
 #, c-format
 msgid "B: %d° %d′ %.2f″"
 msgstr "B: %d° %d′ %.2f″"
+
+# Windows
+msgid "B: {0}° {1}′ {2:N2}″"
+msgstr ""
 
 # Mac, Undo an operation
 msgid "Back"
@@ -360,6 +364,10 @@ msgstr "Depuração"
 msgid "DEC: %d° %d′ %.2f″"
 msgstr "DEC: %d° %d′ %.2f″"
 
+# Windows
+msgid "DEC: {0}° {1}′ {2:N2}″"
+msgstr ""
+
 # Android/iOS/Mac
 msgid "Deep Sky Objects"
 msgstr "Objetos do Céu Profundo"
@@ -412,7 +420,7 @@ msgstr "Exibição"
 msgid "Display Light Travel Delay"
 msgstr "Mostrar Atraso de Viagem da Luz"
 
-# Windows, Distance to the object (in Go to)
+# Android/iOS/Windows, Distance to the object (in Go to)
 msgid "Distance"
 msgstr ""
 
@@ -496,7 +504,7 @@ msgstr ""
 msgid "Equatorial"
 msgstr "Equatorial"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "Equatorial radius: %s"
 msgstr "Raio equatorial: %s"
@@ -645,7 +653,7 @@ msgstr "Globulares"
 msgid "Go"
 msgstr "Ir para"
 
-# Mac/Windows
+# Android/iOS/Mac/Windows
 msgid "Go to Object"
 msgstr "Ir para Objeto"
 
@@ -665,11 +673,11 @@ msgstr "Grades"
 msgid "Guides"
 msgstr "Guias"
 
-# Android/iOS/Mac, Indicate that an object has atmosphere
+# Android/iOS/Mac/Windows, Indicate that an object has atmosphere
 msgid "Has atmosphere"
 msgstr "Possui atmosfera"
 
-# Android/iOS/Mac, Indicate that an object has rings
+# Android/iOS/Mac/Windows, Indicate that an object has rings
 msgid "Has rings"
 msgstr "Possui anéis"
 
@@ -761,7 +769,7 @@ msgstr ""
 msgid "Julian Date:"
 msgstr "Data Juliana:"
 
-# Mac/Windows, Unit
+# Android/iOS/Mac/Windows, Unit
 msgid "km"
 msgstr "km"
 
@@ -769,6 +777,10 @@ msgstr "km"
 #, c-format
 msgid "L: %d° %d′ %.2f″"
 msgstr "L: %d° %d′ %.2f″"
+
+# Windows
+msgid "L: {0}° {1}′ {2:N2}″"
+msgstr ""
 
 # Mac/Windows, Labels to display
 msgid "Labels"
@@ -790,7 +802,7 @@ msgstr ""
 msgid "Language:"
 msgstr ""
 
-# Mac/Windows, Coordinates
+# Android/iOS/Mac/Windows, Coordinates
 msgid "Latitude"
 msgstr "Latitude"
 
@@ -802,7 +814,7 @@ msgstr "Esquerda"
 msgid "Left Arrow"
 msgstr "Seta Esquerda"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "Length of day: %s"
 msgstr "Duração do dia: %s"
@@ -850,7 +862,7 @@ msgstr "Fixar Fase"
 msgid "Long press on stepper to change orientation."
 msgstr "Deixe pressionado para alterar a orientação."
 
-# Mac/Windows, Coordinates
+# Android/iOS/Mac/Windows, Coordinates
 msgid "Longitude"
 msgstr "Longitude"
 
@@ -962,7 +974,7 @@ msgstr "Sem dados"
 msgid "No object name entered"
 msgstr "Nenhum nome inserido"
 
-# Android/iOS/Mac, No overview for an object
+# Android/iOS/Mac/Windows, No overview for an object
 msgid "No overview available."
 msgstr "Resumo não disponível."
 
@@ -986,7 +998,7 @@ msgstr ""
 "Nota:\n"
 "Especificar um intervalo longo de tempo pode causar demora na pesquisa e um excesso de resultados."
 
-# Android/iOS, In eclipse finder, object to find eclipse with
+# Android/iOS, In eclipse finder, object to find eclipse with, or in go to
 msgid "Object"
 msgstr "Objecto"
 
@@ -1114,7 +1126,7 @@ msgstr "Por favor digite uma descrição do conteúdo."
 msgid "Please enter a new name."
 msgstr "Por favor digite um novo nome."
 
-# Mac, In Go to; Android/iOS, Enter the name of an object in Eclipse Finder
+# Android/iOS/Mac, In Go to; Android/iOS, Enter the name of an object in Eclipse Finder
 msgid "Please enter an object name."
 msgstr "Por favor digite o nome de um objeto."
 
@@ -1160,7 +1172,11 @@ msgstr "Sair do Celestia"
 msgid "RA: %dh %dm %.2fs"
 msgstr "AR: %dh %dm %2fs"
 
-# Mac/Windows, In Go to, specify the distance based on the object radius
+# Windows
+msgid "RA: {0}h {1}m {2:N2}s"
+msgstr ""
+
+# Android/iOS/Mac/Windows, In Go to, specify the distance based on the object radius
 msgid "radii"
 msgstr "raios"
 
@@ -1369,7 +1385,7 @@ msgstr ""
 msgid "Show Frame Axes"
 msgstr "Mostrar Eixos do Referencial"
 
-# Mac, Show info for an object
+# Mac/Windows, Show info for an object
 msgid "Show Info"
 msgstr "Mostrar Informações"
 
@@ -1401,12 +1417,12 @@ msgstr "Mostrar Terminador"
 msgid "Show Velocity Vector"
 msgstr "Mostrar Vetor de Velocidade"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "Sidereal rotation period: %s"
 msgstr "Período de rotação sideral: %s"
 
-# Android/iOS/Mac, Size of an object
+# Android/iOS/Mac/Windows, Size of an object
 #, c-format
 msgid "Size: %s"
 msgstr "Tamanho: %s"

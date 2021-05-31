@@ -16,22 +16,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "%.2f days"
 msgstr "%.2f 天"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "%.2f hours"
 msgstr "%.2f 小時"
 
-# Android/iOS/Mac, Unit kilometer
+# Android/iOS/Mac/Windows, Unit kilometer
 #, c-format
 msgid "%d km"
 msgstr "%d 千米"
 
-# Android/iOS/Mac, Unit meter
+# Android/iOS/Mac/Windows, Unit meter
 #, c-format
 msgid "%d m"
 msgstr "%d 米"
@@ -132,7 +132,7 @@ msgstr "小行星"
 msgid "Atmospheres"
 msgstr "大氣壓"
 
-# Mac/Windows, Astronomical unit
+# Android/iOS/Mac/Windows, Astronomical unit
 msgid "au"
 msgstr "天文單位"
 
@@ -157,6 +157,10 @@ msgstr " 自動調節星等極限"
 #, c-format
 msgid "B: %d° %d′ %.2f″"
 msgstr "B: %d° %d′ %.2f″"
+
+# Windows
+msgid "B: {0}° {1}′ {2:N2}″"
+msgstr "B: {0}° {1}′ {2:N2}″"
 
 # Mac, Undo an operation
 msgid "Back"
@@ -359,6 +363,10 @@ msgstr "除錯操作"
 msgid "DEC: %d° %d′ %.2f″"
 msgstr "DEC: %d° %d′ %.2f″"
 
+# Windows
+msgid "DEC: {0}° {1}′ {2:N2}″"
+msgstr "DEC: {0}° {1}′ {2:N2}″"
+
 # Android/iOS/Mac
 msgid "Deep Sky Objects"
 msgstr "深太空天體"
@@ -411,7 +419,7 @@ msgstr "顯示"
 msgid "Display Light Travel Delay"
 msgstr "顯示光速延遲"
 
-# Windows, Distance to the object (in Go to)
+# Android/iOS/Windows, Distance to the object (in Go to)
 msgid "Distance"
 msgstr "距離"
 
@@ -495,7 +503,7 @@ msgstr "結束時間: "
 msgid "Equatorial"
 msgstr "赤道"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "Equatorial radius: %s"
 msgstr "赤道半徑: %s"
@@ -644,7 +652,7 @@ msgstr "球狀星團"
 msgid "Go"
 msgstr "前往"
 
-# Mac/Windows
+# Android/iOS/Mac/Windows
 msgid "Go to Object"
 msgstr "前往星體"
 
@@ -664,11 +672,11 @@ msgstr "格子"
 msgid "Guides"
 msgstr "遊歷指導"
 
-# Android/iOS/Mac, Indicate that an object has atmosphere
+# Android/iOS/Mac/Windows, Indicate that an object has atmosphere
 msgid "Has atmosphere"
 msgstr "存在大氣"
 
-# Android/iOS/Mac, Indicate that an object has rings
+# Android/iOS/Mac/Windows, Indicate that an object has rings
 msgid "Has rings"
 msgstr "存在星環"
 
@@ -760,7 +768,7 @@ msgstr "已安裝"
 msgid "Julian Date:"
 msgstr "儒略曆: "
 
-# Mac/Windows, Unit
+# Android/iOS/Mac/Windows, Unit
 msgid "km"
 msgstr "公里"
 
@@ -768,6 +776,10 @@ msgstr "公里"
 #, c-format
 msgid "L: %d° %d′ %.2f″"
 msgstr "L: %d° %d′ %.2f″"
+
+# Windows
+msgid "L: {0}° {1}′ {2:N2}″"
+msgstr "L: {0}° {1}′ {2:N2}″"
 
 # Mac/Windows, Labels to display
 msgid "Labels"
@@ -789,7 +801,7 @@ msgstr "語言"
 msgid "Language:"
 msgstr "語言: "
 
-# Mac/Windows, Coordinates
+# Android/iOS/Mac/Windows, Coordinates
 msgid "Latitude"
 msgstr "緯度"
 
@@ -801,7 +813,7 @@ msgstr "左"
 msgid "Left Arrow"
 msgstr "左箭號"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "Length of day: %s"
 msgstr "日長: %s"
@@ -849,7 +861,7 @@ msgstr "鎖定"
 msgid "Long press on stepper to change orientation."
 msgstr "長按來控制方向。"
 
-# Mac/Windows, Coordinates
+# Android/iOS/Mac/Windows, Coordinates
 msgid "Longitude"
 msgstr "經度"
 
@@ -961,7 +973,7 @@ msgstr "無資料"
 msgid "No object name entered"
 msgstr "星體名稱"
 
-# Android/iOS/Mac, No overview for an object
+# Android/iOS/Mac/Windows, No overview for an object
 msgid "No overview available."
 msgstr "無描述。"
 
@@ -985,7 +997,7 @@ msgstr ""
 "注意: \n"
 "分析較長時間內將會嚴懲分析的時間并產生大量結果。"
 
-# Android/iOS, In eclipse finder, object to find eclipse with
+# Android/iOS, In eclipse finder, object to find eclipse with, or in go to
 msgid "Object"
 msgstr "星體"
 
@@ -1113,7 +1125,7 @@ msgstr "請輸入內容介紹。"
 msgid "Please enter a new name."
 msgstr "請輸入新名稱。"
 
-# Mac, In Go to; Android/iOS, Enter the name of an object in Eclipse Finder
+# Android/iOS/Mac, In Go to; Android/iOS, Enter the name of an object in Eclipse Finder
 msgid "Please enter an object name."
 msgstr "請輸入天體名稱。"
 
@@ -1159,7 +1171,11 @@ msgstr "結束 Celestia"
 msgid "RA: %dh %dm %.2fs"
 msgstr "RA: %dh %dm %.2fs"
 
-# Mac/Windows, In Go to, specify the distance based on the object radius
+# Windows
+msgid "RA: {0}h {1}m {2:N2}s"
+msgstr "RA: {0}h {1}m {2:N2}s"
+
+# Android/iOS/Mac/Windows, In Go to, specify the distance based on the object radius
 msgid "radii"
 msgstr "半徑"
 
@@ -1368,7 +1384,7 @@ msgstr "檢視目的地"
 msgid "Show Frame Axes"
 msgstr "顯示系統轉軸"
 
-# Mac, Show info for an object
+# Mac/Windows, Show info for an object
 msgid "Show Info"
 msgstr "顯示簡介"
 
@@ -1400,12 +1416,12 @@ msgstr "顯示晝夜界線"
 msgid "Show Velocity Vector"
 msgstr "顯示速度向量"
 
-# Android/iOS/Mac
+# Android/iOS/Mac/Windows
 #, c-format
 msgid "Sidereal rotation period: %s"
 msgstr "自轉週期: %s"
 
-# Android/iOS/Mac, Size of an object
+# Android/iOS/Mac/Windows, Size of an object
 #, c-format
 msgid "Size: %s"
 msgstr "尺寸: %s"
