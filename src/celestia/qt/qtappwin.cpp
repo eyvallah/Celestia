@@ -11,7 +11,7 @@
 // of the License, or (at your option) any later version.
 
 
-#include <ctime>
+#include <memory>
 
 #include <QStandardPaths>
 #include <QActionGroup>
@@ -63,15 +63,6 @@
 #include <celestia/scriptmenu.h>
 #include <celestia/url.h>
 #include "qtbookmark.h"
-
-#if defined(_WIN32)
-#include "celestia/avicapture.h"
-// TODO: Add Mac support
-#elif !defined(__APPLE__)
-#ifdef THEORA
-#include "celestia/oggtheoracapture.h"
-#endif
-#endif
 
 #ifndef CONFIG_DATA_DIR
 #define CONFIG_DATA_DIR "./"
@@ -592,20 +583,15 @@ void CelestiaAppWindow::slotShowSelectionContextMenu(const QPoint& pos,
     menu->popupAtCenter(pos);
 }
 
-
 void CelestiaAppWindow::slotGrabImage()
 {
     QString dir;
     QSettings settings;
     settings.beginGroup("Preferences");
     if (settings.contains("GrabImageDir"))
-    {
         dir = settings.value("GrabImageDir").toString();
-    }
     else
-    {
         dir = QDir::current().path();
-    }
 
     QString saveAsName = QFileDialog::getSaveFileName(this,
                                                       _("Save Image"),
@@ -614,13 +600,11 @@ void CelestiaAppWindow::slotGrabImage()
 
     if (!saveAsName.isEmpty())
     {
-        QFileInfo saveAsFile(saveAsName);
-
         //glWidget->repaint();
         QImage grabbedImage = glWidget->grabFrameBuffer();
         grabbedImage.save(saveAsName);
 
-        settings.setValue("GrabImageDir", saveAsFile.absolutePath());
+        settings.setValue("GrabImageDir", QFileInfo(saveAsName).absolutePath());
     }
     settings.endGroup();
 }
@@ -628,72 +612,67 @@ void CelestiaAppWindow::slotGrabImage()
 
 void CelestiaAppWindow::slotCaptureVideo()
 {
-// TODO: Add Mac support
-#if defined(_WIN32) || (defined(THEORA) && !defined(__APPLE__))
+#ifdef USE_FFMPEG
     QString dir;
     QSettings settings;
     settings.beginGroup("Preferences");
     if (settings.contains("CaptureVideoDir"))
-    {
         dir = settings.value("CaptureVideoDir").toString();
-    }
     else
-    {
         dir = QDir::current().path();
-    }
+    settings.endGroup();
 
-    int videoSizes[8][2] =
-                       {
-                         { 160, 120 },
-                         { 320, 240 },
-                         { 640, 480 },
-                         { 720, 480 },
-                         { 720, 576 },
-                         { 1024, 768 },
-                         { 1280, 720 },
-                         { 1920, 1080 }
-                       };
-
-    float videoFrameRates[5] = { 15.0f, 24.0f, 25.0f, 29.97f, 30.0f };
-
-#ifdef _WIN32
     QString saveAsName = QFileDialog::getSaveFileName(this,
                                                       _("Capture Video"),
                                                       dir,
-                                                      _("Video (*.avi)"));
-#else
-    QString saveAsName = QFileDialog::getSaveFileName(this,
-                                                      _("Capture Video"),
-                                                      dir,
-                                                      _("Video (*.ogv)"));
-#endif
+                                                      _("Matroska Video (*.mkv)"));
+
     if (!saveAsName.isEmpty())
     {
+#ifndef _WIN32
+        if (!saveAsName.endsWith(".mkv", Qt::CaseInsensitive))
+            saveAsName.append(".mkv");
+#endif
+
         QDialog videoInfoDialog(this);
-        videoInfoDialog.setWindowTitle("Capture Video");
+        videoInfoDialog.setWindowTitle(_("Capture Video"));
 
         QGridLayout* layout = new QGridLayout(&videoInfoDialog);
 
         QComboBox* resolutionCombo = new QComboBox(&videoInfoDialog);
         layout->addWidget(new QLabel(_("Resolution:"), &videoInfoDialog), 0, 0);
         layout->addWidget(resolutionCombo, 0, 1);
-        for (unsigned int i = 0; i < sizeof(videoSizes) / sizeof(videoSizes[0]); i++)
+        auto videoSizes = m_appCore->getSupportedMovieSizes();
+        for (const auto& size : videoSizes)
         {
-            resolutionCombo->addItem(QString(_("%1 x %2")).arg(videoSizes[i][0]).arg(videoSizes[i][1]), QSize(videoSizes[i][0], videoSizes[i][1]));
+            int w = size.width;
+            int h = size.height;
+            resolutionCombo->addItem(QString(_("%1 x %2")).arg(w).arg(h), QSize(w, h));
         }
 
         QComboBox* frameRateCombo = new QComboBox(&videoInfoDialog);
         layout->addWidget(new QLabel(_("Frame rate:"), &videoInfoDialog), 1, 0);
         layout->addWidget(frameRateCombo, 1, 1);
-        for (unsigned int i = 0; i < sizeof(videoFrameRates) / sizeof(videoFrameRates[0]); i++)
-        {
-            frameRateCombo->addItem(QString("%1").arg(videoFrameRates[i]), videoFrameRates[i]);
-        }
+        auto videoFrameRates = m_appCore->getSupportedMovieFramerates();
+        for (float i : videoFrameRates)
+            frameRateCombo->addItem(QString::number(i), i);
+
+        QComboBox* codecCombo = new QComboBox(&videoInfoDialog);
+        layout->addWidget(new QLabel(_("Video codec:"), &videoInfoDialog), 2, 0);
+        layout->addWidget(codecCombo, 2, 1);
+        auto videoCodecs = m_appCore->getSupportedMovieCodecs();
+        for (const auto &c : videoCodecs)
+            codecCombo->addItem(_(c.codecDescr), c.codecId);
+
+        QLineEdit* bitrateEdit = new QLineEdit("400000", &videoInfoDialog);
+        bitrateEdit->setInputMask("D000000000");
+        layout->addWidget(new QLabel(_("Bitrate:"), &videoInfoDialog), 3, 0);
+        layout->addWidget(bitrateEdit, 3, 1);
 
         QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, &videoInfoDialog);
         connect(buttons, SIGNAL(accepted()), &videoInfoDialog, SLOT(accept()));
         connect(buttons, SIGNAL(rejected()), &videoInfoDialog, SLOT(reject()));
-        layout->addWidget(buttons, 2, 0, 1, 2);
+        layout->addWidget(buttons, 4, 0, 1, 2);
 
         videoInfoDialog.setLayout(layout);
 
@@ -701,26 +680,18 @@ void CelestiaAppWindow::slotCaptureVideo()
         {
             QSize videoSize = resolutionCombo->itemData(resolutionCombo->currentIndex()).toSize();
             float frameRate = frameRateCombo->itemData(frameRateCombo->currentIndex()).toFloat();
+            int codec = codecCombo->itemData(codecCombo->currentIndex()).toInt();
+            int64_t bitrate = bitrateEdit->text().toLongLong();
 
-#ifdef _WIN32
-            MovieCapture* movieCapture = new AVICapture(m_appCore->getRenderer());
-#else
-            MovieCapture* movieCapture = new OggTheoraCapture(m_appCore->getRenderer());
-            movieCapture->setAspectRatio(1, 1);
-#endif
-            bool ok = movieCapture->start(saveAsName.toLatin1().data(),
-                                          videoSize.width(), videoSize.height(),
-                                          frameRate);
-            if (ok)
-                m_appCore->initMovieCapture(movieCapture);
-            else
-                delete movieCapture;
+            m_appCore->initMovieCapture(saveAsName.toStdString(),
+                                        videoSize.width(), videoSize.height(),
+                                        frameRate, bitrate, codec);
         }
 
+        settings.beginGroup("Preferences");
         settings.setValue("CaptureVideoDir", QFileInfo(saveAsName).absolutePath());
+        settings.endGroup();
     }
-
-    settings.endGroup();
 #endif
 }
 
@@ -1186,7 +1157,7 @@ void CelestiaAppWindow::createMenus()
     QAction* captureVideoAction = new QAction(QIcon(":/icons/capture-video.png"),
                                               _("Capture &video"), this);
     // TODO: Add Mac support for video capture
-#if defined(__APPLE__) || (!defined(_WIN32) && !defined(THEORA))
+#ifndef USE_FFMPEG
     captureVideoAction->setEnabled(false);
 #endif
     captureVideoAction->setShortcut(QString(_("Shift+F10")));

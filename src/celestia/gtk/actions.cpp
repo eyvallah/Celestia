@@ -27,11 +27,9 @@
 #include <celestia/celestiacore.h>
 #include <celestia/helper.h>
 #include <celestia/url.h>
+#include <celcompat/charconv.h>
 #include <celutil/filetype.h>
 #include <celutil/gettext.h>
-#ifdef THEORA
-#include <celestia/oggtheoracapture.h>
-#endif
 
 #include "actions.h"
 #include "common.h"
@@ -54,14 +52,26 @@ using namespace std;
 /* Declarations: Action Helpers */
 static void openScript(const char* filename, AppData* app);
 static void captureImage(const char* filename, AppData* app);
-#ifdef THEORA
-static void captureMovie(const char* filename, int aspect, float fps, float quality, AppData* app);
+#ifdef USE_FFMPEG
+static void captureMovie(const char* filename, int w, int h, float fps,
+                         int codec, int64_t bitrate, AppData* app);
 #endif
 static void textInfoDialog(const char *txt, const char *title, AppData* app);
 static void setRenderFlag(AppData* a, uint64_t flag, gboolean state);
 static void setOrbitMask(AppData* a, int mask, gboolean state);
 static void setLabelMode(AppData* a, int mode, gboolean state);
 
+static void insert_text_event(GtkEditable *editable, const gchar *text, gint length, gint *position, gpointer data)
+{
+    for (int i = 0; i < length; i++)
+    {
+        if (!isdigit(text[i]))
+        {
+            g_signal_stop_emission_by_name(G_OBJECT(editable), "insert-text");
+            return;
+        }
+    }
+}
 
 /* File -> Copy URL */
 void actionCopyURL(GtkAction*, AppData* app)
@@ -184,7 +194,7 @@ void actionCaptureImage(GtkAction*, AppData* app)
 /* File -> Capture Movie... */
 void actionCaptureMovie(GtkAction*, AppData* app)
 {
-#ifdef THEORA
+#ifdef USE_FFMPEG
     // TODO: The menu item should be disable so that the user doesn't even
     // have the opportunity to record two movies simultaneously; the only
     // thing missing to make this happen is notification when recording
@@ -201,7 +211,7 @@ void actionCaptureMovie(GtkAction*, AppData* app)
         return;
     }
 
-    GtkWidget* fs = gtk_file_chooser_dialog_new("Save Ogg Theora Movie to File",
+    GtkWidget* fs = gtk_file_chooser_dialog_new("Save Matroska Movie to File",
                                                 GTK_WINDOW(app->mainWindow),
                                                 GTK_FILE_CHOOSER_ACTION_SAVE,
                                                 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
@@ -209,8 +219,8 @@ void actionCaptureMovie(GtkAction*, AppData* app)
                                                 NULL);
 
     GtkFileFilter* filter = gtk_file_filter_new();
-    gtk_file_filter_set_name(filter, "Ogg Files");
-    gtk_file_filter_add_pattern(filter, "*.ogg");
+    gtk_file_filter_set_name(filter, "Matroska Files");
+    gtk_file_filter_add_pattern(filter, "*.mkv");
     gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(fs), filter);
 
     #if GTK_CHECK_VERSION(2, 7, 0)
@@ -223,31 +233,52 @@ void actionCaptureMovie(GtkAction*, AppData* app)
     GtkWidget* hbox = gtk_hbox_new(FALSE, CELSPACING);
     gtk_container_set_border_width(GTK_CONTAINER(hbox), CELSPACING);
 
-    GtkWidget* rlabel = gtk_label_new("Aspect Ratio:");
+    GtkWidget* rlabel = gtk_label_new("Resolution:");
     gtk_box_pack_start(GTK_BOX(hbox), rlabel, TRUE, TRUE, 0);
 
-    GtkWidget* aspectmenubox = gtk_combo_box_text_new();
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(aspectmenubox), "1:1");
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(aspectmenubox), "4:3");
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(aspectmenubox), "16:9");
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(aspectmenubox), "Display");
-    gtk_combo_box_set_active(GTK_COMBO_BOX(aspectmenubox), 0);
-    gtk_box_pack_start(GTK_BOX(hbox), aspectmenubox, FALSE, FALSE, 0);
+    GtkWidget* vscombo = gtk_combo_box_text_new();
+    auto movieSizes = app->core->getSupportedMovieSizes();
+    for (const auto& size : movieSizes)
+    {
+        auto s = fmt::format("{} x {}", size.width, size.height);
+        gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(vscombo),
+                                       s.c_str());
+    }
+    gtk_combo_box_set_active(GTK_COMBO_BOX(vscombo), 0);
+    gtk_box_pack_start(GTK_BOX(hbox), vscombo, FALSE, FALSE, 0);
 
     GtkWidget* flabel = gtk_label_new("Frame Rate:");
     gtk_box_pack_start(GTK_BOX(hbox), flabel, TRUE, TRUE, 0);
 
-    GtkWidget* fpsspin = gtk_spin_button_new_with_range(5.0, 30.0, 0.01);
-    gtk_box_pack_start(GTK_BOX(hbox), fpsspin, TRUE, TRUE, 0);
-    gtk_spin_button_set_value(GTK_SPIN_BUTTON(fpsspin), 12.0);
-    gtk_spin_button_set_increments(GTK_SPIN_BUTTON(fpsspin), 0.01, 1.0);
+    GtkWidget* frcombo = gtk_combo_box_text_new();
+    auto movieFramerates = app->core->getSupportedMovieFramerates();
+    for (float i : movieFramerates)
+    {
+        gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(frcombo),
+                                       fmt::format("{:.3f}", i).c_str());
+    }
+    gtk_combo_box_set_active(GTK_COMBO_BOX(frcombo), 0);
+    gtk_box_pack_start(GTK_BOX(hbox), frcombo, FALSE, FALSE, 0);
 
-    GtkWidget* qlabel = gtk_label_new("Video Quality:");
-    gtk_box_pack_start(GTK_BOX(hbox), qlabel, TRUE, TRUE, 0);
+    GtkWidget* vclabel = gtk_label_new("Video Codec:");
+    gtk_box_pack_start(GTK_BOX(hbox), vclabel, TRUE, TRUE, 0);
 
-    GtkWidget* qspin = gtk_spin_button_new_with_range(0.0, 10.0, 1.0);
-    gtk_box_pack_start(GTK_BOX(hbox), qspin, TRUE, TRUE, 0);
-    gtk_spin_button_set_value(GTK_SPIN_BUTTON(qspin), 10.0);
+    GtkWidget* vccombo = gtk_combo_box_text_new();
+    auto movieCodecs = app->core->getSupportedMovieCodecs();
+    for (const auto &mcodec : movieCodecs)
+    {
+        gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(vccombo),
+                                       mcodec.codecDescr);
+    }
+    gtk_combo_box_set_active(GTK_COMBO_BOX(vccombo), 0);
+    gtk_box_pack_start(GTK_BOX(hbox), vccombo, FALSE, FALSE, 0);
+
+    GtkWidget* brlabel = gtk_label_new("Bitrate:");
+    gtk_box_pack_start(GTK_BOX(hbox), brlabel, TRUE, TRUE, 0);
+    GtkWidget* brentry = gtk_entry_new();
+    gtk_entry_set_text(GTK_ENTRY(brentry), "400000");
+    g_signal_connect(G_OBJECT(brentry), "insert-text", G_CALLBACK(insert_text_event), NULL);
+    gtk_box_pack_start(GTK_BOX(hbox), brentry, TRUE, TRUE, 0);
 
     gtk_widget_show_all(hbox);
     gtk_file_chooser_set_extra_widget(GTK_FILE_CHOOSER(fs), hbox);
@@ -255,14 +286,21 @@ void actionCaptureMovie(GtkAction*, AppData* app)
     if (gtk_dialog_run(GTK_DIALOG(fs)) == GTK_RESPONSE_ACCEPT)
     {
         char* filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(fs));
-        int aspect = gtk_combo_box_get_active(GTK_COMBO_BOX(aspectmenubox));
-        double fps = gtk_spin_button_get_value(GTK_SPIN_BUTTON(fpsspin));
-        double quality = gtk_spin_button_get_value(GTK_SPIN_BUTTON(qspin));
+        int vsidx = gtk_combo_box_get_active(GTK_COMBO_BOX(vscombo));
+        int fridx = gtk_combo_box_get_active(GTK_COMBO_BOX(frcombo));
+        int vcidx = gtk_combo_box_get_active(GTK_COMBO_BOX(vccombo));
+        const gchar *brtext = gtk_entry_get_text(GTK_ENTRY(brentry));
+        const auto &dim = movieSizes[vsidx];
+        float fps = movieFramerates[fridx];
+        int codec = movieCodecs[vcidx].codecId;
+        int64_t bitrate = 400000;
+        const gchar *last = &brtext[gtk_entry_get_text_length(GTK_ENTRY(brentry))];
+        std::from_chars(brtext, last, bitrate);
 
         gtk_widget_destroy(fs);
         for (int i=0; i < 10 && gtk_events_pending ();i++)
             gtk_main_iteration ();
-        captureMovie(filename, aspect, fps, quality,  app);
+        captureMovie(filename, dim.width, dim.height, fps, codec, bitrate, app);
         g_free(filename);
     }
     else
@@ -1046,38 +1084,18 @@ static void captureImage(const char* filename, AppData* app)
 }
 
 /* Image capturing helper called by actionCaptureImage() */
-#ifdef THEORA
-static void captureMovie(const char* filename, int aspect, float fps, float quality, AppData* app)
+#ifdef USE_FFMPEG
+static void captureMovie(const char* filename,
+                         int width, int height,
+                         float fps, int codec,
+                         int64_t bitrate, AppData* app)
 {
-    /* Get the dimensions of the current viewport */
-    array<int, 4> viewport;
-    app->renderer->getViewport(viewport);
-
-    MovieCapture* movieCapture = new OggTheoraCapture(app->renderer);
-    switch (aspect)
+    bool ok = app->core->initMovieCapture(filename,
+                                          width, height,
+                                          fps, bitrate,
+                                          codec);
+    if (!ok)
     {
-    case 0:
-        movieCapture->setAspectRatio(1, 1);
-        break;
-    case 1:
-        movieCapture->setAspectRatio(4, 3);
-        break;
-    case 2:
-        movieCapture->setAspectRatio(16, 9);
-        break;
-    default:
-        movieCapture->setAspectRatio(viewport[2], viewport[3]);
-        break;
-    }
-    movieCapture->setQuality(quality);
-
-    bool success = movieCapture->start(filename, viewport[2], viewport[3], fps);
-    if (success)
-        app->core->initMovieCapture(movieCapture);
-    else
-    {
-        delete movieCapture;
-
         GtkWidget* errBox = gtk_message_dialog_new(GTK_WINDOW(app->mainWindow),
                                                    GTK_DIALOG_DESTROY_WITH_PARENT,
                                                    GTK_MESSAGE_ERROR,

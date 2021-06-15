@@ -50,7 +50,7 @@ option(ENABLE_GTK     "Build GTK2 frontend (Unix only)? (Default: off)" OFF)
 option(ENABLE_QT      "Build Qt frontend? (Default: on)" ON)
 option(ENABLE_SDL     "Build SDL frontend? (Default: off)" OFF)
 option(ENABLE_WIN     "Build Windows native frontend? (Default: on)" ON)
-option(ENABLE_THEORA  "Support video capture to OGG Theora? (Default: on)" ON)
+option(ENABLE_FFMPEG  "Support video capture using FFMPEG (Default: off)" OFF)
 option(ENABLE_TOOLS   "Build different tools? (Default: off)" OFF)
 option(NATIVE_OSX_APP "Support native OSX paths read data from (Default: off)" OFF)
 option(FAST_MATH      "Build with unsafe fast-math compiller option (Default: off)" OFF)
@@ -86,7 +86,7 @@ endif()
 add_definitions(-D_USE_MATH_DEFINES)
 
 # Let CMake handle setting C++11 (since 3.1)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_C_STANDARD 11)
 
 # Use our cmake files
@@ -99,12 +99,6 @@ endif()
 include(CheckIncludeFiles)
 include(CheckIncludeFileCXX)
 include(FastMath)
-if(NOT WIN32)
-  include(cotire)
-else()
-  macro(cotire _target)
-  endmacro()
-endif()
 
 #
 # Compile options
@@ -116,11 +110,12 @@ if(MSVC)
   # C4800: forcing value to bool
   # C4455: reserved literals (no undescore at the beginning)
   # C5030: not recognized attribute
+  # C5105: macro expansion producing 'defined' has undefined behavior
   # Additional options
   # bigobj: generate more object sections than allowed by default
   # Promoted to errors
   # C4316: object allocated on the heap may not be aligned 16
-  add_compile_options("/wd4244" "/wd4267" "/wd4503" "/wd4800" "/wd4455" "/wd5030" "/bigobj" "/we4316")
+  add_compile_options("/wd4244" "/wd4267" "/wd4503" "/wd4800" "/wd4455" "/wd5030" "/wd5105" "/bigobj" "/we4316")
 
   if(MSVC_VERSION GREATER_EQUAL 1914)
     # /Zc:__cplusplus: correctly set __cplusplus macro value
@@ -208,16 +203,14 @@ else()
   message(STATUS "NAIF SPICE is disabled. Not looking for cspice library.")
 endif()
 
-if(_UNIX)
-  find_package(PkgConfig)
+if(ENABLE_FFMPEG)
+  include(FindFFMPEG)
+  find_package(FFMPEG REQUIRED COMPONENTS avcodec avutil avformat swscale)
+  add_definitions(-DUSE_FFMPEG)
 endif()
 
-if(_UNIX AND ENABLE_THEORA)
-  pkg_search_module(THEORA theora REQUIRED)
-  include_directories(${THEORA_INCLUDE_DIRS})
-  link_directories(${THEORA_LIBRARY_DIRS})
-  link_libraries(${THEORA_LIBRARIES})
-  add_definitions(-DTHEORA)
+if(_UNIX)
+  find_package(PkgConfig)
 endif()
 
 if(WIN32)

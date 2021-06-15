@@ -193,6 +193,8 @@
 #define IDC_SHOWFADINGORBITS            1163
 #define IDC_SHOWRINGS                   1164
 #define IDC_SHOWPARTIALTRAJECTORIES     1165
+#define IDC_COMBO_MOVIE_CODEC           1166
+#define IDC_EDIT_MOVIE_BITRATE          1167
 #define ID_SELECTSOL                    40001
 #define ID_GOTOSELECTION                40002
 #define ID_FOLLOWSELECTION              40003
@@ -269,6 +271,7 @@
 #define ID_RENDER_TERMINATOR            40088
 #define ID_STARCOLOR_DISABLED           40089
 #define ID_STARCOLOR_ENABLED            40090
+#define ID_SELECT_PRIMARY_BODY          40091
 #define ID_BOOKMARKS_FIRSTBOOKMARK      41000
 #define ID_FIRST_SCRIPT                 42000
 
@@ -278,8 +281,8 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        142
-#define _APS_NEXT_COMMAND_VALUE         40091
-#define _APS_NEXT_CONTROL_VALUE         1166
+#define _APS_NEXT_COMMAND_VALUE         40092
+#define _APS_NEXT_CONTROL_VALUE         1168
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

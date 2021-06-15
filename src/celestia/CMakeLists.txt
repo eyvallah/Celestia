@@ -15,7 +15,6 @@ set(CELESTIA_SOURCES
   helper.h
   imagecapture.cpp
   imagecapture.h
-  moviecapture.h
   scriptmenu.cpp
   scriptmenu.h
   url.cpp
@@ -24,15 +23,10 @@ set(CELESTIA_SOURCES
   view.h
 )
 
-if(WIN32)
+if(ENABLE_FFMPEG)
   list(APPEND CELESTIA_SOURCES
-    avicapture.cpp
-    avicapture.h
-  )
-elseif(_UNIX AND ENABLE_THEORA)
-  list(APPEND CELESTIA_SOURCES
-    oggtheoracapture.cpp
-    oggtheoracapture.h
+    moviecapture.cpp
+    moviecapture.h
   )
 endif()
 
@@ -73,7 +67,9 @@ if(APPLE)
   target_link_libraries(celestia "-framework Foundation")
 endif()
 
-cotire(celestia)
+if(ENABLE_FFMPEG)
+  target_link_libraries(celestia ${FFMPEG_LIBRARIES})
+endif()
 
 install(TARGETS celestia LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} NAMELINK_SKIP)
 
