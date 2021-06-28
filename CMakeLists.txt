@@ -150,44 +150,13 @@ if(ENABLE_NLS)
   find_package(Intl REQUIRED)
   include_directories(${Intl_INCLUDE_DIRS})
   link_libraries(${Intl_LIBRARIES})
-
-  # begin static libintl support
-  # libintl.a may depend on libiconv.a and libcharset.a
-  # this is the case of vcpkg + mingw, for example
-  macro(try_compile_intl)
-    set(_argv ${ARGV})
-    try_compile(INTLLIB ${CMAKE_BINARY_DIR}
-                "${CMAKE_SOURCE_DIR}/checks/intl.cpp"
-                LINK_LIBRARIES ${_argv}
-                CMAKE_FLAGS "-DINCLUDE_DIRECTORIES=${Intl_INCLUDE_DIRS}")
-  endmacro()
-
-  try_compile_intl(${Intl_LIBRARIES})
-  if (NOT INTLLIB)
-    message(STATUS "Checking for libiconv and libcharset dependencies of libintl")
-    find_package(Iconv REQUIRED)
-    link_libraries(${Iconv_LIBRARIES})
-
-    try_compile_intl(${Intl_LIBRARIES} ${Iconv_LIBRARIES})
-    if (NOT INTLLIB)
-      find_library(Charset_LIBRARY NAMES libcharset charset HINTS Charset_DIR)
-      try_compile_intl(${Intl_LIBRARIES} ${Iconv_LIBRARIES} ${Charset_LIBRARY})
-      if (NOT INTLLIB)
-        message(FATAL_ERROR "LibIntl has unknown dependencies")
-      else()
-        link_libraries(${Charset_LIBRARY})
-      endif()
-    endif()
-  endif()
-  # end static libintl support
-
   add_definitions(-DENABLE_NLS)
 else()
   message(STATUS "NLS is disabled. Not looking for gettext and libintl.")
 endif()
 
 if(ENABLE_SPICE)
-  find_package(Cspice)
+  find_package(CSPICE)
   if(NOT CSPICE_FOUND)
     message(STATUS "Using cspice submodule")
     add_subdirectory("${CMAKE_SOURCE_DIR}/thirdparty/Spice")
@@ -206,6 +175,7 @@ endif()
 if(ENABLE_FFMPEG)
   include(FindFFMPEG)
   find_package(FFMPEG REQUIRED COMPONENTS avcodec avutil avformat swscale)
+  include_directories(${FFMPEG_INCLUDE_DIRS})
   add_definitions(-DUSE_FFMPEG)
 endif()
 

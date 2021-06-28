@@ -415,21 +415,21 @@ ShaderManager::getShader(const string& name)
     uintmax_t fsSize = fs::file_size(fsName, ecf);
     if (ecv || ecf)
     {
-        fmt::fprintf(cerr, "Failed to get file size of %s or %s\n", vsName, fsName);
+        fmt::fprintf(cerr, "Failed to get file size of %s or %s\n", vsName.string(), fsName.string());
         return getShader(name, errorVertexShaderSource, errorFragmentShaderSource);
     }
 
     ifstream vsf(vsName.string());
     if (!vsf.good())
     {
-        fmt::fprintf(cerr, "Failed to open %s\n", vsName);
+        fmt::fprintf(cerr, "Failed to open %s\n", vsName.string());
         return getShader(name, errorVertexShaderSource, errorFragmentShaderSource);
     }
 
     ifstream fsf(fsName.string());
     if (!fsf.good())
     {
-        fmt::fprintf(cerr, "Failed to open %s\n", fsName);
+        fmt::fprintf(cerr, "Failed to open %s\n", fsName.string());
         return getShader(name, errorVertexShaderSource, errorFragmentShaderSource);
     }
 
@@ -1289,10 +1289,17 @@ BeginLightSourceShadows(const ShaderProperties& props, unsigned int light)
 
     if (props.hasRingShadowForLight(light))
     {
+        source += "float ringShadowTexCoordX;\n";
+        source += assign("ringShadowTexCoordX", ringShadowTexCoord(light));
+
+#ifdef GL_ES
+        if (!gl::OES_texture_border_clamp)
+            source += "if (ringShadowTexCoordX >= 0.0 && ringShadowTexCoordX <= 1.0)\n{\n";
+#endif
         if (gl::ARB_shader_texture_lod)
         {
             source += mulAssign("shadow",
-                      (1.0f - texture2DLod(sampler2D("ringTex"), vec2(ringShadowTexCoord(light), 0.0f), indexedUniform("ringShadowLOD", light))["a"]));
+                      (1.0f - texture2DLod(sampler2D("ringTex"), vec2(sh_float("ringShadowTexCoordX"), 0.0f), indexedUniform("ringShadowLOD", light))["a"]));
         }
         else
         {
@@ -1304,8 +1311,12 @@ BeginLightSourceShadows(const ShaderProperties& props, unsigned int light)
             // derivative is computed from the plane equation of the triangle, which means that there
             // are discontinuities between triangles.
             source += mulAssign("shadow",
-                      (1.0f - texture2DLodBias(sampler2D("ringTex"), vec2(ringShadowTexCoord(light), 0.0f), indexedUniform("ringShadowLOD", light))["a"]));
+                      (1.0f - texture2DLodBias(sampler2D("ringTex"), vec2(sh_float("ringShadowTexCoordX"), 0.0f), indexedUniform("ringShadowLOD", light))["a"]));
         }
+#ifdef GL_ES
+        if (!gl::OES_texture_border_clamp)
+            source += "}\n";
+#endif
     }
 
     if (props.hasCloudShadowForLight(light))
